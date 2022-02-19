@@ -1,8 +1,18 @@
 import React from 'react';
 import logo from './logo.svg';
-import './App.css';
+import './styles/App.scss';
+import { getAllRestaurants } from './apiCalls'
 
-function App() {
+class App extends React.Component {
+  constructor() {
+    super();
+  }
+
+  componentDidMount() {
+    getAllRestaurants()
+  }
+
+  render() {
   return (
     <div className="App">
       <header className="App-header">
@@ -21,6 +31,7 @@ function App() {
       </header>
     </div>
   );
+  }
 }
 
 export default App;

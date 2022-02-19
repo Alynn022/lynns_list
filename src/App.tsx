@@ -1,13 +1,14 @@
 import * as React from 'react';
 import './styles/App.scss';
-import { getAllRestaurants } from './apiCalls'
+import { getAllRestaurants } from './apiCalls';
+import Header from './Components/Header/Header';
+import { Restaurant, State } from './types';
 
-interface Props {}
 
-class App extends React.Component <Props> {
-  constructor(props: Props) {
-    super(props);
-  }
+class App extends React.Component  {
+ state: State = {
+   restaurants: [1, 2, 3]
+ }
 
   componentDidMount() {
     getAllRestaurants()
@@ -16,6 +17,8 @@ class App extends React.Component <Props> {
   render() {
     return (
       <div className="App">
+        { this.state.restaurants[0] }
+        <Header />
       </div>
     );
   }

@@ -40,5 +40,10 @@ export interface Restaurant {
 
 export interface State {
   restaurants: Restaurant[];
+  userLists: UserLists;
 }
 
+export interface UserLists {
+  gottaGo: Restaurant[],
+  wannaTry: Restaurant[]
+}

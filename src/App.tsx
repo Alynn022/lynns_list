@@ -12,7 +12,7 @@ class App extends React.Component {
    restaurants: [],
    userLists: {
      gottaGo: [],
-     wannaTry: []
+     lovedIt: []
    }
   }
 

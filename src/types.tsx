@@ -8,7 +8,7 @@ interface Coordinates {
   longitude: number
 }
 
-interface Location {
+export interface Location {
   address1: string,
   address2: string,
   address3: string,
@@ -45,5 +45,5 @@ export interface State {
 
 export interface UserLists {
   gottaGo: Restaurant[],
-  wannaTry: Restaurant[]
+  lovedIt: Restaurant[]
 }

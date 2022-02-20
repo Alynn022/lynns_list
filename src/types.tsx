@@ -44,6 +44,6 @@ export interface State {
 }
 
 export interface UserLists {
-  gottaGo: Restaurant[],
-  lovedIt: Restaurant[]
+  [key: string]: Restaurant[]
 }
+

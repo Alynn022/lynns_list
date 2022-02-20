@@ -40,5 +40,18 @@ export interface Restaurant {
 
 export interface State {
   restaurants: Restaurant[];
+  userLists: UserLists;
 }
 
+export interface UserLists {
+  gottaGo: Restaurant[],
+  wannaTry: Restaurant[]
+  // [key: string]: Restaurant[]
+}
+
+// export type AddToListFn = (listName: string, id: string) => void;
+
+// export interface HomeProps {
+//   restaurants: Restaurant[],
+//   addToList: AddToListFn
+// }

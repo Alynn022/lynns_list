@@ -1,24 +1,19 @@
 import * as React from 'react';
 import { Restaurant } from '../../types';
 
-// interface Props {
-//     restaurants: Restaurant[];
-//     addToList: ((listName: string, id: string) => void)
-// }
+interface Props {
+    restaurants: Restaurant[];
+    addToList: ((listName: string, id: string) => void)
+}
 
-const Home: React.FC<{
-        restaurants: Restaurant[];
-        addToList: ((listName: string, id: string) => void)
-    }> = (restaurants, addToList) => {
-    return (
+// pass addToList to card components (there will be a button for each list)
+
+const Home: React.FC<Props> = (props: Props) => {
+  const names = props.restaurants.map(res => <p>{res.name}</p>)  
+  
+  return (
     <div>
-      <p>Hi</p>
-      {restaurants}
-      {/* move button to card file */}
-      <button
-        onClick={(e) => addToList(e.target.name, e.target.id)}
-      >  
-      </button>
+      {names}
     </div>
     )
   }

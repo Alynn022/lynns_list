@@ -19,7 +19,6 @@ class App extends React.Component {
   componentDidMount = () => {
     getAllRestaurants()
     .then(data => {
-      console.log(data);
       this.setState({ restaurants: data.businesses});
       console.log(this.state);
     })
@@ -34,9 +33,18 @@ class App extends React.Component {
       }
     });
   }
+
+  removeFromList = (listName: string, id: string): void => {
+    const updatedList = this.state.restaurants.filter(restaurant => restaurant.id !== id);
+    this.setState({
+      userLists: {
+        ...this.state.userLists,
+        [listName]: updatedList
+      }
+    })
+  }
   
   render() {
-    // const name = this.state.restaurants.length > 0 && <p>{this.state.restaurants[0].name}</p>
     console.log(this.props)
     return (
       <div className="App">
@@ -45,10 +53,10 @@ class App extends React.Component {
           restaurants={this.state.restaurants}
           addToList={this.addToList}
         />
-        <MyLists
-          restaurants={this.state.restaurants}
+        {/* {<MyLists
           userLists={this.state.userLists}
-        />
+          removeFromList={this.removeFromList}
+        />} */}
       </div>
     );
   }

@@ -1,10 +1,10 @@
-# What was changed/implemented? (Why and How)
+### What was changed/implemented? (Why and How)
 
 
-# Is it a feature/refactor/bugfix?
+### Is it a feature/refactor/bugfix?
 
 
-# Resources (if any):
+### Resources (if any):
 
 
-# Next Steps:
+### Next Steps:

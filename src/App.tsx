@@ -12,7 +12,7 @@ class App extends React.Component {
    restaurants: [],
    userLists: {
      gottaGo: [],
-     wannaTry: []
+     lovedIt: []
    }
   }
 
@@ -26,12 +26,14 @@ class App extends React.Component {
 
   addToList = (listName: string, id: string): void => {
     const newRestaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
+    if (newRestaurant && !this.state.userLists[listName].includes(newRestaurant)) {
     this.setState({
       userLists: {
         ...this.state.userLists,
-        [listName]: [...[listName], newRestaurant]
+        [listName]: [...this.state.userLists[listName], newRestaurant]
       }
     });
+  } 
   }
 
   removeFromList = (listName: string, id: string): void => {

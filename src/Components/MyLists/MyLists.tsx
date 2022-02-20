@@ -18,8 +18,8 @@ const MyLists: React.FC<Props> = (props: Props) => {
     // for each rest. in list, create a Card
     // will be an array of card components
 
-  const wannaTryCards = {};
-    // map over userLists.wannaTry
+  const lovedItCards = {};
+    // map over userLists.lovedIt
     // for each rest. in list, create a Card
     // will be an array of card components
 
@@ -31,9 +31,9 @@ const MyLists: React.FC<Props> = (props: Props) => {
           {gottaGoCards}
         </section>
         <section
-          className="wannaTry"
+          className="lovedIt"
         >
-          {wannaTryCards}
+          {lovedItCards}
         </section>
       </div>
     )

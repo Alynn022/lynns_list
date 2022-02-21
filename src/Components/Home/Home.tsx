@@ -18,14 +18,13 @@ class Home extends React.Component<Props, State> {
       offset: 0
     }
 
-  componentDidUpdate = () => {
-    console.log("Updated offset: ", this.state.offset)
+  updateRestaurants = () => {
     getAllRestaurants(this.state.offset)
       .then(data => this.props.addRestaurants(data.businesses))
   }
 
   loadMoreResults = () => {
-    this.setState(prevState => ({offset: prevState.offset + 50}))
+    this.setState(prevState => ({offset: prevState.offset + 50}), this.updateRestaurants)
   }
 
   render() {

@@ -1,0 +1,16 @@
+@mixin flexbox($direction:unset, $wrap:unset, $alignContent:unset, $justify:unset, $alignItems:unset) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  align-content: $alignContent;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin flexgrid($alignContent:unset, $justifyContent:unset, $alignItems:unset, $justifyItems:unset){
+  display: grid;
+  align-content: $alignContent;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  justify-items: $justifyItems;
+}

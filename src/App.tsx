@@ -7,10 +7,16 @@ import MyLists from './Components/MyLists/MyLists';
 import { getAllRestaurants } from './apiCalls';
 import { State } from './types';
 import { Route } from 'react-router-dom';
+import { Restaurant } from '../src/types';
 
+// interface State {
+//   restaurants: Restaurant[];
+//   userLists: UserLists;
+// }
 
+interface Props {}
 
-class App extends React.Component {
+class App extends React.Component<Props, State> {
  state: State = {
    restaurants: [],
    userLists: {
@@ -22,8 +28,7 @@ class App extends React.Component {
   componentDidMount = () => {
     getAllRestaurants()
     .then(data => {
-      this.setState({ restaurants: data.businesses});
-      console.log(this.state);
+      this.setState({ restaurants: data.businesses})
     })
   }
 
@@ -48,9 +53,12 @@ class App extends React.Component {
       }
     })
   }
+
+  addRestaurants = (data: Restaurant[]): void => {
+    this.setState(prevState => ({ restaurants: prevState.restaurants.concat(data) }))
+  }
   
   render() {
-    console.log(this.props)
     return (
       <div className="App">
         <Header />
@@ -65,6 +73,7 @@ class App extends React.Component {
           <Home
             restaurants={this.state.restaurants}
             addToList={this.addToList}
+            addRestaurants={this.addRestaurants}
           />
           }
         />

@@ -40,7 +40,7 @@ class App extends React.Component {
   }
 
   removeFromList = (listName: string, id: string): void => {
-    const updatedList = this.state.restaurants.filter(restaurant => restaurant.id !== id);
+    const updatedList = this.state.userLists[listName].filter(restaurant => restaurant.id !== id);
     this.setState({
       userLists: {
         ...this.state.userLists,

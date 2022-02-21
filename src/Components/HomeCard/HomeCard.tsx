@@ -8,12 +8,13 @@ interface Props {
   image: string,
   location: string[],
   phone: string,
-  url: string
+  url: string,
+  key: string
 }
 
 const displayAddress = (address: string[]) => {
-  return address.map(element => 
-    <p className='address'>{element}</p>
+  return address.map((element, index) => 
+    <p key={index} className='address'>{element}</p>
   )
 }
 

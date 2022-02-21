@@ -13,12 +13,12 @@ const MyLists: React.FC<Props> = (props: Props) => {
   
   // maybe make one dynamic function to create cards
 
-  const gottaGoCards = {};
+  // const gottaGoCards = {};
     // map over userLists.gottaGo
     // for each rest. in list, create a Card
     // will be an array of card components
 
-  const lovedItCards = {};
+  // const lovedItCards = {};
     // map over userLists.lovedIt
     // for each rest. in list, create a Card
     // will be an array of card components
@@ -28,12 +28,13 @@ const MyLists: React.FC<Props> = (props: Props) => {
         <section
           className="gottaGo"
         >
-          {gottaGoCards}
+          <p>Hey</p>
+          {/* {gottaGoCards} */}
         </section>
         <section
           className="lovedIt"
         >
-          {lovedItCards}
+          {/* {lovedItCards} */}
         </section>
       </div>
     )

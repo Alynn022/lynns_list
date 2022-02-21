@@ -47,3 +47,4 @@ export interface UserLists {
   [key: string]: Restaurant[]
 }
 
+

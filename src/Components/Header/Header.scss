@@ -1,0 +1,58 @@
+@use '../../styles/_variables' as v;
+@use '../../styles/_mixins' as m;
+
+header {
+  background-color: v.$teal;
+  padding: 1%;
+  @include m.flexbox(row, nowrap, normal, space-between, center);
+  
+  h1 {
+    font-size: 3em;
+    padding: 2%;
+    color: v.$offWhite;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  .logo {
+    flex: 3
+  }
+  
+  nav {
+    flex: 1;
+    @include m.flexbox(row, nowrap, normal, flex-end, normal);
+    white-space: nowrap;
+  }
+  
+  a {
+    color: v.$offWhite;
+    letter-spacing: 1px;
+    font-size: 1.2em;
+    padding: 0 5%;
+  }
+
+  a.home {
+    border-right: 1px solid v.$offWhite;
+  }
+  
+  // below is for NavLink hover
+  .active {
+    border-bottom: 4px solid v.$orange;
+  }
+}
+
+//desktop requirements
+@media screen and (min-width: 40em) {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+//mobile requirements
+@media screen and (max-width: 40em) {
+  .hidden-mobile {
+    display: none;
+  }
+}

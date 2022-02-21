@@ -1,38 +1,35 @@
-.App {
-  text-align: center;
+@use './reset.scss';
+@use './variables' as v;
+@use './_mixins' as m;
+
+* {
+  color: v.$offBlack;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+html {
+  background-color: v.$offWhite;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+p {
+  font-size: 1.2em;
+  padding: 0.5em 0;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.white-text { 
+  color: v.$offWhite;
 }
 
-.App-link {
-  color: #61dafb;
+.black-text { 
+  color: v.$offBlack;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.hidden {
+  display: none;
 }
+
+// these are here for router styling
+a:link { text-decoration: none; }
+a:visited { text-decoration: none; }
+a:hover { text-decoration: none; }
+a:active { text-decoration: none; }
+a:focus {text-decoration: none; }

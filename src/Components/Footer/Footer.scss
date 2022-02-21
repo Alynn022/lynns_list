@@ -1,0 +1,51 @@
+@use '../../styles/_variables' as v;
+@use '../../styles/_mixins' as m;
+
+footer {
+  background-color: v.$palePeach;
+  @include m.flexgrid(normal, normal, normal, center);
+  grid-template-columns: 50% 50%;
+  white-space: nowrap;
+  
+  h4 {
+    font-size: 1.5em;
+    padding: 2%;
+    
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  
+  a {
+    letter-spacing: 1px;
+  }
+
+  .footer-home,
+  .footer-lists {
+    padding: 5%;
+    width: 100%;
+    text-align: center;
+
+    &:hover {
+      background-color: v.$brightTeal;
+    }
+  }
+
+  .footer-lists {
+    background-color: v.$orange;
+  }
+}
+
+//desktop requirements
+@media screen and (min-width: 40em) {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+//mobile requirements
+@media screen and (max-width: 40em) {
+  .hidden-mobile {
+    display: none;
+  }
+}

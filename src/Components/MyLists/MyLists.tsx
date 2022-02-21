@@ -1,6 +1,7 @@
 import * as React from 'react';
 import { Restaurant } from '../../types';
 import { UserLists } from '../../types';
+import ListCard from '../ListCard/ListCard';
 
 interface Props {
   userLists: UserLists;
@@ -10,29 +11,39 @@ interface Props {
 // pass removeFromList to card components
 
 const MyLists: React.FC<Props> = (props: Props) => {
+  const createCurrentList = (listName: string) => {
+    return props.userLists[listName].map(restaurant => { return (
+      <ListCard 
+      key={restaurant.id}
+      id={restaurant.id}
+      removeFromList={props.removeFromList}
+      name={restaurant.name}
+      rating={restaurant.rating}
+      image={restaurant.image_url}
+      location={restaurant.location.display_address}
+      phone={restaurant.phone}
+      url={restaurant.url}
+      />
+    )
+  })
+}
+
+  const gottaGoCards = createCurrentList('gottaGo')
+
+  const lovedItCards = createCurrentList('lovedIt')
   
-  // maybe make one dynamic function to create cards
-
-  const gottaGoCards = {};
-    // map over userLists.gottaGo
-    // for each rest. in list, create a Card
-    // will be an array of card components
-
-  const lovedItCards = {};
-    // map over userLists.lovedIt
-    // for each rest. in list, create a Card
-    // will be an array of card components
-
   return (
       <div>
         <section
           className="gottaGo"
         >
+          <p>Gotta Go!</p>
           {gottaGoCards}
         </section>
         <section
           className="lovedIt"
         >
+          <p>Loved It!</p>
           {lovedItCards}
         </section>
       </div>

@@ -6,6 +6,8 @@ import Home from './Components/Home/Home';
 import MyLists from './Components/MyLists/MyLists';
 import { getAllRestaurants } from './apiCalls';
 import { State } from './types';
+import { Route } from 'react-router-dom';
+
 
 
 class App extends React.Component {
@@ -38,7 +40,7 @@ class App extends React.Component {
   }
 
   removeFromList = (listName: string, id: string): void => {
-    const updatedList = this.state.restaurants.filter(restaurant => restaurant.id !== id);
+    const updatedList = this.state.userLists[listName].filter(restaurant => restaurant.id !== id);
     this.setState({
       userLists: {
         ...this.state.userLists,
@@ -52,14 +54,20 @@ class App extends React.Component {
     return (
       <div className="App">
         <Header />
-        <Home
-          restaurants={this.state.restaurants}
-          addToList={this.addToList}
+        <Route exact path="/MyLists" render={() => 
+          <MyLists
+            userLists={this.state.userLists}
+            removeFromList={this.removeFromList}
+          />
+          } 
+        /> 
+        <Route exact path="/" render={() => 
+          <Home
+            restaurants={this.state.restaurants}
+            addToList={this.addToList}
+          />
+          }
         />
-        {/* {<MyLists
-          userLists={this.state.userLists}
-          removeFromList={this.removeFromList}
-        />} */}
         <Footer />
       </div>
     );

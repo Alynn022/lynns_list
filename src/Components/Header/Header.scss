@@ -4,7 +4,7 @@
 header {
   background-color: v.$teal;
   padding: 1%;
-  @include m.flexbox(0, 0, 0, space-between, center);
+  @include m.flexbox(row, nowrap, normal, space-between, center);
   
   h1 {
     font-size: 3em;
@@ -22,7 +22,7 @@ header {
   
   nav {
     flex: 1;
-    @include m.flexbox(0, 0, 0, flex-end, 0);
+    @include m.flexbox(row, nowrap, normal, flex-end, normal);
     white-space: nowrap;
   }
   
@@ -40,5 +40,19 @@ header {
   // below is for NavLink hover
   .active {
     border-bottom: 4px solid v.$orange;
+  }
+}
+
+//desktop requirements
+@media screen and (min-width: 55em) {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+//mobile requirements
+@media screen and (max-width: 40em) {
+  .hidden-mobile {
+    display: none;
   }
 }

@@ -1,3 +1,5 @@
+import './HomeCard.scss';
+
 interface Props {
   id: string,
   addToList: ((listName: string, id: string) => void),
@@ -11,32 +13,35 @@ interface Props {
 
 const displayAddress = (address: string[]) => {
   return address.map(element => 
-    <p>{element}</p>
+    <p className='address'>{element}</p>
   )
 }
 
 const HomeCard: React.FC<Props> = (props: Props) => {
   return (
-    <div className="home-card">
-      <img src={props.image} />
-      <div>
-        <h3 className="name">{props.name}</h3>
-        <p className="rating">Rating: {props.rating}</p>
+    <div className='home-card'>
+      <img className='thumbnail' src={props.image} alt={`${props.name} Image`} />
+      <div className='restaurant-info'>
+        <h2 className='name'>{props.name}</h2>
+        <p className='rating'>Rating: {props.rating}</p>
+        {/* consider reformatting phone # below and linking it */}
         <p className='phone'>{props.phone}</p>
         <div className='address'>
           {displayAddress(props.location)}
         </div>
-        <p>{props.url}</p>
+        {/* may consider adding yelp logo icon below */}
+        <a href={props.url} target='_blank' className='yelp-link'>Yelp Link</a>
       </div>
-      <div>
-        <button 
+      <div className='card-buttons'>
+        <button className='gotta-go'
           id={props.id}
           onClick={(event) => 
-          props.addToList("gottaGo", props.id)}>Gotta Go!</button>
-        <button
+          props.addToList('gottaGo', props.id)}>Gotta Go!</button>
+        <button className='been-there'
         id={props.id}
         onClick={(event) => 
-        props.addToList("lovedIt", props.id)}>Loved It!</button>
+        props.addToList('lovedIt', props.id)}>Loved It!</button>
+        <button className='more-info'>Tell Me More</button>
       </div>
     </div>
   )

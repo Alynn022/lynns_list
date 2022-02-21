@@ -9,7 +9,7 @@ const Header = () => {
       <section className='logo'>
         <h1 onClick={() => {window.location.href='/'}}> Lynn's List</h1>
       </section>
-      <nav>
+      <nav className='hidden-mobile'>
           <a className='home' href='/'>Home</a>
           {/* <NavLink to='/'>Home</NavLink> */}
           <a href='/MyLists'>My Lists</a>

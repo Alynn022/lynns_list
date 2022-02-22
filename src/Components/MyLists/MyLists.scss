@@ -1,0 +1,44 @@
+@use '../../styles/_variables' as v;
+@use '../../styles/_mixins' as m;
+
+
+.list-dropdown-container {
+  @include m.flexbox(row, wrap, normal, center, normal);
+
+  .instructions {
+    font-size: 1.5em;
+    color: v.$teal;
+    margin: 2% 5%;
+  }
+
+  .list-dropdown {
+    border: 1px solid v.$palePeach;
+    border-radius: 0.2em;
+    color: v.$orange;
+    background-color: v.$transparentPeach;
+    min-width: 10em;
+    min-height: 2em;
+    font-size: 1.5em;
+
+    &:hover {
+      background-color: v.$orange;
+      color: v.$offWhite;
+    }
+  }
+}
+
+
+
+//desktop requirements
+@media screen and (min-width: 40em) {
+  .hidden-desktop {
+    display: none;
+  }
+}
+
+//mobile requirements
+@media screen and (max-width: 40em) {
+  .hidden-mobile {
+    display: none;
+  }
+}

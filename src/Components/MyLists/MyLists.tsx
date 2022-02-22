@@ -1,4 +1,6 @@
+import { create } from 'domain';
 import * as React from 'react';
+import './MyLists.scss';
 import { Restaurant } from '../../types';
 import { UserLists } from '../../types';
 import ListCard from '../ListCard/ListCard';
@@ -27,20 +29,31 @@ const MyLists: React.FC<Props> = (props: Props) => {
   })
 }
 
+const gottaGoList = createCurrentList('gottaGo');
+const lovedItList = createCurrentList('lovedIt');
+
+// const handleChange = (event) => {
+
+// }
+
 return (
     <div>
       <section className='list-dropdown-container'>
         <p className='instructions'>
-          Choose which list you'd like to view below. Or make a new list.
+          Choose which list you'd like to view below. Or create a new list.
         </p>
-        <select className='list-dropdown' onChange={event => createCurrentList(event.target.value)}>
+        <select className='list-dropdown' onChange={event => {
+          createCurrentList(event.target.value)
+          console.log(event.target.value)
+        }}>
           <option value='gottaGo'>Gotta Go!</option>
           <option value='lovedIt'> Loved It!</option>
-          <option value='addNewList'> Add New List!</option>
+          <option value='addNewList'> Create New List!</option>
         </select>
       </section>
       <section className='listView'>
-        {cardsToDisplay}
+        { gottaGoList }
+        { cardsToDisplay }
       </section>
     </div>
   )

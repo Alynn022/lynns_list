@@ -7,16 +7,16 @@
 
   .instructions {
     font-size: 1.5em;
-    color: v.$teal;
+    color: v.$blue;
     margin: 2% 5%;
     text-align: center;
   }
 
   .list-dropdown {
-    border: 2px solid v.$orange;
+    border: none;
     border-radius: 0.2em;
-    color: v.$teal;
-    background-color: v.$offWhite;
+    color: v.$blue;
+    background-color: v.$lightBlue;
     width: 10em;
     min-height: 2em;
     font-size: 1.5em;
@@ -25,8 +25,8 @@
     text-align: center;
 
     &:hover {
-      background-color: v.$orange;
-      // color: v.$offWhite;
+      background-color: v.$blue;
+      color: v.$lightBlue;
       cursor: pointer;
     }
   }
@@ -44,11 +44,11 @@
   cursor: pointer;
 
   .plus {
-    background-color: v.$darkTeal;
+    background-color: v.$navy;
   }
 
   .new-list-text {
-    color: v.$darkTeal;
+    color: v.$navy;
   }
 }
 
@@ -56,7 +56,7 @@
   height: 1.7em;
   width: 1.7em;
   border-radius: 50%;
-  background-color: v.$teal;
+  background-color: v.$blue;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -69,7 +69,7 @@
 }
 
 .new-list-text {
-  color: v.$teal;
+  color: v.$blue;
   font-size: 1.2em;
   font-weight: bold;
   margin-left: 0.5em;

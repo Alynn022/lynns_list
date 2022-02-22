@@ -1,4 +1,4 @@
-// original colors:
+
 // $palePeach: #EDD8CA;
 // $transparentPeach: rgba(237, 216, 202, .60);
 // $orange: #FF7A1F;
@@ -11,15 +11,18 @@
 
 $palePeach: #EDD8CA;
 $transparentPeach: rgba(237, 216, 202, .60);
-$orange: #79D4B9;
+$orange: #5CDB95;
 $nude: #F0CFB9;
-$teal: #39997D;
+$teal: #4056A1;
 $darkTeal: #037982;
-$brightTeal:#C2EAED;
+$brightTeal:#B9ECF0;
 $offBlack: #020202;
 $offWhite: #FFF;
 
-
-$green: #39997D;
-$lightGreen: #D0F9ED;
-
+// these color combos pass lighthouse audit
+$navy: #05386B;
+$blue:#4056A1;
+$lightBlue: #C5CBE3;
+$green: #5CDB95;
+$lightGreen: #8EE4AF;
+$offWhite: #FFF;

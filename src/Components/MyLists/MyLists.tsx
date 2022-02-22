@@ -52,16 +52,17 @@ class MyLists extends React.Component<Props, State> {
       <div>
         <section className='list-dropdown-container'>
           <p className='instructions'>
-            Choose which list you'd like to view below. Or create a new list.
+            Choose which list you'd like to view below.
           </p>
-          <select
-            className='list-dropdown'
-            onChange={ event => this.updateList(event.target.value) }
-          >
+          <select className='list-dropdown'
+            onChange={ event => this.updateList(event.target.value) }>
             <option value='gottaGo'>Gotta Go!</option>
             <option value='lovedIt'> Loved It!</option>
-            <option value='addNewList'> Create New List!</option>
           </select>
+          <p className='instructions'>
+            Or create a new list below.
+          </p>
+          <button className='list-dropdown'>Make a new list!</button>
         </section>
         <section className='listView'>
           { this.state.cardsToDisplay }

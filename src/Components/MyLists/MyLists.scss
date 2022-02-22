@@ -13,22 +13,67 @@
   }
 
   .list-dropdown {
-    border: 1px solid v.$palePeach;
+    border: 2px solid v.$orange;
     border-radius: 0.2em;
     color: v.$orange;
-    background-color: v.$transparentPeach;
-    max-width: 10em;
+    background-color: v.$offWhite;
+    width: 10em;
     min-height: 2em;
     font-size: 1.5em;
+    font-weight: bold;
+    padding: 5px;
+    text-align: center;
 
     &:hover {
       background-color: v.$orange;
       color: v.$offWhite;
+      cursor: pointer;
     }
   }
 }
 
+.new-list-button {
+  background-color: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  margin: 1em;
+}
 
+.new-list-button:hover {
+  cursor: pointer;
+
+  .plus {
+    background-color: v.$darkTeal;
+  }
+
+  .new-list-text {
+    color: v.$darkTeal;
+  }
+}
+
+.plus {
+  height: 1.7em;
+  width: 1.7em;
+  border-radius: 50%;
+  background-color: v.$teal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  p {
+    font-weight: bold;
+    color: v.$offWhite;
+    text-align: center;
+  }
+}
+
+.new-list-text {
+  color: v.$teal;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-left: 0.5em;
+}
 
 //desktop requirements
 @media screen and (min-width: 40em) {

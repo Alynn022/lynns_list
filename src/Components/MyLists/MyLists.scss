@@ -15,7 +15,7 @@
   .list-dropdown {
     border: 2px solid v.$orange;
     border-radius: 0.2em;
-    color: v.$orange;
+    color: v.$teal;
     background-color: v.$offWhite;
     width: 10em;
     min-height: 2em;
@@ -26,7 +26,7 @@
 
     &:hover {
       background-color: v.$orange;
-      color: v.$offWhite;
+      // color: v.$offWhite;
       cursor: pointer;
     }
   }

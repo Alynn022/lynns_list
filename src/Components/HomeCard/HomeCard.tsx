@@ -1,4 +1,6 @@
 import './HomeCard.scss';
+import * as React from 'react';
+import yelp_logo from './yelp_logo.png';
 
 interface Props {
   id: string,
@@ -11,6 +13,26 @@ interface Props {
   url: string,
   key: string
 }
+
+interface StarRatingProps {
+  rating?: number;
+  numberOfStars?: number;
+  changeRating?: (rating: number) => void;
+  starRatedColor?: string;
+  starEmptyColor?: string;
+  starHoverColor?: string;
+  starDimension?: string;
+  starSpacing?: string;
+  gradientPathName?: string;
+  ignoreInlineStyles?: boolean;
+  svgIconPath?: string;
+  svgIconViewBox?: string;
+  name?: string;
+}
+
+declare class StarRatings extends React.Component<
+  StarRatingProps
+> {}
 
 const displayAddress = (address: string[]) => {
   return address.map((element, index) => 
@@ -30,8 +52,7 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         <div className='address'>
           {displayAddress(props.location)}
         </div>
-        {/* may consider adding yelp logo icon below */}
-        <a href={props.url} target='_blank' className='yelp-link'>Yelp Link</a>
+        <a href={props.url} target='_blank' className='yelp-link'><img src={yelp_logo} alt='visit yelp page' className='yelp-logo'/></a>
       </div>
       <div className='card-buttons'>
         <button className='gotta-go'

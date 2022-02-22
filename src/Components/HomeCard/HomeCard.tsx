@@ -1,6 +1,6 @@
 import './HomeCard.scss';
-import * as React from 'react';
 import yelp_logo from './yelp_logo.png';
+import StarRatings from '../StarRatings/StarRatings';
 
 interface Props {
   id: string,
@@ -14,26 +14,6 @@ interface Props {
   key: string
 }
 
-interface StarRatingProps {
-  rating?: number;
-  numberOfStars?: number;
-  changeRating?: (rating: number) => void;
-  starRatedColor?: string;
-  starEmptyColor?: string;
-  starHoverColor?: string;
-  starDimension?: string;
-  starSpacing?: string;
-  gradientPathName?: string;
-  ignoreInlineStyles?: boolean;
-  svgIconPath?: string;
-  svgIconViewBox?: string;
-  name?: string;
-}
-
-declare class StarRatings extends React.Component<
-  StarRatingProps
-> {}
-
 const displayAddress = (address: string[]) => {
   return address.map((element, index) => 
     <p key={index} className='address'>{element}</p>
@@ -41,14 +21,17 @@ const displayAddress = (address: string[]) => {
 }
 
 const HomeCard: React.FC<Props> = (props: Props) => {
+  console.log('Home Card Props >>>', props)
   return (
     <div className='home-card'>
       <img className='thumbnail' src={props.image} alt={`${props.name} Image`} />
       <div className='restaurant-info'>
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
+        {/* <StarRatings rating={props.rating}/> */}
         {/* consider reformatting phone # below and linking it */}
-        <p className='phone'>{props.phone}</p>
+        {/* <StarRatings rating={props.rating} /> */}
+        <a href='tel:{props.phone}'>{props.phone}</a>
         <div className='address'>
           {displayAddress(props.location)}
         </div>

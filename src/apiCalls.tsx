@@ -1,4 +1,4 @@
-const apiKey = "AH6TkVNX-YvTWJNUDUWrGhPCWRjzowhc6chQ6pvs4uhx251m3PAI0UoMZT5jRW1IyQFG0DifaEmk6F3Iz64u4myxtcZRuGThLO9OHp_zAGCp7yGsEorWWz3lhLIOYnYx"
+const apiKey = "QeGfkjxp7tLZ3SygF9N__lCE_MQ5gxNe1YwVsi17CK1sMUIqin5Cmh5fEh-228VREL-F7C9J0zTA98DPvQOk0V-S7I6mqDwqYkAkpIiEKgqfIubC9ze8NRu3thgUYnYx"
 const url = "https://api.yelp.com/v3/businesses/search?location=Denver&categories=food"
 
 // const getAllRestaurants = () => {

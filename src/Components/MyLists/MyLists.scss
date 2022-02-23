@@ -7,22 +7,22 @@
 
   .instructions {
     font-size: 1.5em;
-    color: v.$teal;
+    color: v.$dark;
     margin: 2% 5%;
     text-align: center;
   }
 
   .list-dropdown {
-    border: 1px solid v.$palePeach;
+    border: none;
     border-radius: 0.2em;
-    color: v.$orange;
-    background-color: v.$transparentPeach;
+    color: v.$dark;
+    background-color: v.$light;
     max-width: 10em;
     min-height: 2em;
     font-size: 1.5em;
 
     &:hover {
-      background-color: v.$orange;
+      background-color: v.$lightHover;
       color: v.$offWhite;
     }
   }

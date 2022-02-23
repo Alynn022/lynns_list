@@ -2,7 +2,7 @@
 @use '../../styles/_mixins' as m;
 
 .list-card {
-  border: 1px solid v.$palePeach;
+  border: 1px solid v.$medium;
   border-radius: 0.5em;
   margin: 5%;
   padding: 5%;
@@ -11,7 +11,7 @@
   
   &:hover {
     cursor: pointer;
-    background-color: v.$transparentPeach;
+    background-color: v.$cardHover;
   }
 
   .thumbnail {
@@ -51,21 +51,21 @@
       &:hover {
         color: v.$offBlack;
         letter-spacing: 1px;
-        background-color: v.$brightTeal;
+        background-color: v.$mediumHover;
       }
     }
     
     .gotta-go {
-      background-color: v.$nude;
+      background-color: v.$medium;
       color: v.$offBlack;
     }
 
     .loved-it {
-      background-color: v.$orange;
+      background-color: v.$medium;
     }
 
     .more-info {
-      background-color: v.$teal;
+      background-color: v.$dark;
     }
   }
 }

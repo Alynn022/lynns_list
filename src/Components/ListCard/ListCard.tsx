@@ -27,7 +27,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
       <div className='restaurant-info'>
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
-        <a href='tel:{props.phone}' className='phone'>
+        <a href='tel:{props.phone}' className='phone' aria-label='phone number'>
           {props.phone}
         </a>
         <div className='address-container'>

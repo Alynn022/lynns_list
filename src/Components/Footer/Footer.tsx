@@ -7,14 +7,14 @@ const Footer = () => {
   return (
     <footer className='hidden-desktop'>
       <section className='footer-home'>
-        <h4>
+        <h2>
           <a href='/' className='black-text'>Home</a>
-        </h4>
+        </h2>
       </section>
       <section className='footer-lists'>
-        <h4>
+        <h2>
           <a href='/MyLists' className='white-text'>My Lists</a>
-        </h4>
+        </h2>
       </section>
     </footer>
   )

@@ -2,7 +2,7 @@
 @use '../../styles/_mixins' as m;
 
 header {
-  background-color: v.$teal;
+  background-color: v.$medium;
   padding: 1%;
   @include m.flexbox(row, nowrap, normal, space-between, center);
   
@@ -39,7 +39,7 @@ header {
   
   // below is for NavLink hover
   .active {
-    border-bottom: 4px solid v.$orange;
+    border-bottom: 4px solid v.$dark;
   }
 }
 

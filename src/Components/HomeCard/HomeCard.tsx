@@ -28,7 +28,7 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
         {/* Don't delete, Jani is working on this ---> <StarRatings rating={props.rating} /> */}
-        <a href='tel:{props.phone}' className='phone'>
+        <a href='tel:{props.phone}' className='phone' aria-label='phone number'>
           {props.phone}
         </a>
         <div className='address-container'>
@@ -38,15 +38,15 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         </a>
       </div>
       <div className='card-buttons'>
-        <button className='gotta-go'
+        <button aria-label='click here to add to Gotta Go List' className='gotta-go' 
           id={props.id}
           onClick={(event) => 
-          props.addToList('gottaGo', props.id)}>Gotta Go!</button>
-        <button className='loved-it'
+          props.addToList('gottaGo', props.id)} >Gotta Go!</button>
+        <button aria-label='click here to add to Loved It List' className='loved-it'
         id={props.id}
         onClick={(event) => 
         props.addToList('lovedIt', props.id)}>Loved It!</button>
-        <button className='more-info'>Tell Me More</button>
+        {/* <button className='more-info'>Tell Me More</button> */}
       </div>
     </div>
   )

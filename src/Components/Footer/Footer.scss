@@ -2,7 +2,8 @@
 @use '../../styles/_mixins' as m;
 
 footer {
-  background-color: v.$palePeach;
+  height: 10%;
+  background-color: v.$light;
   @include m.flexgrid(normal, normal, normal, center);
   grid-template-columns: 50% 50%;
   white-space: nowrap;
@@ -27,12 +28,12 @@ footer {
     text-align: center;
 
     &:hover {
-      background-color: v.$brightTeal;
+      background-color: v.$medium;
     }
   }
 
   .footer-lists {
-    background-color: v.$orange;
+    background-color: v.$dark;
   }
 }
 

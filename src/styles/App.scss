@@ -7,7 +7,7 @@
 }
 
 html {
-  background-color: v.$offWhite;
+  background-color: v.$white;
 }
 
 p {
@@ -16,7 +16,7 @@ p {
 }
 
 .white-text { 
-  color: v.$offWhite;
+  color: v.$white;
 }
 
 .black-text { 
@@ -26,6 +26,12 @@ p {
 .hidden {
   display: none;
 }
+
+// .app {
+//   display: flex;
+//   flex-direction: column;
+//   max-height: 100%;
+// }
 
 // these are here for router styling
 a:link { text-decoration: none; }

@@ -7,7 +7,7 @@
 
   .instructions {
     font-size: 1.5em;
-    color: v.$blue;
+    color: v.$dark;
     margin: 2% 5%;
     text-align: center;
   }
@@ -15,8 +15,8 @@
   .list-dropdown {
     border: none;
     border-radius: 0.2em;
-    color: v.$blue;
-    background-color: v.$lightBlue;
+    color: v.$dark;
+    background-color: v.$light;
     width: 10em;
     min-height: 2em;
     font-size: 1.5em;
@@ -25,8 +25,7 @@
     text-align: center;
 
     &:hover {
-      background-color: v.$blue;
-      color: v.$lightBlue;
+      background-color: v.$lightHover;
       cursor: pointer;
     }
   }
@@ -44,11 +43,11 @@
   cursor: pointer;
 
   .plus {
-    background-color: v.$navy;
+    background-color: v.$medium;
   }
 
   .new-list-text {
-    color: v.$navy;
+    color: v.$medium;
   }
 }
 
@@ -56,20 +55,20 @@
   height: 1.7em;
   width: 1.7em;
   border-radius: 50%;
-  background-color: v.$blue;
+  background-color: v.$medium;
   display: flex;
   align-items: center;
   justify-content: center;
 
   p {
     font-weight: bold;
-    color: v.$offWhite;
+    color: v.$white;
     text-align: center;
   }
 }
 
 .new-list-text {
-  color: v.$blue;
+  color: v.$medium;
   font-size: 1.2em;
   font-weight: bold;
   margin-left: 0.5em;

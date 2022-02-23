@@ -2,7 +2,7 @@
 @use '../../styles/_mixins' as m;
 
 .list-card {
-  border: 1px solid v.$palePeach;
+  border: 1px solid v.$medium;
   border-radius: 0.5em;
   margin: 5%;
   padding: 5%;
@@ -10,8 +10,7 @@
   grid-template-columns: 20% 50% 30%;
   
   &:hover {
-    cursor: pointer;
-    background-color: v.$transparentPeach;
+    background-color: v.$cardHover;
   }
 
   .thumbnail {
@@ -47,25 +46,32 @@
       padding: 5%;
       font-weight: 600;
       color: v.$offWhite;
+      border-radius: 3px;
       
       &:hover {
-        color: v.$offBlack;
         letter-spacing: 1px;
-        background-color: v.$brightTeal;
       }
     }
     
-    .gotta-go {
-      background-color: v.$nude;
-      color: v.$offBlack;
+    .gotta-go,
+    .been-there {
+      background-color: v.$medium;
+      color: v.$white;
     }
 
-    .been-there {
-      background-color: v.$orange;
+    .gotta-go:hover,
+    .been-there:hover {
+      background-color: v.$mediumHover;
+      cursor: pointer;
     }
 
     .more-info {
-      background-color: v.$teal;
+      background-color: v.$dark;
+    }
+
+    .more-info:hover {
+      cursor: pointer;
+      background-color: v.$darkHover;
     }
   }
 }

@@ -2,14 +2,15 @@
 @use '../../styles/_mixins' as m;
 
 header {
-  background-color: v.$teal;
+  height: 10%;
+  background-color: v.$medium;
   padding: 1%;
   @include m.flexbox(row, nowrap, normal, space-between, center);
   
   h1 {
     font-size: 3em;
     padding: 2%;
-    color: v.$offWhite;
+    color: v.$white;
     
     &:hover {
       cursor: pointer;
@@ -27,19 +28,19 @@ header {
   }
   
   a {
-    color: v.$offWhite;
+    color: v.$white;
     letter-spacing: 1px;
     font-size: 1.2em;
     padding: 0 5%;
   }
 
   a.home {
-    border-right: 1px solid v.$offWhite;
+    border-right: 1px solid v.$white;
   }
   
   // below is for NavLink hover
   .active {
-    border-bottom: 4px solid v.$orange;
+    border-bottom: 4px solid v.$dark;
   }
 }
 

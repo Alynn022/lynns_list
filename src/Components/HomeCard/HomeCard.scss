@@ -2,7 +2,7 @@
 @use '../../styles/_mixins' as m;
 
 .home-card {
-  border: 1px solid v.$palePeach;
+  border: 1px solid v.$medium;
   border-radius: 0.5em;
   margin: 5%;
   padding: 5%;
@@ -10,8 +10,7 @@
   grid-template-columns: 20% 50% 30%;
   
   &:hover {
-    cursor: pointer;
-    background-color: v.$transparentPeach;
+    background-color: v.$cardHover;
   }
 
   .thumbnail {
@@ -46,26 +45,33 @@
       border: none;
       padding: 5%;
       font-weight: 600;
-      color: v.$offWhite;
+      color: v.$white;
+      border-radius: 3px;
       
       &:hover {
-        color: v.$offBlack;
         letter-spacing: 1px;
-        background-color: v.$brightTeal;
+        background-color: v.$mediumHover;
+        cursor: pointer;
       }
     }
     
+    .been-there,
     .gotta-go {
-      background-color: v.$nude;
-      color: v.$offBlack;
-    }
-
-    .been-there {
-      background-color: v.$orange;
+      background-color: v.$medium;
+      color: v.$white;
     }
 
     .more-info {
-      background-color: v.$teal;
+      background-color: v.$dark;
+    }
+
+    .gotta-go:hover,
+    .been-there:hover {
+      background-color: v.$mediumHover;
+    }
+
+    .more-info:hover {
+      background-color: v.$darkHover;
     }
   }
 }

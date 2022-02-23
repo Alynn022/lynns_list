@@ -28,7 +28,6 @@ const formatPhoneNumber = (phoneNumberString: string) => {
   }
 }
 
-
 const HomeCard: React.FC<Props> = (props: Props) => {
   return (
     <div className='home-card'>
@@ -43,7 +42,8 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         <div className='address'>
           {displayAddress(props.location)}
         </div>
-        <a href={props.url} target='_blank' className='yelp-link'><img src={yelp_logo} alt='visit yelp page' className='yelp-logo'/></a>
+        <a href={props.url} target='_blank' className='yelp-link'><img src={yelp_logo} alt='visit yelp page' className='yelp-logo'/>
+        </a>
       </div>
       <div className='card-buttons'>
         <button className='gotta-go'

@@ -48,7 +48,7 @@ describe('Home Page user flows', () => {
 
 
   it('On load, a user should see a restaurant card', () => {
-    cy.intercept('GET', 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Denver&categories=food&limit=50&offset=0',
+    cy.intercept('GET', 'https://fe-cors-proxy.herokuapp.com',
       {
         ok: true, 
         statusCode: 200, 
@@ -61,11 +61,11 @@ describe('Home Page user flows', () => {
       .get('.restaurant-info').should('exist')
       .get('h2').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
-      .get('.phone').should('have.text', '+13034553811') //once we change class to display phone, change this assertion to display correct phone number
+      .get('.phone').should('have.text', '(303) 455-3811') 
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
-      .get('.yelp-link').should('have.text', 'Yelp Link') //Need to edit this test based on what we end up doing with yelp link
+      .get('.yelp-link').should('exist')
       .get('.gotta-go').should('exist')
-      .get('.been-there').should('exist') //if className is changed to lovedIt, change test
+      .get('.loved-it').should('exist') //if className is changed to lovedIt, change test
       .get('.more-info').should('exist')
   });
 });

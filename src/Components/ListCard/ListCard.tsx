@@ -20,14 +20,6 @@ const displayAddress = (address: string[]) => {
   )
 }
 
-const formatPhoneNumber = (phoneNumberString: string) => {
-  var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
-  var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
-  if (match) {
-    return ['(', match[2], ') ', match[3], '-', match[4]].join('');
-  }
-}
-
 const ListCard: React.FC<Props> = (props: Props) => {
   return (
     <div className='list-card'>
@@ -35,8 +27,8 @@ const ListCard: React.FC<Props> = (props: Props) => {
       <div className='restaurant-info'>
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
-        <a href='tel:{props.phone}'>
-          {formatPhoneNumber(props.phone)}
+        <a href='tel:{props.phone}' className='phone'>
+          {props.phone}
         </a>
         <div className='address-container'>
           {displayAddress(props.location)}
@@ -49,7 +41,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
           id={props.id}
           onClick={(event) => 
           props.removeFromList('gottaGo', props.id)}>Remove From Gotta Go</button>
-        <button className='been-there'
+        <button className='loved-it'
         id={props.id}
         onClick={(event) => 
         props.removeFromList('lovedIt', props.id)}>Remove From Loved It</button>

@@ -20,14 +20,6 @@ const displayAddress = (address: string[]) => {
   )
 }
 
-const formatPhoneNumber = (phoneNumberString: string) => {
-  var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
-  var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
-  if (match) {
-    return ['(', match[2], ') ', match[3], '-', match[4]].join('');
-  }
-}
-
 const HomeCard: React.FC<Props> = (props: Props) => {
   return (
     <div className='home-card'>
@@ -36,8 +28,8 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
         {/* Don't delete, Jani is working on this ---> <StarRatings rating={props.rating} /> */}
-        <a href='tel:{props.phone}'>
-          {formatPhoneNumber(props.phone)}
+        <a href='tel:{props.phone}' className='phone'>
+          {props.phone}
         </a>
         <div className='address-container'>
           {displayAddress(props.location)}
@@ -50,7 +42,7 @@ const HomeCard: React.FC<Props> = (props: Props) => {
           id={props.id}
           onClick={(event) => 
           props.addToList('gottaGo', props.id)}>Gotta Go!</button>
-        <button className='been-there'
+        <button className='loved-it'
         id={props.id}
         onClick={(event) => 
         props.addToList('lovedIt', props.id)}>Loved It!</button>

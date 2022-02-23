@@ -38,7 +38,7 @@ class Home extends React.Component<Props, State> {
           rating={restaurant.rating}
           image={restaurant.image_url}
           location={restaurant.location.display_address}
-          phone={restaurant.phone}
+          phone={restaurant.display_phone}
           url={restaurant.url}
         />
       )

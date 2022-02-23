@@ -9,8 +9,14 @@ const Header = () => {
         <h1 onClick={() => {window.location.href='/'}}> Lynn's List</h1>
       </section>
       <nav className='hidden-mobile'>
-        <NavLink to='/' className='home' >Home</NavLink>
-        <NavLink to='/MyLists' className='my-lists-nav'>My Lists</NavLink>
+        <ul className='menu'>
+          <li>
+            <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
+          </li>
+          <li>
+            <NavLink strict to='/MyLists' activeClassName='selected'>My Lists</NavLink>
+          </li>
+        </ul>
       </nav>
     </header>
   )

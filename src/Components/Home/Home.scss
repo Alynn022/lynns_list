@@ -3,7 +3,7 @@
 
 .home-page {
   text-align: center;
-  margin-bottom: 10%;
+  margin: 5% 0 10% 0;
 }
 
 .load-more {
@@ -15,6 +15,7 @@
   font-family: v.$headerFont;
   color: v.$offBlack;
   cursor: pointer;
+  transition: all .2s ease-in-out;
   // background-color: v.$medium;
   // border-radius: 0.2em;
   
@@ -22,5 +23,18 @@
     letter-spacing: 1px;
     text-transform: underline;
     transform: scale(1.08);
+  }
+}
+
+//desktop requirements
+@media screen and (min-width: 40em) {
+
+}
+
+//mobile requirements
+@media screen and (max-width: 40em) {
+  .home-page {
+    margin: 10% 0;
+    padding-bottom: 20%;
   }
 }

@@ -38,6 +38,7 @@
   
   .restaurant-info {
     margin: 1% 10%;
+    text-align: left;
 
     h2 {
       font-size: 2em;
@@ -111,18 +112,19 @@
 @media screen and (max-width: 40em) {
   .home-card, .list-card {
     @include m.flexbox(column, nowrap, normal, normal, normal);
-
+    
     .thumbnail {
       width: 80%;
       align-self: center;
     }
-
+    
     .restaurant-info {
       margin: 10%;
-    }
-
-    .yelp-logo {
-      width: 30%;
+      text-align: center;
+    
+      .yelp-logo {
+        width: 30%;
+      }
     }
 
     .card-buttons {

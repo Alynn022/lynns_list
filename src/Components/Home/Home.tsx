@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Restaurant } from '../../types';
 import HomeCard from '../HomeCard/HomeCard';
 import { getAllRestaurants } from '../../apiCalls';
+import './Home.scss';
 
 interface Props {
   restaurants: Restaurant[];
@@ -45,41 +46,12 @@ class Home extends React.Component<Props, State> {
     })
 
     return (
-      <div>
+      <section className='home-page'>
         {restaurantCards}
-        <button
-          onClick={() => this.loadMoreResults()}
-        >
-          Load More Results
-        </button>
-      </div>
+        <a className='load-more' onClick={() => this.loadMoreResults()}>Load More...</a>
+      </section>
     )
   }
 }
-
-// const Home: React.FC<Props> = (props: Props) => {
-//   const restaurantCards = props.restaurants.map(restaurant => {return (
-//     <HomeCard 
-//       key={restaurant.id}
-//       id={restaurant.id}
-//       addToList={props.addToList}
-//       name={restaurant.name}
-//       rating={restaurant.rating}
-//       image={restaurant.image_url}
-//       location={restaurant.location.display_address}
-//       phone={restaurant.phone}
-//       url={restaurant.url}
-//     />
-//   )})  
-  
-//   return (
-//     <div>
-//       { restaurantCards }
-//       <button>
-
-//       </button>
-//     </div>
-//     )
-//   }
 
 export default Home;

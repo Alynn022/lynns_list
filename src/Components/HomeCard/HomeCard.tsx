@@ -36,9 +36,10 @@ const HomeCard: React.FC<Props> = (props: Props) => {
       <div className='restaurant-info'>
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
-        {/* <StarRatings rating={props.rating} /> */}
-        {/* consider reformatting phone # below and linking it */}
-        <a href='tel:{props.phone}'>{formatPhoneNumber(props.phone)}</a>
+        {/* Don't delete, Jani is working on this ---> <StarRatings rating={props.rating} /> */}
+        <a href='tel:{props.phone}'>
+          {formatPhoneNumber(props.phone)}
+        </a>
         <div className='address'>
           {displayAddress(props.location)}
         </div>

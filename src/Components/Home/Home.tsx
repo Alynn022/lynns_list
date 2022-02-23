@@ -54,29 +54,4 @@ class Home extends React.Component<Props, State> {
   }
 }
 
-// const Home: React.FC<Props> = (props: Props) => {
-//   const restaurantCards = props.restaurants.map(restaurant => {return (
-//     <HomeCard 
-//       key={restaurant.id}
-//       id={restaurant.id}
-//       addToList={props.addToList}
-//       name={restaurant.name}
-//       rating={restaurant.rating}
-//       image={restaurant.image_url}
-//       location={restaurant.location.display_address}
-//       phone={restaurant.phone}
-//       url={restaurant.url}
-//     />
-//   )})  
-  
-//   return (
-//     <div>
-//       { restaurantCards }
-//       <button>
-
-//       </button>
-//     </div>
-//     )
-//   }
-
 export default Home;

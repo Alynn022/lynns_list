@@ -24,7 +24,7 @@ header {
     flex: 1;
     @include m.flexbox(row, nowrap, normal, flex-end, normal);
     white-space: nowrap;
-
+    
     .menu {
       margin: 0;
       padding: 0;

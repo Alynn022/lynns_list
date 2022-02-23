@@ -8,7 +8,7 @@
 
 .load-more {
   border: none;
-  // padding: 1% 10%;
+  padding: 1% 10%;
   margin: 10%;
   font-weight: 600;
   font-size: 1.5em;
@@ -16,13 +16,14 @@
   color: v.$offBlack;
   cursor: pointer;
   transition: all .2s ease-in-out;
-  // background-color: v.$medium;
-  // border-radius: 0.2em;
+  background-color: v.$grayHover;
+  border-radius: 0.2em;
   
   &:hover {
     letter-spacing: 1px;
     text-transform: underline;
     transform: scale(1.08);
+    background-color: v.$gray;
   }
 }
 

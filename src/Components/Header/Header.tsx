@@ -14,7 +14,7 @@ const Header = () => {
             <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
           </li>
           <li>
-            <NavLink strict to='/MyLists' activeClassName='selected'>My Lists</NavLink>
+            <NavLink exact to='/MyLists' activeClassName='selected'>My Lists</NavLink>
           </li>
         </ul>
       </nav>

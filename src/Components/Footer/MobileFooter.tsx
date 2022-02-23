@@ -7,7 +7,7 @@ const Footer = () => {
     <footer className='hidden-desktop'>
       <section className='mobile-nav'>
         <NavLink exact to='/' className='nav-item home' activeClassName='selected'>Home</NavLink>
-        <NavLink strict to='/MyLists' className='nav-item lists' activeClassName='selected'>My Lists</NavLink>
+        <NavLink exact to='/MyLists' className='nav-item lists' activeClassName='selected'>My Lists</NavLink>
       </section>
     </footer>
   )

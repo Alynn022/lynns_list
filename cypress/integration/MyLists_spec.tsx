@@ -45,7 +45,7 @@ describe('MyLists component user flows', () => {
   }
 }
   it('A user should be able to add a restaurant to either "Wanna try?" or "Loved It"', () => {
-    cy.intercept('GET', 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Denver&categories=food&limit=50&offset=0',
+    cy.intercept('GET', 'https://fe-cors-proxy.herokuapp.com',
       {
         ok: true, 
         statusCode: 200, 
@@ -63,22 +63,22 @@ describe('MyLists component user flows', () => {
       .get('.thumbnail').should('exist')
       .get('.name').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
-      .get('.phone').should('have.text', '+13034553811') //once we change class to display phone, change this assertion to display correct phone number
+      .get('.phone').should('have.text', '(303) 455-3811') 
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
-      .get('.yelp-link').should('have.text', 'Yelp Link') //Need to edit this test based on what we end up doing with yelp link
+      .get('.yelp-link').should('exist') 
       .get('.more-info').should('have.text', 'Tell Me More')
 
     .visit('http://localhost:3000')
-      .get('.been-there').click()
+      .get('.loved-it').click()
       .get('.my-lists-nav').click()
       .get('.list-dropdown').select('lovedIt')
       .get('.list-card').should('exist')
       .get('.thumbnail').should('exist')
       .get('.name').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
-      .get('.phone').should('have.text', '+13034553811') //once we change class to display phone, change this assertion to display correct phone number
+      .get('.phone').should('have.text', '(303) 455-3811') 
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
-      .get('.yelp-link').should('have.text', 'Yelp Link') //Need to edit this test based on what we end up doing with yelp link
+      .get('.yelp-link').should('exist') 
       .get('.more-info').should('have.text', 'Tell Me More')
   })
 })

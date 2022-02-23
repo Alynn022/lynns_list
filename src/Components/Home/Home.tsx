@@ -1,4 +1,5 @@
 import * as React from 'react';
+import './Home.scss';
 import { Restaurant } from '../../types';
 import HomeCard from '../HomeCard/HomeCard';
 import { getAllRestaurants } from '../../apiCalls';
@@ -45,7 +46,7 @@ class Home extends React.Component<Props, State> {
     })
 
     return (
-      <div>
+      <div className='home-container'>
         {restaurantCards}
         <button
           onClick={() => this.loadMoreResults()}

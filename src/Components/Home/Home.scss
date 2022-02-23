@@ -1,4 +1,27 @@
-// .home-container {
-//   max-height: 80%;
-//   overflow: auto;
-// }
+@use '../../styles/_variables' as v;
+@use '../../styles/_mixins' as m;
+
+.home-container {
+  // max-height: 80%;
+  // overflow: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.load-more-button {
+  width: 90%;
+  margin: 5%;
+  height: 5em;
+  border-radius: 0.5em;
+  background-color: v.$gray;
+  border: none;
+  font-size:1.2em;
+  color: v.$dark;
+  font-weight: bold;
+
+  &:hover {
+    cursor: pointer;
+    background-color: v.$grayHover;
+  }
+}

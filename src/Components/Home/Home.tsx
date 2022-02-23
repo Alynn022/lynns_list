@@ -49,6 +49,7 @@ class Home extends React.Component<Props, State> {
       <div className='home-container'>
         {restaurantCards}
         <button
+          className='load-more-button'
           onClick={() => this.loadMoreResults()}
         >
           Load More Results

@@ -39,7 +39,7 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         <a href='tel:{props.phone}'>
           {formatPhoneNumber(props.phone)}
         </a>
-        <div className='address'>
+        <div className='address-container'>
           {displayAddress(props.location)}
         </div>
         <a href={props.url} target='_blank' className='yelp-link'><img src={yelp_logo} alt='visit yelp page' className='yelp-logo'/>

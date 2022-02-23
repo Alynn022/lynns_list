@@ -62,7 +62,7 @@ class MyLists extends React.Component<Props, State> {
           <p className='instructions'>
             Or create a new list below.
           </p>
-          <button className='list-dropdown'>Make a new list!</button>
+          <button className='create-new-list-btn'>Make a new list!</button>
         </section>
         <section className='listView'>
           { this.state.cardsToDisplay }

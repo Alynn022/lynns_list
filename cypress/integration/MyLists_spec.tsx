@@ -1,5 +1,4 @@
-describe('Home Page user flows', () => {
-
+describe('MyLists component user flows', () => {
   const restaurantData = () => {
     return { 
       businesses: [{
@@ -44,10 +43,8 @@ describe('Home Page user flows', () => {
       }
     ]
   }
-} 
-
-
-  it('On load, a user should see a restaurant card', () => {
+}
+  it('A user should be able to add a restaurant to either "Wanna try?" or "Loved It"', () => {
     cy.intercept('GET', 'https://cors-anywhere.herokuapp.com/https://api.yelp.com/v3/businesses/search?location=Denver&categories=food&limit=50&offset=0',
       {
         ok: true, 
@@ -56,18 +53,32 @@ describe('Home Page user flows', () => {
       }
     )
     .visit('http://localhost:3000')
-      .get('.home-card').should('exist')
+      .get('.my-lists-nav').click()
+      .get('.list-card').should('not.exist')
+    
+    .visit('http://localhost:3000')
+      .get('.gotta-go').click()
+      .get('.my-lists-nav').click()
+      .get('.list-card').should('exist')
       .get('.thumbnail').should('exist')
-      .get('.restaurant-info').should('exist')
-      .get('h2').should('have.text', 'Little Man Ice Cream')
+      .get('.name').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
       .get('.phone').should('have.text', '+13034553811') //once we change class to display phone, change this assertion to display correct phone number
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
       .get('.yelp-link').should('have.text', 'Yelp Link') //Need to edit this test based on what we end up doing with yelp link
-      .get('.gotta-go').should('exist')
-      .get('.been-there').should('exist') //if className is changed to lovedIt, change test
-      .get('.more-info').should('exist')
-  });
-});
+      .get('.more-info').should('have.text', 'Tell Me More')
 
-
+    .visit('http://localhost:3000')
+      .get('.been-there').click()
+      .get('.my-lists-nav').click()
+      .get('.list-dropdown').select('lovedIt')
+      .get('.list-card').should('exist')
+      .get('.thumbnail').should('exist')
+      .get('.name').should('have.text', 'Little Man Ice Cream')
+      .get('.rating').should('have.text', 'Rating: 4.5')
+      .get('.phone').should('have.text', '+13034553811') //once we change class to display phone, change this assertion to display correct phone number
+      .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
+      .get('.yelp-link').should('have.text', 'Yelp Link') //Need to edit this test based on what we end up doing with yelp link
+      .get('.more-info').should('have.text', 'Tell Me More')
+  })
+})

@@ -28,7 +28,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
         <p className='rating'>Rating: {props.rating}</p>
         {/* consider reformatting phone # below and linking it */}
         <p className='phone'>{props.phone}</p>
-        <div className='address'>
+        <div className='address-container'>
           {displayAddress(props.location)}
         </div>
         {/* may consider adding yelp logo icon below */}

@@ -1,17 +1,33 @@
 @use '../../styles/_variables' as v;
 @use '../../styles/_mixins' as m;
 
-.home-card {
+.home-card, .list-card {
   border: 1px solid v.$medium;
+  box-shadow: 1px 1px 4px 1px v.$dark;
   border-radius: 0.5em;
   margin: 5%;
   padding: 5%;
   display: grid;
-  grid-template-columns: 20% 50% 30%;
+  grid-template-columns: 25% 45% 30%;
+
+  .yelp-link-hover {
+    display:none
+  };
   
   &:hover {
-    cursor: pointer;
-    background-color: v.$cardHover;
+    background-color: v.$medium;
+
+    h2, p, a {
+      color: v.$offWhite
+    };
+
+    .yelp-link {
+      display: none
+    };
+
+    .yelp-link-hover {
+      display: block
+    };
   }
 
   .thumbnail {
@@ -24,48 +40,93 @@
     margin: 1% 10%;
 
     h2 {
+      font-size: 2em;
+    }
+
+    p {
       font-size: 1.5em;
+    }
+
+    .rating, .phone-number {
+      padding: 0.5em 0 0 0;
+    }
+
+    .phone-link {
+      font-family: v.$bodyFont;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+
+    .address-container {
+      padding: 0.5em 0;
     }
 
     .address {
       padding: 0.2em 0;
     }
 
-    .yelp-link {
-      font-size: 1.2em;
+    .yelp-logo {
+      width: 20%;
+
+      &:hover {
+        transform: scale(1.10);
+      }
     }
   }
 
   .card-buttons {
-    @include m.flexbox(column, nowrap, normal, space-between, normal);
-    margin: 0 10%;
+    @include m.flexbox(column, nowrap, normal, flex-start, normal);
 
     .gotta-go, 
     .loved-it, 
     .more-info {
       border: none;
       padding: 5%;
+      margin: 0 0 10% 0;
       font-weight: 600;
       color: v.$offWhite;
+      cursor: pointer;
+      background-color: v.$dark;
+      border-radius: 0.2em;
       
       &:hover {
-        color: v.$offBlack;
         letter-spacing: 1px;
-        background-color: v.$mediumHover;
+        background-color: v.$lightHover;
+        color: v.$offBlack;
+        transform: scale(1.08);
       }
     }
-    
-    .gotta-go {
-      background-color: v.$medium;
-      color: v.$offWhite;
+  }
+}
+
+
+//desktop requirements
+@media screen and (min-width: 40em) {
+
+}
+
+//mobile requirements
+@media screen and (max-width: 40em) {
+  .home-card, .list-card {
+    @include m.flexbox(column, nowrap, normal, normal, normal);
+
+    .thumbnail {
+      width: 80%;
+      align-self: center;
     }
 
-    .loved-it {
-      background-color: v.$dark;
+    .restaurant-info {
+      margin: 10%;
     }
 
-    .more-info {
-      background-color: v.$dark;
+    .yelp-logo {
+      width: 30%;
+    }
+
+    .card-buttons {
+      margin: 0 10%;
     }
   }
 }

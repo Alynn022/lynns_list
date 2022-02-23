@@ -1,0 +1,73 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
+footer {
+  background-color: v.$deepPurple;
+  border-top: 1px solid v.$darkPurple;
+}
+
+.footer-content {
+  display: flex;
+  line-height: 1.5em;
+  font-size: 0.9em;
+  
+  .project-description {
+    flex: 2;
+    margin: 2%;
+  }
+  
+  .logos {
+    @include m.flexbox(0,0,0,space-evenly,0);
+  }
+  
+  h3 {
+    font-family: v.$titleFont;
+    font-size: 1.5em;
+    text-shadow: 1px 1px 1px black;
+  }
+  
+  h4 {
+    font-size: 1.5em;
+    font-family: v.$titleFont;
+  }
+  
+  .social-links {
+    flex: 2;
+    margin: 2%;
+  }
+  
+  .repo, .github, .linkedin {
+    margin: 4% 1%;
+  }
+  
+  a {
+    text-decoration: none;
+    padding: 0 1%;
+    font-size: 90%;
+  
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+
+.copyright {
+  background-color: v.$darkPurple;
+  margin: 0;
+  text-align: center;
+  font-size: .8em;
+  padding: .25em;
+}
+
+//Tablet portrait view
+@media (min-width: 768px) and (max-width: 1024px) {
+
+}
+
+//small mobile device view
+@media (min-width: 320px) and (max-width: 767px) {
+  .footer-content {
+    flex-direction: column;
+  }
+}

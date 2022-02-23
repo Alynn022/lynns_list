@@ -2,6 +2,7 @@ import * as React from 'react';
 import { Restaurant } from '../../types';
 import HomeCard from '../HomeCard/HomeCard';
 import { getAllRestaurants } from '../../apiCalls';
+import './Home.scss';
 
 interface Props {
   restaurants: Restaurant[];
@@ -45,14 +46,10 @@ class Home extends React.Component<Props, State> {
     })
 
     return (
-      <div>
+      <section className='home-page'>
         {restaurantCards}
-        <button
-          onClick={() => this.loadMoreResults()}
-        >
-          Load More Results
-        </button>
-      </div>
+        <a className='load-more' onClick={() => this.loadMoreResults()}>Load More...</a>
+      </section>
     )
   }
 }

@@ -3,7 +3,7 @@
 
 header {
   background-color: v.$medium;
-  padding: 1%;
+  padding: 2%;
   @include m.flexbox(row, nowrap, normal, space-between, center);
   
   h1 {

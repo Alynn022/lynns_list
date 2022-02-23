@@ -1,4 +1,6 @@
 import './HomeCard.scss';
+import yelp_logo from './yelp_logo.png';
+// import StarRatings from '../StarRatings/StarRatings';
 
 interface Props {
   id: string,
@@ -18,6 +20,14 @@ const displayAddress = (address: string[]) => {
   )
 }
 
+const formatPhoneNumber = (phoneNumberString: string) => {
+  var cleaned = ('' + phoneNumberString).replace(/\D/g, '');
+  var match = cleaned.match(/^(1|)?(\d{3})(\d{3})(\d{4})$/);
+  if (match) {
+    return ['(', match[2], ') ', match[3], '-', match[4]].join('');
+  }
+}
+
 const HomeCard: React.FC<Props> = (props: Props) => {
   return (
     <div className='home-card'>
@@ -25,13 +35,15 @@ const HomeCard: React.FC<Props> = (props: Props) => {
       <div className='restaurant-info'>
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
-        {/* consider reformatting phone # below and linking it */}
-        <p className='phone'>{props.phone}</p>
+        {/* Don't delete, Jani is working on this ---> <StarRatings rating={props.rating} /> */}
+        <a href='tel:{props.phone}'>
+          {formatPhoneNumber(props.phone)}
+        </a>
         <div className='address'>
           {displayAddress(props.location)}
         </div>
-        {/* may consider adding yelp logo icon below */}
-        <a href={props.url} target='_blank' className='yelp-link'>Yelp Link</a>
+        <a href={props.url} target='_blank' className='yelp-link'><img src={yelp_logo} alt='visit yelp page' className='yelp-logo'/>
+        </a>
       </div>
       <div className='card-buttons'>
         <button className='gotta-go'

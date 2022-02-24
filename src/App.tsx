@@ -9,6 +9,7 @@ import { getAllRestaurants } from './apiCalls';
 import { State } from './types';
 import { Route } from 'react-router-dom';
 import { Restaurant } from '../src/types';
+import Error  from './Components/Error/Error'
 
 // interface State {
 //   restaurants: Restaurant[];
@@ -23,7 +24,8 @@ class App extends React.Component<Props, State> {
    userLists: {
      gottaGo: [],
      lovedIt: []
-   }
+   },
+   error: ''
   }
 
   componentDidMount = () => {
@@ -31,6 +33,13 @@ class App extends React.Component<Props, State> {
     .then(data => {
       this.setState({ restaurants: data.businesses})
     })
+    .catch(error => {
+      console.log(error)
+      this.handleError(error)})
+  }
+
+  handleError = (err: string) => {
+    this.setState({error: err})
   }
 
   addToList = (listName: string, id: string): void => {
@@ -60,9 +69,11 @@ class App extends React.Component<Props, State> {
   }
   
   render() {
+    const displayError = (this.state.error && <Error error={this.state.error}/>)
     return (
       <div className="App">
         <Header />
+        {displayError}
         <Route exact path="/MyLists" render={() => 
           <MyLists
             userLists={this.state.userLists}
@@ -75,6 +86,7 @@ class App extends React.Component<Props, State> {
             restaurants={this.state.restaurants}
             addToList={this.addToList}
             addRestaurants={this.addRestaurants}
+            handleError ={this.handleError}
           />
           }
         />

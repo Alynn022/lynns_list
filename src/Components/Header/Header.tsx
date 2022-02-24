@@ -11,10 +11,10 @@ const Header = () => {
       <nav className='hidden-mobile'>
         <ul className='menu'>
           <li>
-            <NavLink exact to='/' activeClassName='selected'>Home</NavLink>
+            <NavLink exact to='/' activeClassName='selected' id="home-nav-button">Home</NavLink>
           </li>
           <li>
-            <NavLink exact to='/MyLists' activeClassName='selected'>My Lists</NavLink>
+            <NavLink exact to='/MyLists' activeClassName='selected' id="my-lists-nav">My Lists</NavLink>
           </li>
         </ul>
       </nav>

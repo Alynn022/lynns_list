@@ -8,6 +8,7 @@ interface Props {
   restaurants: Restaurant[];
   addToList: ((listName: string, id: string) => void)
   addRestaurants: (data: Restaurant[]) => void
+  handleError: (error: string) => void
 }
 
 interface State {
@@ -22,6 +23,7 @@ class Home extends React.Component<Props, State> {
   updateRestaurants = () => {
     getAllRestaurants(this.state.offset)
       .then(data => this.props.addRestaurants(data.businesses))
+      .catch(error => this.props.handleError(error))
   }
 
   loadMoreResults = () => {

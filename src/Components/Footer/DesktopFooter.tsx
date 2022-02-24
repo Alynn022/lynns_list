@@ -9,7 +9,7 @@ const DesktopFooter = () => {
       <div className='footer-content hidden-mobile'>
         <section className='project-description'>
           <h3>About</h3>
-            <p>This is a Turing Module 3 project built with React.js, TypeScript, and the Yelp Fusion API. . It was designed and developed by Lynn Nguyen, Jani Palomio, Daniel O'Connell, Ali Roemhildt.</p>
+            <p>This is a Turing Module 3 project built with React.js, TypeScript, and the Yelp Fusion API. It was designed and developed by Lynn Nguyen, Jani Palomino, Daniel O'Connell, Ali Roemhildt.</p>
         <div className='logos'>
           <img src={react_logo} alt='react logo'/>
           <img src={turing_logo} alt='turing logo'/>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import './MobileFooter.scss'
 import { NavLink } from 'react-router-dom';
 
-const Footer = () => {
+const MobileFooter = () => {
   return (
     <footer className='hidden-desktop'>
       <section className='mobile-nav'>
@@ -13,4 +13,4 @@ const Footer = () => {
   )
 }
 
-export default Footer;
+export default MobileFooter;

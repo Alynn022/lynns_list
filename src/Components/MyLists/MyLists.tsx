@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './MyLists.scss';
 import { UserLists } from '../../types';
-import ListCard from '../ListCard/ListCard';
+import ListCard from '../RestaurantCards/ListCard';
 
 interface Props {
   userLists: UserLists;

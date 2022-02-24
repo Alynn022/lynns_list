@@ -1,5 +1,6 @@
-import '../HomeCard/HomeCard.scss';
-import yelp_logo from '../HomeCard/yelp_logo.png';
+import '../RestaurantCards/RestaurantCards.scss';
+import yelp_icon_white from './yelp_icon_white.png';
+import yelp_icon_black from './yelp_icon_black.png';
 import { UserLists } from '../../types';
 
 interface Props {
@@ -44,23 +45,8 @@ const ListCard: React.FC<Props> = (props: Props) => {
         <div className='address-container'>
           {displayAddress(props.location)}
         </div>
-        <a
-          href={props.url}
-          target='_blank'
-          className='yelp-link'
-        >
-          <img
-            src={yelp_logo}
-            alt='visit yelp page'
-            className='yelp-logo'
-          />
-        </a>
       </article>
       <article className='card-buttons'>
-        {/* <button className='gotta-go'
-          id={props.id}
-          onClick={(event) => 
-          props.removeFromList('gottaGo', props.id)}>Remove From Gotta Go</button> */}
         <button
           className='loved-it'
           id={props.id}
@@ -68,7 +54,12 @@ const ListCard: React.FC<Props> = (props: Props) => {
         >
           Remove From List
         </button>
-        {/* <button className='more-info'>Tell Me More</button> */}
+        <a href={props.url} target='_blank'>
+          <button className='more-info'>View On Yelp
+            <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>
+            <img src={yelp_icon_black} alt='visit yelp page' className='yelp-logo-black'/>
+          </button>
+        </a>
       </article>
     </section>
   )

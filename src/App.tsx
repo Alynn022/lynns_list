@@ -1,7 +1,8 @@
 import * as React from 'react';
 import './styles/App.scss';
 import Header from './Components/Header/Header';
-// import Footer from './Components/Footer/Footer';
+import MobileFooter from './Components/Footer/MobileFooter';
+import DesktopFooter from './Components/Footer/DesktopFooter';
 import Home from './Components/Home/Home';
 import MyLists from './Components/MyLists/MyLists';
 import { getAllRestaurants } from './apiCalls';
@@ -89,7 +90,8 @@ class App extends React.Component<Props, State> {
           />
           }
         />
-        {/* <Footer /> */}
+        <MobileFooter />
+        <DesktopFooter />
       </div>
     );
   }

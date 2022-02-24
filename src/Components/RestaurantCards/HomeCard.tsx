@@ -1,6 +1,6 @@
-import './HomeCard.scss';
-import yelp_logo from './yelp_logo.png';
-import yelp_logo_hover from './yelp_logo_hover.png';
+import './RestaurantCards.scss';
+import yelp_icon_white from './yelp_icon_white.png';
+import yelp_icon_black from './yelp_icon_black.png';
 // import StarRatings from '../StarRatings/StarRatings';
 
 interface Props {
@@ -35,21 +35,20 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         <div className='address-container'>
           {displayAddress(props.location)}
         </div>
-        <a href={props.url} target='_blank' className='yelp-link'><img src={yelp_logo} alt='visit yelp page' className='yelp-logo'/>
-        </a>
-        <a href={props.url} target='_blank' className='yelp-link-hover'><img src={yelp_logo_hover} alt='visit yelp page' className='yelp-logo'/>
-        </a>
       </article>
       <article className='card-buttons'>
-        <button aria-label='click here to add to Gotta Go List' className='gotta-go' 
-          id={props.id}
-          onClick={(event) => 
-          props.addToList('gottaGo', props.id)} >Gotta Go!</button>
-        <button aria-label='click here to add to Loved It List' className='loved-it'
-        id={props.id}
-        onClick={(event) => 
-        props.addToList('lovedIt', props.id)}>Loved It!</button>
-        {/* <button className='more-info'>Tell Me More</button> */}
+        <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={props.id} onClick={(event) => 
+          props.addToList('gottaGo', props.id)}>Gotta Go!
+        </button>
+        <button aria-label='click here to add to Loved It List' className='loved-it' id={props.id} onClick={(event) => 
+          props.addToList('lovedIt', props.id)}>Loved It!
+        </button>
+        <a href={props.url} target='_blank'>
+          <button className='more-info'>View On Yelp
+            <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>
+            <img src={yelp_icon_black} alt='visit yelp page' className='yelp-logo-black'/>
+          </button>
+        </a>
       </article>
     </section>
   )

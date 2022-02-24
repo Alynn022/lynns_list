@@ -10,23 +10,11 @@
   display: grid;
   grid-template-columns: 25% 45% 30%;
 
-  .yelp-link-hover {
-    display:none
-  };
-  
   &:hover {
     background-color: v.$medium;
 
     h2, p, a {
-      color: v.$offWhite
-    };
-
-    .yelp-link {
-      display: none
-    };
-
-    .yelp-link-hover {
-      display: block
+      color: v.$offWhite;
     };
   }
 
@@ -70,10 +58,6 @@
 
     .yelp-logo {
       width: 20%;
-
-      &:hover {
-        transform: scale(1.10);
-      }
     }
   }
 
@@ -91,12 +75,29 @@
       cursor: pointer;
       background-color: v.$dark;
       border-radius: 0.2em;
+      min-width: 100%;
+
+      .yelp-logo-white {
+        display: inline;
+      }
+
+      .yelp-logo-black {
+        display: none;
+      }
       
       &:hover {
         letter-spacing: 1px;
         background-color: v.$lightHover;
         color: v.$offBlack;
         transform: scale(1.08);
+
+        .yelp-logo-white {
+          display: none;
+        }
+
+        .yelp-logo-black {
+          display: inline;
+        }
       }
     }
   }

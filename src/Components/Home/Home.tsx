@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { Restaurant } from '../../types';
-import HomeCard from '../HomeCard/HomeCard';
+import HomeCard from '../RestaurantCards/HomeCard';
 import { getAllRestaurants } from '../../apiCalls';
 import './Home.scss';
 

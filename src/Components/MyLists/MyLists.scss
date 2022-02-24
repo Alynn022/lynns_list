@@ -1,81 +1,83 @@
 @use '../../styles/_variables' as v;
 @use '../../styles/_mixins' as m;
 
+.my-lists-container {
+  min-height: 100vh;
 
-.list-dropdown-container {
-  @include m.flexbox(column, wrap, center, center, center);
+  .list-dropdown-container {
+    @include m.flexbox(column, wrap, center, center, center);
 
-  .instructions {
-    font-size: 1.5em;
-    color: v.$dark;
-    margin: 2% 5%;
-    text-align: center;
-  }
-
-  .list-dropdown {
-    border: none;
-    border-radius: 0.2em;
-    color: v.$dark;
-    background-color: v.$light;
-    min-width: 10em;
-    min-height: 2em;
-    font-size: 1.5em;
-    font-weight: bold;
-    padding: 1%;
-
-    &:hover {
-      background-color: v.$mediumHover;
-      color: v.$offWhite;
-      cursor: pointer;
-    }
-
-    &:focus {
-      border: none;
-    }
-  }
-}
-
-.new-list-button {
-  background-color: transparent;
-  border: none;
-  display: flex;
-  margin: 1em;
-  
-  .plus {
-    height: 1.7em;
-    width: 1.7em;
-    border-radius: 50%;
-    background-color: v.$medium;
-    @include m.flexbox(row, nowrap, normal, center, center);
-  
-    p {
-      font-weight: bold;
-      color: v.$white;
+    .instructions {
       font-size: 1.5em;
+      color: v.$dark;
+      margin: 2% 5%;
+      text-align: center;
+    }
+
+    .list-dropdown {
+      border: none;
+      border-radius: 0.2em;
+      color: v.$dark;
+      background-color: v.$light;
+      min-width: 10em;
+      min-height: 2em;
+      font-size: 1.5em;
+      font-weight: bold;
+      padding: 1%;
+
+      &:hover {
+        background-color: v.$mediumHover;
+        color: v.$offWhite;
+        cursor: pointer;
+      }
+
+      &:focus {
+        border: none;
+      }
     }
   }
-  
-  .new-list-text {
-    color: v.$medium;
-    font-size: 1.2em;
-    font-weight: bold;
-    margin-left: 0.5em;
-  }
 
-  &:hover {
-    cursor: pointer;
-    transform: scale(1.05);
+  .new-list-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    margin: 1em;
     
     .plus {
-      background-color: v.$mediumHover;
+      height: 1.7em;
+      width: 1.7em;
+      border-radius: 50%;
+      background-color: v.$medium;
+      @include m.flexbox(row, nowrap, normal, center, center);
+    
+      p {
+        font-weight: bold;
+        color: v.$white;
+        font-size: 1.5em;
+      }
     }
-  
+    
     .new-list-text {
-      color: v.$mediumHover;
+      color: v.$medium;
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-left: 0.5em;
+    }
+
+    &:hover {
+      cursor: pointer;
+      transform: scale(1.05);
+      
+      .plus {
+        background-color: v.$mediumHover;
+      }
+    
+      .new-list-text {
+        color: v.$mediumHover;
+      }
     }
   }
 }
-
 
 //desktop requirements
 @media screen and (min-width: 40em) {

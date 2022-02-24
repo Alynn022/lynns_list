@@ -22,7 +22,7 @@ footer {
   
   h3 {
     font-family: v.$headerFont;
-    font-size: 1.8em;
+    font-size: 2em;
     font-weight: 600;
     color: v.$offWhite;
   }
@@ -50,7 +50,6 @@ footer {
   a {
     text-decoration: none;
     padding: 0 1%;
-    font-size: 90%;
     color: v.$offWhite;
   
     &:hover {
@@ -70,18 +69,6 @@ footer {
     color: v.$offWhite;
   }
 }
-
-// //Tablet portrait view
-// @media (min-width: 768px) and (max-width: 1024px) {
-
-// }
-
-// //small mobile device view
-// @media (min-width: 320px) and (max-width: 767px) {
-//   .footer-content {
-//     flex-direction: column;
-//   }
-// }
 
 //desktop requirements
 @media screen and (min-width: 40em) {

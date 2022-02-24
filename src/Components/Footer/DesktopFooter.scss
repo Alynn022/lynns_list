@@ -2,8 +2,8 @@
 @use '../../styles/mixins' as m;
 
 footer {
-  background-color: v.$deepPurple;
-  border-top: 1px solid v.$darkPurple;
+  background-color: v.$dark;
+  border-top: 1px solid v.$darkHover;
 }
 
 .footer-content {
@@ -17,18 +17,24 @@ footer {
   }
   
   .logos {
-    @include m.flexbox(0,0,0,space-evenly,0);
+    @include m.flexbox(row, nowrap, normal, space-evenly, normal);
   }
   
   h3 {
-    font-family: v.$titleFont;
-    font-size: 1.5em;
-    text-shadow: 1px 1px 1px black;
+    font-family: v.$headerFont;
+    font-size: 1.8em;
+    font-weight: 600;
+    color: v.$offWhite;
   }
   
   h4 {
     font-size: 1.5em;
-    font-family: v.$titleFont;
+    font-family: v.$headerFont;
+    color: v.$offWhite;
+  }
+
+  p {
+    color: v.$offWhite;
   }
   
   .social-links {
@@ -38,12 +44,14 @@ footer {
   
   .repo, .github, .linkedin {
     margin: 4% 1%;
+    color: v.$offWhite;
   }
   
   a {
     text-decoration: none;
     padding: 0 1%;
     font-size: 90%;
+    color: v.$offWhite;
   
     &:hover {
       text-decoration: underline;
@@ -51,22 +59,43 @@ footer {
   }
 }
 
-
 .copyright {
-  background-color: v.$darkPurple;
+  background-color: #031a1f;
   margin: 0;
   text-align: center;
   font-size: .8em;
   padding: .25em;
+
+  p {
+    color: v.$offWhite;
+  }
 }
 
-//Tablet portrait view
-@media (min-width: 768px) and (max-width: 1024px) {
+// //Tablet portrait view
+// @media (min-width: 768px) and (max-width: 1024px) {
 
+// }
+
+// //small mobile device view
+// @media (min-width: 320px) and (max-width: 767px) {
+//   .footer-content {
+//     flex-direction: column;
+//   }
+// }
+
+//desktop requirements
+@media screen and (min-width: 40em) {
+  .hidden-desktop {
+    display: none;
+  }
 }
 
-//small mobile device view
-@media (min-width: 320px) and (max-width: 767px) {
+//mobile requirements
+@media screen and (max-width: 40em) {
+  .hidden-mobile {
+    display: none;
+  }
+
   .footer-content {
     flex-direction: column;
   }

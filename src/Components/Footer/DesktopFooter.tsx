@@ -6,10 +6,10 @@ import turing_logo from './turing_logo.png';
 const DesktopFooter = () => {
   return (
     <footer>
-      <div className='footer-content'>
+      <div className='footer-content hidden-mobile'>
         <section className='project-description'>
           <h3>About</h3>
-            <p>This is a Turing Module 3 project built with React.js. It was designed and developed by Jani Palomino and Daniel O'Connell.</p>
+            <p>This is a Turing Module 3 project built with React.js, TypeScript, and the Yelp Fusion API. . It was designed and developed by Lynn Nguyen, Jani Palomio, Daniel O'Connell, Ali Roemhildt.</p>
         <div className='logos'>
           <img src={react_logo} alt='react logo'/>
           <img src={turing_logo} alt='turing logo'/>
@@ -19,22 +19,26 @@ const DesktopFooter = () => {
           <h3>Follow Us</h3>
           <section className='repo'>
               <h4>Project Repo</h4>
-              <a href='https://github.com/Daniel-OC/rancid-tomatillos' target='_blank' rel='noreferrer'>github.com/Daniel-OC/rancid-tomatillos</a>
+              <a href='https://github.com/Alynn022/lynns_list' target='_blank' rel='noreferrer'>github.com/Alynn022/lynns_list</a>
           </section>
           <section className='github'>
               <h4>GitHub Profiles</h4>
+              <a href='https://github.com/ALynn022' target='_blank' rel='noreferrer'>Alynn022</a> |  
               <a href='https://github.com/janitastic' target='_blank' rel='noreferrer'>Janitastic</a> |  
-              <a href='https://github.com/Daniel-OC' target='_blank' rel='noreferrer'>Daniel-OC</a>
+              <a href='https://github.com/Daniel-OC' target='_blank' rel='noreferrer'>Daniel-OC</a> |
+              <a href='https://github.com/aliroemhildt' target='_blank' rel='noreferrer'>AliRoemhildt</a>
           </section>
           <section className='linkedin'>
             <h4>LinkedIn</h4>
+            <a href='https://www.linkedin.com/in/lynnnguyen22/' target='_blank' rel='noreferrer'>Lynn Nguyen</a> |
             <a href='https://www.linkedin.com/in/janipalomino/' target='_blank' rel='noreferrer'>Jani Palomino</a> | 
-            <a href='https://www.linkedin.com/in/daniel-o-connell-maker/' target='_blank' rel='noreferrer'>Daniel O'Connell</a>
+            <a href='https://www.linkedin.com/in/daniel-o-connell-maker/' target='_blank' rel='noreferrer'>Daniel O'Connell</a> | 
+            <a href='https://www.linkedin.com/in/aliroemhildt/' target='_blank' rel='noreferrer'>Ali Roemhildt</a>
           </section>
         </div>
       </div>
       <div className='copyright'>
-        <p>©2021 Palomino + O'Connell | Fine Film Critics</p>
+        <p>© Lynn's List | Dining, Drinks, and Desserts</p>
       </div>
     </footer>
   )

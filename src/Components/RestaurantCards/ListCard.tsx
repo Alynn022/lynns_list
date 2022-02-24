@@ -13,6 +13,7 @@ interface Props {
   phone: string,
   url: string,
   key: string
+  selectedList: string
 }
 
 const displayAddress = (address: string[]) => {
@@ -24,23 +25,34 @@ const displayAddress = (address: string[]) => {
 const ListCard: React.FC<Props> = (props: Props) => {
   return (
     <section className='list-card'>
-      <img className='thumbnail' src={props.image} alt={`${props.name} Image`} />
+      <img
+        className='thumbnail'
+        src={props.image}
+        alt={`${props.name} Image`}
+      />
       <article className='restaurant-info'>
         <h2 className='name'>{props.name}</h2>
         <p className='rating'>Rating: {props.rating}</p>
-        <p className='phone-number'><a href='tel:{props.phone}' className='phone-link' aria-label='phone number'>
-          {props.phone}
-        </a></p>
+        <p className='phone-number'>
+          <a
+            href='tel:{props.phone}'
+            className='phone-link'
+            aria-label='phone number'
+          >
+            {props.phone}
+          </a>
+        </p>
         <div className='address-container'>
           {displayAddress(props.location)}
         </div>
       </article>
       <article className='card-buttons'>
-        <button className='gotta-go' id={props.id} onClick={(event) => 
-          props.removeFromList('gottaGo', props.id)}>Remove From Gotta Go
-        </button>
-        <button className='loved-it' id={props.id} onClick={(event) => 
-          props.removeFromList('lovedIt', props.id)}>Remove From Loved It
+        <button
+          className='loved-it'
+          id={props.id}
+          onClick={() => props.removeFromList(props.selectedList, props.id)}
+        >
+          Remove From List
         </button>
         <a href={props.url} target='_blank'>
           <button className='more-info'>View On Yelp

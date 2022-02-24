@@ -29,11 +29,11 @@
     text-align: left;
 
     h2 {
-      font-size: 2em;
+      font-size: 2.5em;
     }
 
     p {
-      font-size: 1.5em;
+      font-size: 2em;
     }
 
     .rating, .phone-number {
@@ -71,6 +71,7 @@
       padding: 5%;
       margin: 0 0 10% 0;
       font-weight: 600;
+      font-size: 1.5em;
       color: v.$offWhite;
       cursor: pointer;
       background-color: v.$dark;

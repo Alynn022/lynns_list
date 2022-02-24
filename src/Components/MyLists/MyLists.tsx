@@ -55,7 +55,7 @@ class MyLists extends React.Component<Props, State> {
 
   render() {
     return (
-      <div>
+      <div className='my-lists-container'>
         <section className='list-dropdown-container'>
           <p className='instructions'>
             Select a list to view.

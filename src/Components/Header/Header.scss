@@ -7,7 +7,7 @@ header {
   @include m.flexbox(row, nowrap, normal, space-between, center);
   
   h1 {
-    font-size: 3em;
+    font-size: 4em;
     padding: 2%;
     color: v.$offWhite;
     
@@ -46,7 +46,7 @@ header {
   a {
     color: v.$offWhite;
     letter-spacing: 1px;
-    font-size: 1.2em;
+    font-size: 1.5em;
   }
   
   // below is for NavLink hover

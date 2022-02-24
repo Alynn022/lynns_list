@@ -41,6 +41,7 @@ export interface Restaurant {
 export interface State {
   restaurants: Restaurant[];
   userLists: UserLists;
+  error: string;
 }
 
 export interface UserLists {

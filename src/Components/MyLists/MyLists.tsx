@@ -9,7 +9,7 @@ interface Props {
 }
 
 interface State {
-  cardsToDisplay: JSX.Element[], // need to double check how to type this
+  cardsToDisplay: JSX.Element[], 
   selectedList: string
 }
 
@@ -36,6 +36,7 @@ class MyLists extends React.Component<Props, State> {
           location={restaurant.location.display_address}
           phone={restaurant.display_phone}
           url={restaurant.url}
+          selectedList={this.state.selectedList}
         />
       )
     })
@@ -43,12 +44,12 @@ class MyLists extends React.Component<Props, State> {
   }
 
   updateList = (listName: string) => {
-    console.log(listName)
     this.setState({ selectedList: listName }, this.createCardsToDisplay)
   }
 
   render() {
     return (
+
       <div>
         <section className='list-dropdown-container'>
           <p className='instructions'>

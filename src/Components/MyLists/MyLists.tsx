@@ -22,6 +22,12 @@ class MyLists extends React.Component<Props, State> {
   componentDidMount = () => {
     this.createCardsToDisplay();
   }
+ 
+  componentDidUpdate = () => {
+    if (this.state.cardsToDisplay.length !== this.props.userLists[this.state.selectedList].length) {
+      this.createCardsToDisplay();
+    }
+  }
 
   createCardsToDisplay = () => {
     const cards = this.props.userLists[this.state.selectedList].map(restaurant => {
@@ -49,7 +55,6 @@ class MyLists extends React.Component<Props, State> {
 
   render() {
     return (
-
       <div>
         <section className='list-dropdown-container'>
           <p className='instructions'>

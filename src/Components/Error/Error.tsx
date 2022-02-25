@@ -10,9 +10,9 @@ interface Props {
 const Error: React.FC<Props> = (props: Props) => {
   return (
     <section className='error-container'>
-      <img src={sad_ice_cream_boy}/>
-      <p>{props.error}</p>
-      {!props.error.includes('5') && <Link to='/'>Take Me Home!!</Link>}
+      <img src={sad_ice_cream_boy} className="sad-ice-cream-boy"/>
+      <p className="error-message">{props.error}</p>
+      {!props.error.includes('5') && <Link to='/' className="nav-back-home-error">Take Me Home!!</Link>}
     </section>
   )
 }

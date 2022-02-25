@@ -48,7 +48,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
       </article>
       <article className='card-buttons'>
         <button
-          className='loved-it'
+          className='delete-button'
           id={props.id}
           onClick={() => props.removeFromList(props.selectedList, props.id)}
         >

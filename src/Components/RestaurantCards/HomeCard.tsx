@@ -31,9 +31,9 @@ const HomeCard: React.FC<Props> = (props: Props) => {
       <h2 className='name' tabIndex={0}>{props.name}</h2>
         <p className='rating' tabIndex={0}>Rating: {props.rating}</p>
         {/* Don't delete, Jani is working on this ---> <StarRatings rating={props.rating} /> */}
-        <p className='phone-number'><a href='tel:{props.phone}' className='phone-link' aria-label='phone number'>
-          {props.phone}
-        </a></p>
+        <p className='phone-number'>
+          <a href='tel:{props.phone}' className='phone-link' aria-label='phone number'>{props.phone}</a>
+        </p>
         <div className='address-container' tabIndex={0}>
           {displayAddress(props.location)}
         </div>

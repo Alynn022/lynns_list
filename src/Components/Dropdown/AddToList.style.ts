@@ -10,7 +10,6 @@ export const ActivatorButton = styled.button`
   align-items: center;
   border: none;
   padding: 5%;
-  margin: 0 0 10% 0;
   font-weight: 600;
   font-size: 1.5em;
   color: #F2F2F2;
@@ -31,13 +30,15 @@ export const ActivatorButton = styled.button`
 `;
 
 export const DropdownList = styled.ul<{ active: boolean }>`
-  background-color: #ececec;
-  color: black;
   display: ${props => (props.active ? 'block' : 'none')};
+  background-color: #abdcdf;
+  color: #036e76;
+  font-size: 1.5em;
   margin: 0;
-  min-width: 180px;
+  min-width: 100%;
   padding: 0;
   position: absolute;
+  border-radius: 0.2em;
   li {
     list-style: none;
     margin: 0;
@@ -45,8 +46,10 @@ export const DropdownList = styled.ul<{ active: boolean }>`
     a:link {
       display: block;
       padding: 0.5em;
+      color: #093b48;
       &:hover {
-        background-color: lightblue;
+        background-color: #093b48;
+        color: #f2f2f2;
       }
     }
   }

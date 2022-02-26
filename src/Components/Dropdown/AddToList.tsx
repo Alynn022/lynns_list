@@ -3,44 +3,41 @@ import * as React from 'react';
 import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import { Wrapper, ActivatorButton, DropdownList } from './AddToList.style';
 
-interface IDropdownItem {
+interface DropDownItem {
   id: number;
   url: string;
   text: string;
 }
 
-interface IProps {
+interface Props {
   activatorText?: string;
-  items?: IDropdownItem[];
+  items?: DropDownItem[];
 }
 
 const dropdownItems = [
   {
     id: 1,
-    url: 'myLink',
-    text: 'option'
+    // onClick event to add to list goes here
+    url: 'linkHere1',
+    text: 'Gotta Go!'
   },
   {
     id: 2,
-    url: 'myLink2',
-    text: 'option2'
+    url: 'linkHere2',
+    text: 'Loved It!'
   },
   {
+    // let's revisit how to make this dynamic
     id: 3,
-    url: 'myLink3',
-    text: 'option3'
-  },
-  {
-    id: 4,
-    url: 'myLink4',
-    text: 'option4'
+    url: 'linkHere3',
+    text: 'Generic List'
   }
 ];
 
 const Dropdown = ({
   activatorText = 'Add To List',
   items = dropdownItems
-}: IProps) => {
+}: Props) => {
   const activatorRef = React.useRef<HTMLButtonElement | null>(null);
   const listRef = React.useRef<HTMLUListElement | null>(null);
   const [isOpen, setIsOpen] = React.useState(false);

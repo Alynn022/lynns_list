@@ -65,7 +65,8 @@
     @include m.flexbox(column, nowrap, normal, flex-start, normal);
 
     .gotta-go, 
-    .loved-it, 
+    .loved-it,
+    .delete-button, 
     .more-info {
       border: none;
       padding: 5%;

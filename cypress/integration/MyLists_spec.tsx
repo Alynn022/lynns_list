@@ -60,12 +60,13 @@ describe('MyLists component user flows', () => {
       .get('.gotta-go').click()
       .get('#my-lists-nav').click()
       .get('.list-card').should('exist')
+      .get('.delete-button').should('exist')
       .get('.thumbnail').should('exist')
       .get('.name').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
       .get('.phone-number').should('have.text', '(303) 455-3811') 
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
-      .get('.yelp-link').should('exist') 
+      .get('.more-info').should('exist') 
       // .get('.more-info').should('have.text', 'Tell Me More')
 
     .visit('http://localhost:3000')
@@ -74,11 +75,36 @@ describe('MyLists component user flows', () => {
       .get('.list-dropdown').select('lovedIt')
       .get('.list-card').should('exist')
       .get('.thumbnail').should('exist')
+      .get('.delete-button').should('exist')
       .get('.name').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
       .get('.phone-number').should('have.text', '(303) 455-3811') 
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
-      .get('.yelp-link').should('exist') 
+      .get('.more-info').should('exist') 
       // .get('.more-info').should('have.text', 'Tell Me More')
   })
+
+  it('should be able to delete a restaurant from a user\'s lists', () => {
+    cy.intercept('GET', 'https://fe-cors-proxy.herokuapp.com',
+      {
+        ok: true, 
+        statusCode: 200, 
+        body: restaurantData() 
+      }
+    )
+      .visit('http://localhost:3000')
+        .get('.loved-it').click()
+        .get('#my-lists-nav').click()
+        .get('.list-dropdown').select('lovedIt')
+        .get('.list-card').should('exist')
+        .get('.delete-button').click()
+        .get('.list-card').should('not.exist')
+
+      .visit('http://localhost:3000')
+        .get('.gotta-go').click()
+        .get('#my-lists-nav').click()
+        .get('.list-card').should('exist')
+        .get('.delete-button').click()
+        .get('.list-card').should('not.exist')
+})
 })

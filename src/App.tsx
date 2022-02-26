@@ -74,11 +74,14 @@ class App extends React.Component<Props, State> {
       <div className="App">
         <Header />
         {displayError}
-        <Route exact path="/MyLists" render={() => 
-          <MyLists
+        <Route exact path="/:selectedList" render={({match}) => 
+          { console.log(match)
+            return (
+            <MyLists
             userLists={this.state.userLists}
             removeFromList={this.removeFromList}
-          />
+            selectedList={match.params.selectedList}
+          />)}
           } 
         /> 
         <Route exact path="/" render={() => 

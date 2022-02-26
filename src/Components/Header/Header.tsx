@@ -6,7 +6,7 @@ const Header = () => {
   return (
     <header>
       <section className='logo'>
-        <h1 onClick={() => {window.location.href='/'}}> Lynn's List</h1>
+        <h1 tabIndex={0} onClick={() => {window.location.href='/'}}> Lynn's List</h1>
       </section>
       <nav className='hidden-mobile'>
         <ul className='menu'>

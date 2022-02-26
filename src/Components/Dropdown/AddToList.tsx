@@ -17,7 +17,7 @@ interface Props {
 const dropdownItems = [
   {
     id: 1,
-    // onClick event to add to list goes here
+    // onClick event to add to list goes here. Not sure if we want to import Props here from HomeCard or do some refactoring.
     url: 'linkHere1',
     text: 'Gotta Go!'
   },

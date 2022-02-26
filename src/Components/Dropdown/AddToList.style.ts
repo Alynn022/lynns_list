@@ -32,7 +32,7 @@ export const ActivatorButton = styled.button`
 export const DropdownList = styled.ul<{ active: boolean }>`
   display: ${props => (props.active ? 'block' : 'none')};
   background-color: #abdcdf;
-  color: #036e76;
+  color: #062932;
   font-size: 1.5em;
   margin: 0;
   min-width: 100%;

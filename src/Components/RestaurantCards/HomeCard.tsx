@@ -39,31 +39,15 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         </div>
       </article>
       <article className='card-buttons'>
-        {/* <addToList /> */}
+        
         <Dropdown />
-        {/* <label className="dropdown">
-          <div className="dd-button">
-            Add To List
-          </div>
-          <div className="dd-input" id="test">
-            <ul className="dd-menu">
-              <li>Gotta Go!</li>
-              <li>Loved It!</li>
-              <li>Generic Button</li>
-              <li className="divider"></li>
-              <li>
-                <a href="#">+ Add New List</a>
-              </li>
-            </ul>
-          </div>
-        </label> */}
 
-        <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={props.id} onClick={(event) => 
+        {/* <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={props.id} onClick={(event) => 
           props.addToList('gottaGo', props.id)}>Gotta Go!
         </button>
         <button aria-label='click here to add to Loved It List' className='loved-it' id={props.id} onClick={(event) => 
           props.addToList('lovedIt', props.id)}>Loved It!
-        </button>
+        </button> */}
         <a href={props.url} target='_blank'>
           <button className='more-info'>View On Yelp
             <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>

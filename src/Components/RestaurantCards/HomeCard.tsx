@@ -1,6 +1,8 @@
 import './RestaurantCards.scss';
 import yelp_icon_white from './yelp_icon_white.png';
 import yelp_icon_black from './yelp_icon_black.png';
+import Dropdown from '../Dropdown/AddToList';
+// import AddToList from '../AddToListButton'
 // import StarRatings from '../StarRatings/StarRatings';
 
 interface Props {
@@ -37,6 +39,25 @@ const HomeCard: React.FC<Props> = (props: Props) => {
         </div>
       </article>
       <article className='card-buttons'>
+        {/* <addToList /> */}
+        <Dropdown />
+        {/* <label className="dropdown">
+          <div className="dd-button">
+            Add To List
+          </div>
+          <div className="dd-input" id="test">
+            <ul className="dd-menu">
+              <li>Gotta Go!</li>
+              <li>Loved It!</li>
+              <li>Generic Button</li>
+              <li className="divider"></li>
+              <li>
+                <a href="#">+ Add New List</a>
+              </li>
+            </ul>
+          </div>
+        </label> */}
+
         <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={props.id} onClick={(event) => 
           props.addToList('gottaGo', props.id)}>Gotta Go!
         </button>

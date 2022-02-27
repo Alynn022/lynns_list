@@ -96,8 +96,8 @@ class MyLists extends React.Component<Props, State> {
             Select a list to view.
           </p>
           <article className='buttons'>
-            <Link to='lovedIt' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
-            <Link to='gottaGo' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link>
+            {/* <Link to='lovedIt' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
+            <Link to='gottaGo' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link> */}
           </article>
         <button className='new-list-button' onClick={() => this.showNewListInput()}>
           <div className='plus'>

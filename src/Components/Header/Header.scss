@@ -7,7 +7,7 @@ header {
   padding: 2%;
   position: fixed;
   top: 0;
-  width: 100%;
+  width: calc(100% - 20px);
   
   h1 {
     font-size: 4em;

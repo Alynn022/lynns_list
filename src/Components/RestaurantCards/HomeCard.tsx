@@ -40,7 +40,7 @@ const HomeCard: React.FC<Props> = (props: Props) => {
       </article>
       <article className='card-buttons'>
         
-        <Dropdown />
+        {/* <Dropdown /> */}
 
         <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={props.id} onClick={(event) => 
           props.addToList('gottaGo', props.id)}>Gotta Go!

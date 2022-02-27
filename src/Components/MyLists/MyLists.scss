@@ -8,7 +8,7 @@
 
   .list-menu-container {
     @include m.flexbox(column, wrap, center, center, center);
-    position: fixed; //
+    position: fixed;
     width: 100%;
     margin-bottom:auto; //These are all that I added to styling for making it "fixed"
     top: 17%;

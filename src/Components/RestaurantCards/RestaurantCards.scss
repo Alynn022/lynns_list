@@ -65,12 +65,13 @@
     @include m.flexbox(column, nowrap, normal, flex-start, normal);
 
     .gotta-go, 
-    .loved-it,
-    .delete-button, 
-    .more-info {
+    .loved-it, 
+    .more-info,
+    .delete-button {
       border: none;
       padding: 5%;
-      margin: 0 0 10% 0;
+      // margin: 0 0 10% 0;
+      margin: 10% 0 0 0;
       font-weight: 600;
       font-size: 1.5em;
       color: v.$offWhite;

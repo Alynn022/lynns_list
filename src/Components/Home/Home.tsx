@@ -50,7 +50,7 @@ class Home extends React.Component<Props, State> {
     return (
       <section className='home-page'>
         {restaurantCards}
-        <a className='load-more' onClick={() => this.loadMoreResults()}>Load More...</a>
+        <a className='load-more'  tabIndex={0} onClick={() => this.loadMoreResults()}>Load More...</a>
       </section>
     )
   }

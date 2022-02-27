@@ -2,9 +2,12 @@
 @use '../../styles/_mixins' as m;
 
 header {
+  @include m.flexbox(row, nowrap, normal, space-between, center);
   background-color: v.$medium;
   padding: 2%;
-  @include m.flexbox(row, nowrap, normal, space-between, center);
+  position: fixed;
+  top: 0;
+  width: calc(100% - 20px);
   
   h1 {
     font-size: 4em;

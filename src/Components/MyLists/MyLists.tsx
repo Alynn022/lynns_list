@@ -12,13 +12,15 @@ interface Props {
 
 interface State {
   cardsToDisplay: JSX.Element[], 
-  selectedList: string
+  selectedList: string,
+  input: boolean
 }
 
 class MyLists extends React.Component<Props, State> {
   state: State = {
     cardsToDisplay: [],
-    selectedList: this.props.selectedList
+    selectedList: this.props.selectedList,
+    input: false
   }
 
   componentDidMount = () => {
@@ -56,10 +58,18 @@ class MyLists extends React.Component<Props, State> {
   }
 
   showNewListInput = (): void => {
-    
+    this.setState(prevState => ({
+      input: !prevState.input
+    }))
   }
 
   render() {
+    const inputField = this.state.input &&
+      <div>
+        <input type='text'></input>
+        <button>Submit</button>
+      </div>
+
     return (
       <div className='my-lists-container'>
         <section className='fixed-buttons'>
@@ -71,12 +81,13 @@ class MyLists extends React.Component<Props, State> {
               <Link to="lovedIt" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
               <Link to="gottaGo" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link>
             </section>
-            <button className='new-list-button'>
+            <button className='new-list-button' onClick={() => this.showNewListInput()}>
               <div className='plus'>
                 <p>+</p>
               </div>
               <div className='new-list-text'>Add New List</div>
             </button>
+            {inputField}
           </section>
         </section>
         <section className='listView'>

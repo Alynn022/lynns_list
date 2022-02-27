@@ -1,19 +1,23 @@
 @use '../../styles/_variables' as v;
 @use '../../styles/_mixins' as m;
 
-.my-lists-container {
+.my-lists-page {
   min-height: 100vh;
+  margin-top: 35%;
+}
 
-  .list-dropdown-container {
+  .list-menu-container {
     @include m.flexbox(column, wrap, center, center, center);
     position: fixed; //
     width: 100%;
     margin-bottom:auto; //These are all that I added to styling for making it "fixed"
+    top: 17%;
+    position: fixed;
+  }
 
     .instructions {
       font-size: 1.5em;
-      color: v.$dark;
-      margin: 2% 5%;
+      color: v.$white;
       text-align: center;
     }
 
@@ -39,14 +43,19 @@
         border: none;
       }
     }
-  }
 
   .my-lists-button-container {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
     width:100%;
+    background-color: v.$medium;
   }
-  
+
+  .buttons {
+    display: flex;
+    max-height: 3em;
+  }
   
   .btn-link {
     margin-left: 1em;
@@ -54,7 +63,6 @@
 
   .list-nav-btn {
     border: none;
-    padding: 5%;
     margin: 0 0 10% 0;
     font-weight: 600;
     font-size: 1.5em;
@@ -62,7 +70,9 @@
     cursor: pointer;
     background-color: v.$dark;
     border-radius: 0.2em;
-    min-width: 100%;
+    min-width: 5em;
+    min-height: 2em;
+    white-space: nowrap;
   }
 
   .new-list-button {
@@ -75,18 +85,18 @@
       height: 1.7em;
       width: 1.7em;
       border-radius: 50%;
-      background-color: v.$medium;
+      background-color: v.$white;
       @include m.flexbox(row, nowrap, normal, center, center);
     
       p {
         font-weight: bold;
-        color: v.$white;
+        color: v.$medium;
         font-size: 1.5em;
       }
     }
     
     .new-list-text {
-      color: v.$medium;
+      color: v.$white;
       font-size: 1.2em;
       font-weight: bold;
       margin-left: 0.5em;
@@ -97,14 +107,17 @@
       transform: scale(1.05);
       
       .plus {
-        background-color: v.$mediumHover;
+        background-color: v.$darkHover;
       }
     
       .new-list-text {
-        color: v.$mediumHover;
+        color: v.$darkHover;
       }
     }
   }
+
+.list-view {
+  // margin-top: 20%;
 }
 
 //desktop requirements
@@ -118,5 +131,13 @@
 @media screen and (max-width: 40em) {
   .hidden-mobile {
     display: none;
+  }
+
+  .my-lists-page {
+    margin-top: 50%;
+  }
+
+  .list-menu-container {
+    top: 12%;
   }
 }

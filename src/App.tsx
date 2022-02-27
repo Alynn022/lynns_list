@@ -68,11 +68,11 @@ class App extends React.Component<Props, State> {
     this.setState(prevState => ({ restaurants: prevState.restaurants.concat(data) }))
   }
 
-  submitNewList = (input: string): void => {
+  createNewList = (newListName: string): void => {
     this.setState ({ 
       userLists: {
         ...this.state.userLists,
-        [input]: []
+        [newListName]: []
       }
     })
   }
@@ -90,6 +90,7 @@ class App extends React.Component<Props, State> {
             userLists={this.state.userLists}
             removeFromList={this.removeFromList}
             selectedList={match.params.selectedList}
+            createNewList={this.createNewList}
           />)}
           } 
         /> 

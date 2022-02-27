@@ -8,19 +8,22 @@ interface Props {
   userLists: UserLists;
   removeFromList: (listName: string, id: string) => void;
   selectedList: string;
+  createNewList: (newListName: string) => void;
 }
 
 interface State {
   cardsToDisplay: JSX.Element[], 
   selectedList: string,
-  input: boolean
+  input: boolean,
+  value: string
 }
 
 class MyLists extends React.Component<Props, State> {
   state: State = {
     cardsToDisplay: [],
     selectedList: this.props.selectedList,
-    input: false
+    input: false,
+    value: ''
   }
 
   componentDidMount = () => {
@@ -63,11 +66,26 @@ class MyLists extends React.Component<Props, State> {
     }))
   }
 
+  getInput = (): void => {
+    if (this.state.value) {
+      this.props.createNewList(this.state.value)
+      this.clearInput()
+    }
+  }
+
+  clearInput = (): void => {
+    this.setState({value: '', input: false})
+  }
+
+  handleChange = (event: any) => {
+    this.setState({ value: event.target.value });
+  }
+
   render() {
     const inputField = this.state.input &&
       <div>
-        <input type='text'></input>
-        <button>Submit</button>
+        <input className='list-input' type='text' value={this.state.value} onChange={event => this.handleChange(event)}></input>
+        <button onClick={() => this.getInput()}>Create List</button>
       </div>
 
     return (

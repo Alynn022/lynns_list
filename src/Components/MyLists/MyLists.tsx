@@ -55,6 +55,10 @@ class MyLists extends React.Component<Props, State> {
     this.setState({ selectedList: listName }, this.createCardsToDisplay)
   }
 
+  showNewListInput = (): void => {
+    
+  }
+
   render() {
     return (
       <div className='my-lists-container'>

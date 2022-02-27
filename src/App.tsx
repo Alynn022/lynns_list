@@ -67,6 +67,15 @@ class App extends React.Component<Props, State> {
   addRestaurants = (data: Restaurant[]): void => {
     this.setState(prevState => ({ restaurants: prevState.restaurants.concat(data) }))
   }
+
+  submitNewList = (input: string): void => {
+    this.setState ({ 
+      userLists: {
+        ...this.state.userLists,
+        [input]: []
+      }
+    })
+  }
   
   render() {
     const displayError = (this.state.error && <Error error={this.state.error}/>)

@@ -89,29 +89,31 @@ class MyLists extends React.Component<Props, State> {
       </div>
 
     return (
-      <div className='my-lists-container'>
-        <section className='fixed-buttons'>
-          <section className='list-dropdown-container'>
-            <p className='instructions'>
-              Select a list to view.
-            </p>
-            <section className="my-lists-button-container">
-              <Link to="lovedIt" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
-              <Link to="gottaGo" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link>
-            </section>
-            <button className='new-list-button' onClick={() => this.showNewListInput()}>
-              <div className='plus'>
-                <p>+</p>
-              </div>
-              <div className='new-list-text'>Add New List</div>
-            </button>
-            {inputField}
-          </section>
+      <div className='my-lists-page'>
+      <section className='list-menu-container'>
+        <section className='my-lists-button-container'>
+          <p className='instructions'>
+            Select a list to view.
+          </p>
+          <article className='buttons'>
+            <Link to='lovedIt' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
+            <Link to='gottaGo' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link>
+          </article>
+        <button className='new-list-button' onClick={() => this.showNewListInput()}>
+          <div className='plus'>
+            <p>+</p>
+          </div>
+          <div className='new-list-text'>Add New List</div>
+        </button>
+         {inputField}
         </section>
-        <section className='listView'>
+      </section>
+      <section className='my-lists-container'>
+        <section className='list-view'>
           { this.state.cardsToDisplay }
         </section>
-      </div>
+      </section>
+    </div>
     )
   }
 }

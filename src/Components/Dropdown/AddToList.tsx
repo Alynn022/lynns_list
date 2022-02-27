@@ -1,6 +1,6 @@
 
 import * as React from 'react';
-import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
+// import useDropdownMenu from 'react-accessible-dropdown-menu-hook';
 import { Wrapper, ActivatorButton, DropdownList } from './AddToList.style';
 
 interface DropDownItem {

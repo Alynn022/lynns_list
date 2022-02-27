@@ -7,7 +7,7 @@
   align-items: $alignItems;
 }
 
-@mixin flexgrid($alignContent, $justifyContent, $alignItems, $justifyItems){
+@mixin flexgrid($alignContent, $justifyContent, $alignItems, $justifyItems) {
   display: grid;
   align-content: $alignContent;
   justify-content: $justifyContent;

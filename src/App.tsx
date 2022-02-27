@@ -67,6 +67,24 @@ class App extends React.Component<Props, State> {
   addRestaurants = (data: Restaurant[]): void => {
     this.setState(prevState => ({ restaurants: prevState.restaurants.concat(data) }))
   }
+
+  createNewList = (newListName: string): void => {
+    const lists = Object.keys(this.state.userLists)
+    let checkList = false 
+    lists.forEach(list => {
+      if (list === newListName) {
+        checkList = true 
+      }
+    })
+    if (!checkList) {
+      this.setState ({ 
+        userLists: {
+          ...this.state.userLists,
+          [newListName]: []
+        }
+      })
+    }
+  }
   
   render() {
     const displayError = (this.state.error && <Error error={this.state.error}/>)
@@ -81,6 +99,7 @@ class App extends React.Component<Props, State> {
             userLists={this.state.userLists}
             removeFromList={this.removeFromList}
             selectedList={match.params.selectedList}
+            createNewList={this.createNewList}
           />)}
           } 
         /> 

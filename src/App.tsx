@@ -22,8 +22,7 @@ class App extends React.Component<Props, State> {
  state: State = {
    restaurants: [],
    userLists: {
-     gottaGo: [],
-     lovedIt: []
+     'My Favorites': []
    },
    error: ''
   }
@@ -109,6 +108,7 @@ class App extends React.Component<Props, State> {
             addToList={this.addToList}
             addRestaurants={this.addRestaurants}
             handleError ={this.handleError}
+            userLists={this.state.userLists}
           />
           }
         />

@@ -3,12 +3,14 @@ import { Restaurant } from '../../types';
 import HomeCard from '../RestaurantCards/HomeCard';
 import { getAllRestaurants } from '../../apiCalls';
 import './Home.scss';
+import { UserLists } from '../../types';
 
 interface Props {
   restaurants: Restaurant[];
   addToList: ((listName: string, id: string) => void)
   addRestaurants: (data: Restaurant[]) => void
   handleError: (error: string) => void
+  userLists: UserLists;
 }
 
 interface State {
@@ -43,6 +45,7 @@ class Home extends React.Component<Props, State> {
           location={restaurant.location.display_address}
           phone={restaurant.display_phone}
           url={restaurant.url}
+          userLists={this.props.userLists}
         />
       )
     })

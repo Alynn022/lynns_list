@@ -2,10 +2,12 @@ import * as React from 'react';
 import './MyLists.scss';
 import { UserLists } from '../../types';
 import ListCard from '../RestaurantCards/ListCard';
+import { Link } from 'react-router-dom';
 
 interface Props {
   userLists: UserLists;
   removeFromList: (listName: string, id: string) => void;
+  selectedList: string;
 }
 
 interface State {
@@ -16,7 +18,7 @@ interface State {
 class MyLists extends React.Component<Props, State> {
   state: State = {
     cardsToDisplay: [],
-    selectedList: 'gottaGo'
+    selectedList: this.props.selectedList
   }
 
   componentDidMount = () => {
@@ -56,21 +58,22 @@ class MyLists extends React.Component<Props, State> {
   render() {
     return (
       <div className='my-lists-container'>
-        <section className='list-dropdown-container'>
-          <p className='instructions'>
-            Select a list to view.
-          </p>
-          <select className='list-dropdown'
-            onChange={ event => this.updateList(event.target.value) }>
-            <option value='gottaGo'>Gotta Go!</option>
-            <option value='lovedIt'> Loved It!</option>
-          </select>
-          <button className='new-list-button'>
-            <div className='plus'>
-              <p>+</p>
-            </div>
-            <div className='new-list-text'>Add New List</div>
-          </button>
+        <section className='fixed-buttons'>
+          <section className='list-dropdown-container'>
+            <p className='instructions'>
+              Select a list to view.
+            </p>
+            <section className="my-lists-button-container">
+              <Link to="lovedIt" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
+              <Link to="gottaGo" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link>
+            </section>
+            <button className='new-list-button'>
+              <div className='plus'>
+                <p>+</p>
+              </div>
+              <div className='new-list-text'>Add New List</div>
+            </button>
+          </section>
         </section>
         <section className='listView'>
           { this.state.cardsToDisplay }

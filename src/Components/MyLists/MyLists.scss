@@ -6,6 +6,9 @@
 
   .list-dropdown-container {
     @include m.flexbox(column, wrap, center, center, center);
+    position: fixed; //
+    width: 100%;
+    margin-bottom:auto; //These are all that I added to styling for making it "fixed"
 
     .instructions {
       font-size: 1.5em;
@@ -24,6 +27,7 @@
       font-size: 1.5em;
       font-weight: bold;
       padding: 1%;
+      
 
       &:hover {
         background-color: v.$mediumHover;
@@ -35,6 +39,30 @@
         border: none;
       }
     }
+  }
+
+  .my-lists-button-container {
+    display: flex;
+    justify-content: center;
+    width:100%;
+  }
+  
+  
+  .btn-link {
+    margin-left: 1em;
+  }
+
+  .list-nav-btn {
+    border: none;
+    padding: 5%;
+    margin: 0 0 10% 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: v.$offWhite;
+    cursor: pointer;
+    background-color: v.$dark;
+    border-radius: 0.2em;
+    min-width: 100%;
   }
 
   .new-list-button {

@@ -37,6 +37,30 @@
     }
   }
 
+  .my-lists-button-container {
+    display: flex;
+    justify-content: center;
+
+    width:100%;
+  }
+  
+  .btn-link {
+    margin-left: 1em;
+  }
+
+  .list-nav-btn {
+    border: none;
+    padding: 5%;
+    margin: 0 0 10% 0;
+    font-weight: 600;
+    font-size: 1.5em;
+    color: v.$offWhite;
+    cursor: pointer;
+    background-color: v.$dark;
+    border-radius: 0.2em;
+    min-width: 100%;
+  }
+
   .new-list-button {
     background-color: transparent;
     border: none;

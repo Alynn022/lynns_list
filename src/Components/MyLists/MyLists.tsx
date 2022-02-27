@@ -62,14 +62,9 @@ class MyLists extends React.Component<Props, State> {
           <p className='instructions'>
             Select a list to view.
           </p>
-          {/* <select className='list-dropdown'
-            onChange={ event => this.updateList(event.target.value) }>
-            <option value='gottaGo'>Gotta Go!</option>
-            <option value='lovedIt'> Loved It!</option>
-          </select> */}
           <section className="my-lists-button-container">
-            <Link to="lovedIt"><button className='loved-it' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
-            <Link to="gottaGo"><button className='loved-it' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link>
+            <Link to="lovedIt" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
+            <Link to="gottaGo" className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link>
           </section>
           <button className='new-list-button'>
             <div className='plus'>

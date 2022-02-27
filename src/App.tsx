@@ -69,12 +69,21 @@ class App extends React.Component<Props, State> {
   }
 
   createNewList = (newListName: string): void => {
-    this.setState ({ 
-      userLists: {
-        ...this.state.userLists,
-        [newListName]: []
+    const lists = Object.keys(this.state.userLists)
+    let checkList = false 
+    lists.forEach(list => {
+      if (list === newListName) {
+        checkList = true 
       }
     })
+    if (!checkList) {
+      this.setState ({ 
+        userLists: {
+          ...this.state.userLists,
+          [newListName]: []
+        }
+      })
+    }
   }
   
   render() {

@@ -16,7 +16,6 @@
     };
   }
 
-
   .list-menu-container {
     width: 100%;
     margin-bottom:auto; 
@@ -64,14 +63,25 @@
 
     .list-buttons-container {
       text-align: center;
-      min-width: 20%;
-      max-width: 80%;
       padding: 1% 0;
+      
+      .scroll-wrap {
+        display: flex;
+        justify-content: center;
+        overflow: auto;
+        margin: 0 2% 1% 2%;
+      }
+      
+      .scroll-wrap > a > .list-button {
+        padding: 0.25em;
+        margin: 0.25em;
+      }
 
       .list-button,
       .submit {
         padding: 0 2%;
         margin: 1%;
+        min-width: 4em;
       }
     }
 

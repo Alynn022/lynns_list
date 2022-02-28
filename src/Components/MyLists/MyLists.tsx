@@ -112,7 +112,9 @@ class MyLists extends React.Component<Props, State> {
             <p className='instructions'>
               Select a list to view.
             </p>
-            { this.getListButtons() }
+            <div className='scroll-wrap'>
+              { this.getListButtons() }
+            </div>
           </article>
         <article className='new-list-container'>
           <button className='new-list-button' id='newList' onClick={() => this.showNewListInput()}>

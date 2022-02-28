@@ -2,10 +2,7 @@ import * as React from 'react';
 import './RestaurantCards.scss';
 import yelp_icon_white from './yelp_icon_white.png';
 import yelp_icon_black from './yelp_icon_black.png';
-import Dropdown from '../Dropdown/AddToList';
 import { UserLists } from '../../types';
-// import AddToList from '../AddToListButton'
-// import StarRatings from '../StarRatings/StarRatings';
 
 interface Props {
   id: string,

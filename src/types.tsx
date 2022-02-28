@@ -53,4 +53,19 @@ export interface UserLists {
   [key: string]: IndividualList;
 }
 
+interface Center {
+  longitude: number;
+  latitude: number;
+}
+
+interface Region {
+  center: Center;
+}
+
+export interface apiData {
+  businesses: Restaurant[];
+  region: Region;
+  total: number
+}
+
 

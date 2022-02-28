@@ -21,6 +21,10 @@ const getAllRestaurants = (offset: number = 0) => {
     }
   })
   .then(response => checkForError(response))
+  .then(data => {
+    console.log(data)
+  return data
+})
 }
 
 export {getAllRestaurants};

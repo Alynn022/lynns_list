@@ -10,7 +10,7 @@
   border: 1px solid v.$medium;
   box-shadow: 1px 1px 4px 1px v.$dark;
   border-radius: 0.5em;
-  margin: 2% 15%;
+  margin: 2% 10%;
   padding: 2% 5%;
   display: grid;
   grid-template-columns: 20% 50% 30%;
@@ -66,14 +66,42 @@
 
   .card-buttons {
     @include m.flexbox(column, nowrap, normal, flex-start, normal);
+    max-width: 20em;
 
-    .dropdown-content {
-      @include m.flexbox(column, nowrap, center, center, center);
+    .dropdown {
+      width: 20em;
+
+      .dropdown-btn {
+        // width: 20em; 
+        .fa {
+          color: v.$offWhite;
+          margin: 0 5%;
+
+          &:after {
+            transform: rotate(180deg)
+          }
+        }
+      }
+
+      .dropdown-content {
+        @include m.flexbox(column, nowrap, center, center, center);
+        list-style: none;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: absolute;
+        width: 20em;
+      }
+
+      .dropdown-item {
+        // position: absolute;
+      }
     }
+
 
     .dropdown-item {
       padding: 2%;
       font-size: 1.5em;
+      font-weight: bold;
       line-height: 1.5em;
       background-color: v.$light;
       color: v.$dark;
@@ -116,7 +144,9 @@
         background-color: v.$lightHover;
         color: v.$offBlack;
         // transform: scale(1.08);
-
+        .fa {
+          color: v.$offBlack;
+        }
         .yelp-logo-white {
           display: none;
         }

@@ -58,7 +58,7 @@ describe('MyLists component user flows', () => {
     
     .visit('http://localhost:3000')
       .get('.dropdown-btn').click()
-      .get('[data-cy=gottago]').click()
+      .get('dropdown-item').click('[data-cy=gottago]')
       .get('#my-lists-nav').click()
       .get('.list-card').should('exist')
       .get('.delete-button').should('exist')

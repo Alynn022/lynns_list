@@ -58,16 +58,17 @@ class HomeCard extends React.Component<Props, State> {
     const keys = Object.keys(this.props.userLists)
     return keys.map((key, index) => {
       return(
-        <a className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}</a>
+        <li className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}
+        </li>
       )
     })
   }
 
   render() {
     const dropDownList = this.state.dropdownOpen &&
-      <div id="myDropdown" className="dropdown-content">
+      <ul id="myDropdown" className="dropdown-content">
         {this.populateDropdown()}
-      </div>
+      </ul>
 
     return (
       <section className='home-card'>
@@ -86,10 +87,10 @@ class HomeCard extends React.Component<Props, State> {
         <article className='card-buttons'>
           <div className="dropdown">
           <button className="dropdown-btn" onClick={ () => this.displayDropdown() }> Add to List
+          <i className="fa fa-chevron-down fa-flip-horizontal"></i>
           </button>
             { dropDownList }
           </div>
-
           <div className='yelp'>
             <a href={this.props.url} target='_blank' tabIndex={-1}>
               <button className='more-info'>View On Yelp

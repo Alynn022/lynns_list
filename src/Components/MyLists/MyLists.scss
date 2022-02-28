@@ -3,16 +3,16 @@
 
 .my-lists-page {
   min-height: 100vh;
-  margin-top: 35%;
+  // margin-top: 35%;
 }
 
   .list-menu-container {
     @include m.flexbox(column, wrap, center, center, center);
-    position: fixed;
     width: 100%;
     margin-bottom:auto; //These are all that I added to styling for making it "fixed"
-    top: 17%;
+    // top: 17%;
     position: fixed;
+    bottom: 0;
   }
 
     .instructions {
@@ -50,6 +50,7 @@
     align-items: center;
     width:100%;
     background-color: v.$medium;
+    box-shadow: 0px -2px 4px 1px #093b48;
   }
 
   .buttons {
@@ -73,6 +74,7 @@
     min-width: 5em;
     min-height: 2em;
     white-space: nowrap;
+    padding: 0 2%;
   }
 
   .new-list-button {
@@ -131,13 +133,5 @@
 @media screen and (max-width: 40em) {
   .hidden-mobile {
     display: none;
-  }
-
-  .my-lists-page {
-    margin-top: 50%;
-  }
-
-  .list-menu-container {
-    top: 12%;
   }
 }

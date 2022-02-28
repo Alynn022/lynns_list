@@ -87,7 +87,7 @@
       border: none;
       padding: 5%;
       // margin: 0 0 10% 0;
-      margin: 10% 0 0 0;
+      margin: 0 0 10% 0;
       font-weight: 600;
       font-size: 1.5em;
       color: v.$offWhite;
@@ -133,13 +133,21 @@
     @include m.flexbox(column, nowrap, normal, normal, normal);
     
     .thumbnail {
-      width: 80%;
+      width: 60%;
       align-self: center;
     }
     
     .restaurant-info {
       margin: 10%;
       text-align: center;
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1.5em;
+      }
     
       .yelp-logo {
         width: 30%;

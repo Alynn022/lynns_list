@@ -95,7 +95,7 @@ class MyLists extends React.Component<Props, State> {
   render() {
     const inputField = this.state.input &&
       <div>
-        <input className='list-input' type='text' value={this.state.value} onChange={event => this.handleChange(event)}></input>
+        <input className='list-input'  maxLength={25} type='text' placeholder='max characters 25' value={this.state.value} onChange={event => this.handleChange(event)}></input>
         <button onClick={() => this.getInput()}>Create List</button>
       </div>
 

@@ -65,7 +65,7 @@ class HomeCard extends React.Component<Props, State> {
     const dropDownList = this.state.dropdownOpen &&
       <ul id="myDropdown" className="dropdown-content">
         {this.populateDropdown()}
-        <li className='dropdown-item'><a href='http://localhost:3000/gottago/#newList'>Create A New List</a></li>
+        <li className='dropdown-item'><a href='/gottago/#newList'>Create A New List</a></li>
       </ul>
 
     return (

@@ -86,7 +86,7 @@ class MyLists extends React.Component<Props, State> {
     return keys.map(key => {
       return (
         <Link key={key} to={`/${key}`} tabIndex={-1}>
-          <button className='list-button' tabIndex={0} onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
+          <button className='list-button' id={`${key}-list-button`} tabIndex={0} onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
         </Link>
       )
     });

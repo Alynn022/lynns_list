@@ -63,10 +63,9 @@ describe('Home Page user flows', () => {
       .get('.rating').should('have.text', 'Rating: 4.5')
       .get('.phone-number').should('have.text', '(303) 455-3811') 
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
+      .get('.dropdown-btn').click()
+      .get('.dropdown-item').should('have.text', 'Gotta GoLoved ItCreate A New List')
       .get('.more-info').should('exist')
-      .get('.gotta-go').should('exist')
-      .get('.loved-it').should('exist') //if className is changed to lovedIt, change test
-      // .get('.more-info').should('exist') // bring back if we bring back button
   });
 });
 

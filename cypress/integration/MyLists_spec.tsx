@@ -58,7 +58,7 @@ describe('MyLists component user flows', () => {
     
     .visit('http://localhost:3000')
       .get('.dropdown-btn').click()
-      .get('dropdown-item').click('[data-cy=gottago]')
+      .get('.dropdown-item').first().click({force: true})
       .get('#my-lists-nav').click()
       .get('.list-card').should('exist')
       .get('.delete-button').should('exist')
@@ -67,14 +67,14 @@ describe('MyLists component user flows', () => {
       .get('.rating').should('have.text', 'Rating: 4.5')
       .get('.phone-number').should('have.text', '(303) 455-3811') 
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
-      .get('.more-info').should('exist') 
-      // .get('.more-info').should('have.text', 'Tell Me More')
+      .get('.more-info').should('exist')
+      
 
-    .visit('http://localhost:3000')
+    .visit('http://localhost:3000') //switch to home button??
       .get('.dropdown-btn').click()
-      .get('.dropdown-item').first().next().click()
+      .get('.dropdown-item').first().next().click({force: true})
       .get('#my-lists-nav').click()
-      .get('.list-button').first().next().click()
+      .get('#lovedit-list-button').click()
       .get('.list-card').should('exist')
       .get('.thumbnail').should('exist')
       .get('.delete-button').should('exist')
@@ -94,16 +94,18 @@ describe('MyLists component user flows', () => {
         body: restaurantData() 
       }
     )
-      .visit('http://localhost:3000')
-        .get('.loved-it').click()
+      .visit('http://localhost:3000') 
+        .get('.dropdown-btn').click()
+        .get('.dropdown-item').first().next().click({force: true})
         .get('#my-lists-nav').click()
-        .get('.list-dropdown').select('lovedIt')
+        .get('#lovedit-list-button').click()
         .get('.list-card').should('exist')
         .get('.delete-button').click()
         .get('.list-card').should('not.exist')
 
-      .visit('http://localhost:3000')
-        .get('.gotta-go').click()
+      .visit('http://localhost:3000')// make home button
+        .get('.dropdown-btn').click()
+        .get('.dropdown-item').first().click({force: true})
         .get('#my-lists-nav').click()
         .get('.list-card').should('exist')
         .get('.delete-button').click()

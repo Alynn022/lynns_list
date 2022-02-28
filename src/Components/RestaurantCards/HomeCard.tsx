@@ -58,7 +58,7 @@ class HomeCard extends React.Component<Props, State> {
     const keys = Object.keys(this.props.userLists)
     return keys.map((key, index) => {
       return (
-        <li className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}
+        <li className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} tabIndex={0} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}
         </li>
       )
     })
@@ -77,7 +77,6 @@ class HomeCard extends React.Component<Props, State> {
         <article className='restaurant-info'>
         <h2 className='name' tabIndex={0}>{this.props.name}</h2>
           <p className='rating' tabIndex={0}>Rating: {this.props.rating}</p>
-          {/* Don't delete, Jani is working on this ---> <StarRatings rating={props.rating} /> */}
           <p className='phone-number'>
             <a href='tel:{props.phone}' className='phone-link' aria-label='phone number'>{this.props.phone}</a>
           </p>
@@ -87,7 +86,7 @@ class HomeCard extends React.Component<Props, State> {
         </article>
         <article className='card-buttons'>
           <div className="dropdown">
-            <button className="dropdown-btn" onClick={ () => this.displayDropdown() }> Add to List
+            <button className="dropdown-btn" tabIndex={0} onClick={ () => this.displayDropdown() }> Add to List
             <i className="fa fa-chevron-down fa-flip-horizontal"></i>
             </button>
               { dropDownList }

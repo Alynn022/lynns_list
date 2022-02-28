@@ -11,7 +11,7 @@
 - [Technologies](#technologies)
 
 ## Overview
-This is a group project incorporating a new stretch tech, TypeScript. Lynn's List is an application for users to maintain and keep track of what restaurants they have been to, want to visit, and/ or add to their personalized list. When a user first lands on the home page, they are able to view a list of individual restaurant information. A user is then able to create their own lists to add specific restaurants to, and can also view more information on the restaurant, by taking them to the yelp page of that restaurant. This application utilizes the Yelp Fushion API to bring the latest information on restarurants in Denver. 
+This is a group project incorporating a new stretch tech, TypeScript. Lynn's List is an application for users to maintain and keep track of what restaurants they have been to, want to visit, and/ or add to their personalized list. When a user first lands on the home page, they can view a list of individual restaurant information. A user is then able to create their own lists to add specific restaurants to. The user can also view more information on the restaurant, by taking them to the yelp page of that restaurant. This application utilizes the Yelp Fushion API to bring the latest information on restaurants in Denver. 
 
 ## Deployed site
 
@@ -39,23 +39,28 @@ A user is able to view other lists, "Loved It", and then click home to go back t
 ![home-button](https://media.giphy.com/media/fi4xLsQLnlNClNoUPw/giphy.gif)
 
 A user is able to create their own list and then add their restaurant to that list. 
+
 ![create-new-list](https://media.giphy.com/media/vr24wlIiybK9x6m8Xp/giphy.gif)
 
-App also has responsive layout for mobile view or browser view. 
+Appplication has responsive layout for mobile view or browser view. 
 
 ![responsive-layout](https://media.giphy.com/media/O7iwgPYNepBNtafgxC/giphy.gif)
 
+Accesibility Score:
+
+![Accessibility-Score](https://user-images.githubusercontent.com/89872714/156065172-9463c1fe-db03-4d96-a1e3-23c3ae0aaa93.png)
+
 ## Joint Learning Goal
-Our learning goals together as a group were to be able to build this application using a new technology where none of us have had previous experience on. 
+Our learning goal together as a group, was to build this application using a new technology, TypeScript, where none of us have had previous experience on. 
 
 ## Individual Reflection 
-Ali - 
+Ali - Learning goals were to continue gaining experience with React and dynamically rendering based on user input.
 
-Daniel -
+Daniel - My primary learning goal over the course of this project was to gain an understanding of strongly typed languages via Typescript. I also wanted to continue transferring the staples I learned in VanillaJS to React.
 
 Jani - Incorporating TypeScript into React. Understanding how to refactor class components into hooks, and  potentially stretching into React Styled Components.
 
-Lynn - My learning goals was to do more cypress testing using intercepts and stubbing static data, which we added to all of tests. I also wanted to be more familiar with class and functional components in TypeScript, and with this project, was able to understand when it was better when use one over the other. 
+Lynn - My learning goals was to do more cypress testing using intercepts and stubbing static data. I also wanted to be more familiar with class and functional components in TypeScript, and with this project, was able to understand when it was better when use one over the other. 
 
 ## Links 
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-3/stretch.html)

@@ -1,26 +1,29 @@
 @use '../../styles/_variables' as v;
 @use '../../styles/_mixins' as m;
 
+.home-cards {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 .home-card, .list-card {
   border: 1px solid v.$medium;
   box-shadow: 1px 1px 4px 1px v.$dark;
   border-radius: 0.5em;
-  margin: 5%;
-  padding: 5%;
+  margin: 2% 10%;
+  padding: 2% 5%;
   display: grid;
-  grid-template-columns: 25% 45% 30%;
+  grid-template-columns: 20% 50% 30%;
+  background-color: v.$medium;
 
-  &:hover {
-    background-color: v.$medium;
-
-    h2, p, a {
-      color: v.$offWhite;
-    };
-  }
+  h2, p, a {
+    color: v.$offWhite;
+  };
 
   .thumbnail {
-    width: 100%;
+    width: 80%;
     border-radius: 0.5em;
+    justify-self: center;
   }
 
   
@@ -63,18 +66,58 @@
 
   .card-buttons {
     @include m.flexbox(column, nowrap, normal, flex-start, normal);
+    max-width: 20em;
 
-    .dropdown-content {
-      @include m.flexbox(column, nowrap, center, center, center);
+    .dropdown {
+      // width: 20em;
+
+      .dropdown-btn {
+        // width: 20em; 
+        .fa {
+          color: v.$offWhite;
+          margin: 0 5%;
+
+          &:after {
+            transform: rotate(180deg)
+          }
+        }
+      }
+
+      .dropdown-content {
+        @include m.flexbox(column, nowrap, center, center, center);
+        list-style: none;
+        overflow-y: hidden;
+        overflow-x: hidden;
+        position: absolute;
+        width: 20em;
+      }
+
+      .dropdown-item {
+        a {
+          color: v.$dark;
+          font-style: italic;
+          letter-spacing: 1px;
+        }
+      }
+
+    }
+    
+    .yelp {
+      // min-width: 20em;
     }
 
     .dropdown-item {
       padding: 2%;
       font-size: 1.5em;
+      font-weight: bold;
+      line-height: 1.5em;
       background-color: v.$light;
       color: v.$dark;
       width: 95%;
-      border: 1px solid v.$medium;
+      border-radius: 0.2em;
+      border-bottom: 1px solid v.$medium;
+      border-left: 1px solid v.$medium;
+      border-right: 1px solid v.$medium;
 
       &:hover {
         cursor: pointer;
@@ -96,6 +139,7 @@
       border-radius: 0.2em;
       min-width: 100%;
 
+
       .yelp-logo-white {
         display: inline;
       }
@@ -108,8 +152,10 @@
         letter-spacing: 1px;
         background-color: v.$lightHover;
         color: v.$offBlack;
-        transform: scale(1.08);
-
+        // transform: scale(1.08);
+        .fa {
+          color: v.$offBlack;
+        }
         .yelp-logo-white {
           display: none;
         }
@@ -133,6 +179,60 @@
 //desktop requirements
 @media screen and (min-width: 40em) {
 
+}
+
+//tablet requirements
+@media screen and (max-width: 73em) {
+  .home-card, .list-card {
+    // @include m.flexbox(column, nowrap, normal, normal, normal);
+    
+    .thumbnail {
+      width: 100%;
+      align-self: center;
+    }
+    
+    .restaurant-info {
+      margin: 10%;
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    
+      .yelp-logo {
+        width: 30%;
+      }
+    }
+
+    .card-buttons {
+      margin: 10% 0;
+      
+      .dropdown-btn,
+      .more-info,
+      .delete-button {
+        font-size: 1.2em;
+      }
+
+      .more-info {
+        margin-top: 5%;
+
+        .yelp-logo-white {
+          width: 10%;
+        }
+
+        .yelp-logo-black {
+          width: 10%;
+        }
+      }
+
+      .dropdown-item {
+        font-size: 1.2em;
+      }
+    }
+  }
 }
 
 //mobile requirements
@@ -164,6 +264,20 @@
 
     .card-buttons {
       margin: 0 10%;
+      
+      .dropdown-btn,
+      .more-info,
+      .delete-button {
+        font-size: 1.2em;
+      }
+
+      .more-info {
+        margin-top: 5%;
+      }
+
+      .dropdown-item {
+        font-size: 1.2em;
+      }
     }
   }
 }

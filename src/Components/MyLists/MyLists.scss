@@ -4,17 +4,30 @@
 .my-lists-page {
   min-height: 100vh;
 
+  .my-lists-title {
+    margin: 2% 5%;
+    
+    .selected-list {
+      font-size: 2.5em;
+    }
+
+    a:hover { 
+      text-decoration: underline
+    };
+  }
+
+
   .list-menu-container {
-    @include m.flexbox(column, wrap, center, center, center);
+    // @include m.flexbox(column, wrap, center, center, center);
     width: 100%;
-    margin-bottom:auto; //These are all that I added to styling for making it "fixed"
-    // top: 17%;
+    margin-bottom:auto; 
     position: fixed;
     bottom: 0;
   }
 
     .instructions {
       font-size: 1.5em;
+      font-family: v.$headerFont;
       color: v.$white;
       text-align: center;
       text-shadow: 1px 1px 4px #000;
@@ -44,24 +57,28 @@
     }
 
   .my-lists-button-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    // display: flex;
+    // flex-direction: column;
+    // align-items: center;
+    display: grid;
+    grid-template-columns: 60% 40%;
     width:100%;
-    background-color: v.$medium;
+    background-color: v.$darkHover;
     box-shadow: 0px -2px 4px 1px v.$dark;
-    padding: 2% 0;
 
     .list-buttons-container {
-      display: flex;
-      flex-direction: row;
-      justify-content: space-around;
+      // display: flex;
+      // flex-direction: row;
+      // justify-content: space-around;
+      text-align: center;
       min-width: 20%;
       max-width: 80%;
       padding: 1% 0;
 
-      .list-button {
+      .list-button,
+      .submit {
         padding: 0 2%;
+        margin: 1%;
       }
     }
 
@@ -72,9 +89,8 @@
       font-weight: 600;
       font-size: 1.5em;
       min-height: 2em;
-      min-width: 5em;
       color: v.$offWhite;
-      background-color: v.$dark;
+      background-color: v.$medium;
       cursor: pointer;
       border-radius: 0.2em;
       white-space: nowrap;
@@ -83,7 +99,7 @@
         letter-spacing: 1px;
         background-color: v.$lightHover;
         color: v.$offBlack;
-        transform: scale(1.08);
+        // transform: scale(1.08);
       }
     }
   }
@@ -107,11 +123,18 @@
     padding: 0 2%;
   }
 
+  .new-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
   .new-list-button {
     background-color: transparent;
     border: none;
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 1em;
     
     .plus {
@@ -123,7 +146,7 @@
     
       p {
         font-weight: bold;
-        color: v.$medium;
+        color: v.$dark;
         font-size: 1.5em;
       }
     }
@@ -131,6 +154,7 @@
     .new-list-text {
       color: v.$white;
       font-size: 2em;
+      font-family: v.$headerFont;
       font-weight: bold;
       margin-left: 0.5em;
       letter-spacing: 2px;
@@ -141,17 +165,19 @@
       transform: scale(1.05);
       
       .plus {
-        background-color: v.$darkHover;
+        background-color: v.$lightHover;
       }
     
       .new-list-text {
-        color: v.$darkHover;
+        color: v.$lightHover;
       }
     }
   }
 
   .input-container {
     display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
 
     input {
       color: v.$darkHover;
@@ -176,5 +202,24 @@
 @media screen and (max-width: 40em) {
   .hidden-mobile {
     display: none;
+  }
+
+  .my-lists-page {
+    .my-lists-button-container {
+      display: flex;
+      flex-direction: column;
+      
+      .list-buttons-container {
+        max-width: 100%;
+      }
+    }
+
+    .input-container {
+      flex-direction: column;
+
+      input {
+        margin: 0 5% 2% 5%;
+      }
+    }
   }
 }

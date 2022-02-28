@@ -85,8 +85,8 @@ class MyLists extends React.Component<Props, State> {
     const keys = Object.keys(this.props.userLists);
     return keys.map(key => {
       return (
-        <Link key={key} to={`/${key}`}>
-          <button className='list-button' onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
+        <Link key={key} to={`/${key}`} tabIndex={-1}>
+          <button className='list-button' tabIndex={0} onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
         </Link>
       )
     });
@@ -95,27 +95,34 @@ class MyLists extends React.Component<Props, State> {
   render() {
     const inputField = this.state.input &&
       <div className='input-container'>
-        <input className='list-input' type='text' value={this.state.value} placeholder='List Name'onChange={event => this.handleChange(event)}></input>
-        <button className='submit' onClick={() => this.getInput()}>Create A List</button>
+        <input className='list-input'  maxLength={25} type='text' placeholder='max characters 25' value={this.state.value} onChange={event => this.handleChange(event)}></input>
+        <button className='submit' onClick={() => this.getInput()}>Create List</button>
       </div>
 
+    const noListMessage = !this.state.cardsToDisplay.length && <p>You currently have no restaurants saved to this list, please <a href='/'>return home</a> and make some selections.</p>
     return (
       <div className='my-lists-page'>
+        <section className='my-lists-title'>
+          <h2 className='selected-list' tabIndex={0}>Your "{this.props.userLists[this.state.selectedList].displayName}" List</h2>
+          { noListMessage }
+        </section>
       <section className='list-menu-container'>
         <section className='my-lists-button-container'>
-          <p className='instructions'>
-            Select a list to view.
-          </p>
           <article className='list-buttons-container'>
+            <p className='instructions'>
+              Select a list to view.
+            </p>
             { this.getListButtons() }
           </article>
-        <button className='new-list-button' onClick={() => this.showNewListInput()}>
+        <article className='new-list-container'>
+          <button className='new-list-button' id='newList' onClick={() => this.showNewListInput()}>
           <div className='plus'>
             <p>+</p>
           </div>
           <p className='new-list-text'>Add New List</p>
-        </button>
+          </button>
          { inputField }
+         </article>
         </section>
       </section>
       <section className='my-lists-container'>

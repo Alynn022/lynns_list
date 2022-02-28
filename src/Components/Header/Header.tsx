@@ -1,12 +1,16 @@
 import * as React from 'react';
 import './Header.scss'
+import lynnslist_logo from './lynnslist_logo.png';
+import lynnslist_logo_mobile from './lynnslist_logo_mobile.png';
 import { NavLink, Link } from 'react-router-dom';
 
 const Header = () => {
   return (
     <header>
-      <section className='logo'>
-        <h1 tabIndex={0} onClick={() => {window.location.href='/'}}> Lynn's List</h1>
+      <section className='logo-container' tabIndex={0} onClick={() => {window.location.href='/'}}>
+          <img className='logo hidden-mobile' src={lynnslist_logo} alt="Lynn's List"/> 
+          <img className='mobile-logo hidden-desktop' src={lynnslist_logo_mobile} alt="Lynn's List"/> 
+          <h1 className='hidden-mobile hidden-desktop'> Lynn's List</h1>
       </section>
       <nav>
         <ul className='menu'>

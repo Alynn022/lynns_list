@@ -1,48 +1,65 @@
-Welcome to Lynn's List!
+# Lynn's List 
 
-# Getting Started with Create React App
+## Table of Contents
+- [Overview](#overview)
+- [Deployed-site](#deployed-site)
+- [Screentshots](#screenshots)
+- [Joint-Learning-Goal](#joint-learning-goal)
+- [Individual-Reflection](#individual-reflection)
+- [Links](#links)
+- [Contributors](#contributors)
+- [Technologies](#technologies)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
+This is a group project incorporating a new stretch tech, TypeScript. Lynn's List is an application for users to maintain and keep track of what restaurants they have been to, want to visit, and/ or add to their personalized list. When a user first lands on the home page, they are able to view a list of individual restaurant information. A user is then able to create their own lists to add specific restaurants to, and can also view more information on the restaurant, by taking them to the yelp page of that restaurant. This application utilizes the Yelp Fushion API to bring the latest information on restarurants in Denver. 
 
-## Available Scripts
+## Deployed site
 
-In the project directory, you can run:
 
-### `npm start`
+## Screenshots 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Home page view 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+![home-view]()
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+![add-to-list-view]()
 
-### `npm run build`
+![list-of-restaurants]()
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+![home-button]()
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+![my-list-view]()
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![create-new-list]()
 
-### `npm run eject`
+App also has responsive layout for mobile view or browser view. 
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+![responsive-layout]()
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Joint Learning Goal
+Our learning goals together as a group were to be able to build this application using a new technology where none of us have had previous experience on. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Individual Reflection 
+Ali - 
+Daniel - 
+Jani - 
+Lynn - My learning goals was to do more cypress testing using intercepts and stubbing static data, which we added to all of tests. I also wanted to be more familiar with class and functional components, and with this project, was able to understand when it was better when use one over the other. 
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Links 
+Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-3/stretch.html)
 
-## Learn More
+## Contributors
+[Ali Roemhildt](https://github.com/aliroemhildt)
+[Daniel O'Connell](https://github.com/Daniel-OC)  
+[Jani Palomino](https://github.com/janitastic)  
+[Lynn Nguyen](https://github.com/Alynn022)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+## Technologies 
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- TypeScript 
+- JavaScript 
+- React Router
+- Sass
+- Fetch API 
+- Cypress 

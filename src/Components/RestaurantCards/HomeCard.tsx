@@ -4,6 +4,7 @@ import yelp_icon_white from './yelp_icon_white.png';
 import yelp_icon_black from './yelp_icon_black.png';
 import Dropdown from '../Dropdown/AddToList';
 import { UserLists } from '../../types';
+
 // import AddToList from '../AddToListButton'
 // import StarRatings from '../StarRatings/StarRatings';
 
@@ -81,6 +82,7 @@ class HomeCard extends React.Component<Props, State> {
           </p>
           <div className='address-container' tabIndex={0}>
             {this.displayAddress(this.props.location)}
+            {/* {this.props.location} */}
           </div>
         </article>
         <article className='card-buttons'>

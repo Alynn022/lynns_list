@@ -6,15 +6,15 @@ import DesktopFooter from './Components/Footer/DesktopFooter';
 import Home from './Components/Home/Home';
 import MyLists from './Components/MyLists/MyLists';
 import { getAllRestaurants } from './apiCalls';
-import { State } from './types';
+import { Restaurant, UserLists } from './types';
 import { Route } from 'react-router-dom';
-import { Restaurant } from '../src/types';
 import Error  from './Components/Error/Error'
 
-// interface State {
-//   restaurants: Restaurant[];
-//   userLists: UserLists;
-// }
+interface State {
+  restaurants: Restaurant[];
+  userLists: UserLists;
+  error: string;
+}
 
 interface Props {}
 
@@ -37,7 +37,7 @@ class App extends React.Component<Props, State> {
   componentDidMount = () => {
     getAllRestaurants()
     .then(data => {
-      this.setState({ restaurants: data.businesses})
+      this.setState({ restaurants: data})
     })
     .catch(error => {
       console.log(error)
@@ -109,15 +109,15 @@ class App extends React.Component<Props, State> {
       <div className="App">
         <Header />
         {displayError}
-        <Route exact path="/:selectedList" render={({match}) => 
-          { console.log(match)
+        <Route exact path="/:selectedList" render={({match}) => { 
             return (
-            <MyLists
-            userLists={this.state.userLists}
-            removeFromList={this.removeFromList}
-            selectedList={match.params.selectedList}
-            createNewList={this.createNewList}
-          />)}
+              <MyLists
+                userLists={this.state.userLists}
+                removeFromList={this.removeFromList}
+                selectedList={match.params.selectedList}
+                createNewList={this.createNewList}
+              />
+            )}
           } 
         /> 
         <Route exact path="/" render={() => 

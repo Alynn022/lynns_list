@@ -1,11 +1,11 @@
 import * as React from 'react';
-import { Restaurant } from '../../types';
 import HomeCard from '../RestaurantCards/HomeCard';
-import { getAllRestaurants } from '../../apiCalls';
 import DesktopFooter from '../Footer/DesktopFooter';
 import MobileFooter from '../Footer/MobileFooter';
-import './Home.scss';
+import { Restaurant } from '../../types';
+import { getAllRestaurants } from '../../apiCalls';
 import { UserLists } from '../../types';
+import './Home.scss';
 
 interface Props {
   restaurants: Restaurant[];
@@ -26,7 +26,7 @@ class Home extends React.Component<Props, State> {
 
   updateRestaurants = () => {
     getAllRestaurants(this.state.offset)
-      .then(data => this.props.addRestaurants(data.businesses))
+      .then(data => this.props.addRestaurants(data))
       .catch(error => this.props.handleError(error))
   }
 

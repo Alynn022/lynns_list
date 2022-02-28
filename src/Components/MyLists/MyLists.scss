@@ -4,10 +4,18 @@
 .my-lists-page {
   min-height: 100vh;
 
-  .selected-list {
+  .my-lists-title {
     margin: 2% 5%;
-    font-size: 2em;
+    
+    .selected-list {
+      font-size: 2.5em;
+    }
+
+    a:hover { 
+      text-decoration: underline
+    };
   }
+
 
   .list-menu-container {
     // @include m.flexbox(column, wrap, center, center, center);

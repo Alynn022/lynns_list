@@ -99,9 +99,13 @@ class MyLists extends React.Component<Props, State> {
         <button className='submit' onClick={() => this.getInput()}>Create A List</button>
       </div>
 
+    const noListMessage = !this.state.cardsToDisplay.length && <p>You currently have no restaurants saved to this list, please <a href='/'>return home</a> and make some selections.</p>
     return (
       <div className='my-lists-page'>
-        <h2 className='selected-list'>{this.state.selectedList}</h2>
+        <section className='my-lists-title'>
+          <h2 className='selected-list'>Your "{this.props.userLists[this.state.selectedList].displayName}" List</h2>
+          { noListMessage }
+        </section>
       <section className='list-menu-container'>
         <section className='my-lists-button-container'>
           <article className='list-buttons-container'>

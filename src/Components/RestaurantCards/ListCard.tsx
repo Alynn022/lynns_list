@@ -30,7 +30,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
         <h2 className='name' tabIndex={0}>{props.name}</h2>
         <p className='rating' tabIndex={0}>Rating: {props.rating}</p>
         <p className='phone-number'>
-          <a href='tel:{props.phone}' className='phone-link' aria-label='phone number'>{props.phone}</a>
+          <a href={`tel:${props.phone}`} className='phone-link' aria-label='phone number'>{props.phone}</a>
         </p>
         <div className='address-container' tabIndex={0}>
           {displayAddress(props.location)}
@@ -39,7 +39,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
       <article className='card-buttons'>
         <button className='delete-button' id={props.id} onClick={() => props.removeFromList(props.selectedList, props.id)}>Remove From List
         </button>
-        <a href={props.url} target='_blank' tabIndex={-1}>
+        <a className='yelp-link' href={props.url} target='_blank' tabIndex={-1}>
           <button className='more-info'>View On Yelp
             <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>
             <img src={yelp_icon_black} alt='visit yelp page' className='yelp-logo-black'/>

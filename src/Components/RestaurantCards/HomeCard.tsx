@@ -90,8 +90,8 @@ class HomeCard extends React.Component<Props, State> {
           <button
             className="dropdown-btn"
             onClick={ () => this.displayDropdown() }
-          >Add to new list</button>
-            {dropDownList}
+          >Add to List</button>
+            { dropDownList }
           {/* </div> */}
 
           {/* <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={this.props.id} onClick={(event) => 

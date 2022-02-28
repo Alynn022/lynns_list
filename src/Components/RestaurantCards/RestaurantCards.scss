@@ -71,10 +71,14 @@
     .dropdown-item {
       padding: 2%;
       font-size: 1.5em;
+      line-height: 1.5em;
       background-color: v.$light;
       color: v.$dark;
       width: 95%;
-      border: 1px solid v.$medium;
+      border-radius: 0.2em;
+      border-bottom: 1px solid v.$medium;
+      border-left: 1px solid v.$medium;
+      border-right: 1px solid v.$medium;
 
       &:hover {
         cursor: pointer;

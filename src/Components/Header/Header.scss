@@ -4,7 +4,6 @@
 header {
   @include m.flexbox(row, nowrap, normal, space-between, center);
   background-color: v.$mediumHover;
-  padding: 2%;
   
   h1 {
     font-size: 4em;

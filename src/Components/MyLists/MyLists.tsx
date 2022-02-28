@@ -31,13 +31,13 @@ class MyLists extends React.Component<Props, State> {
   }
  
   componentDidUpdate = () => {
-    if (this.state.cardsToDisplay.length !== this.props.userLists[this.state.selectedList].length) {
+    if (this.state.cardsToDisplay.length !== this.props.userLists[this.state.selectedList].restaurants.length) {
       this.createCardsToDisplay();
     }
   }
 
   createCardsToDisplay = () => {
-    const cards = this.props.userLists[this.state.selectedList].map(restaurant => {
+    const cards = this.props.userLists[this.state.selectedList].restaurants.map(restaurant => {
       return (
         <ListCard 
           key={restaurant.id}
@@ -81,6 +81,17 @@ class MyLists extends React.Component<Props, State> {
     this.setState({ value: event.target.value });
   }
 
+  getListButtons = () => {
+    const keys = Object.keys(this.props.userLists);
+    return keys.map(key => {
+      return (
+        <Link key={key} to={`/${key}`}>
+          <button onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
+        </Link>
+      )
+    });
+  }
+
   render() {
     const inputField = this.state.input &&
       <div>
@@ -96,6 +107,7 @@ class MyLists extends React.Component<Props, State> {
             Select a list to view.
           </p>
           <article className='buttons'>
+            { this.getListButtons() }
             {/* <Link to='lovedIt' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
             <Link to='gottaGo' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link> */}
           </article>

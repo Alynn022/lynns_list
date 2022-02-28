@@ -41,14 +41,18 @@ class HomeCard extends React.Component<Props, State> {
     }))
   }
 
+  handleClick = (key: string) => {
+    this.props.addToList(key, this.props.id);
+    this.displayDropdown();
+  }
+
   populateDropdown = () => {
-    const listItems = Object.keys(this.props.userLists)
-    return listItems.map((item, index) => {
+    const keys = Object.keys(this.props.userLists)
+    return keys.map((key, index) => {
       return(
-        <a key={index}>{item}</a>
+        <a className='dropdown-item' key={index} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}</a>
       )
     })
-    
   }
 
   render() {
@@ -74,10 +78,13 @@ class HomeCard extends React.Component<Props, State> {
         <article className='card-buttons'>
           
           {/* <Dropdown /> */}
-          <div className="dropdown">
-          <button id="dropDownBtn" className="dropbtn" onClick={ () => this.displayDropdown() }>Add to new list</button>
+          {/* <div className="dropdown"> */}
+          <button
+            className="dropdown-btn"
+            onClick={ () => this.displayDropdown() }
+          >Add to new list</button>
             {dropDownList}
-          </div>
+          {/* </div> */}
 
           {/* <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={this.props.id} onClick={(event) => 
             this.props.addToList('gottaGo', this.props.id)}>Gotta Go!

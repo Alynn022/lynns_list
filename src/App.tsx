@@ -93,8 +93,8 @@ class App extends React.Component<Props, State> {
           />
           }
         />
-        <MobileFooter />
-        <DesktopFooter />
+        {/* <MobileFooter /> */}
+        {/* <DesktopFooter /> */}
       </div>
     );
   }

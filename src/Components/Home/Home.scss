@@ -3,29 +3,35 @@
 
 .home-page {
   text-align: center;
-  margin: 25% 0 10% 0;
-}
+  margin: 5% 0 10% 0;
+  height: 100vh;
 
-.load-more {
-  border: none;
-  padding: 1% 10%;
-  margin: 10%;
-  font-weight: 600;
-  font-size: 1.5em;
-  font-family: v.$headerFont;
-  color: v.$offBlack;
-  cursor: pointer;
-  transition: all .2s ease-in-out;
-  background-color: v.$grayHover;
-  border-radius: 0.2em;
-  
-  &:hover {
-    letter-spacing: 1px;
-    text-transform: underline;
-    transform: scale(1.08);
-    background-color: v.$gray;
+  .bottom-button {
+    padding: 0 0 10% 0;
+    
+    .load-more {
+      border: none;
+      padding: 1% 10%;
+      margin: 10%;
+      font-weight: 600;
+      font-size: 1.5em;
+      font-family: v.$headerFont;
+      color: v.$offBlack;
+      cursor: pointer;
+      transition: all .2s ease-in-out;
+      background-color: v.$grayHover;
+      border-radius: 0.2em;
+      
+      &:hover {
+        letter-spacing: 1px;
+        text-transform: underline;
+        transform: scale(1.08);
+        background-color: v.$gray;
+      }
+    }
   }
 }
+
 
 //desktop requirements
 @media screen and (min-width: 40em) {

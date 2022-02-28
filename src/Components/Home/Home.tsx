@@ -2,6 +2,8 @@ import * as React from 'react';
 import { Restaurant } from '../../types';
 import HomeCard from '../RestaurantCards/HomeCard';
 import { getAllRestaurants } from '../../apiCalls';
+import DesktopFooter from '../Footer/DesktopFooter';
+import MobileFooter from '../Footer/MobileFooter';
 import './Home.scss';
 
 interface Props {
@@ -50,7 +52,11 @@ class Home extends React.Component<Props, State> {
     return (
       <section className='home-page'>
         {restaurantCards}
+      <article className='bottom-button'>
         <a className='load-more'  tabIndex={0} onClick={() => this.loadMoreResults()}>Load More...</a>
+      </article>
+        <MobileFooter />
+        <DesktopFooter />
       </section>
     )
   }

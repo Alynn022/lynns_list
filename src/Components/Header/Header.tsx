@@ -8,7 +8,7 @@ const Header = () => {
       <section className='logo'>
         <h1 tabIndex={0} onClick={() => {window.location.href='/'}}> Lynn's List</h1>
       </section>
-      <nav className='hidden-mobile'>
+      <nav>
         <ul className='menu'>
           <li>
             <NavLink exact to='/' activeClassName='selected' id="home-nav-button">Home</NavLink>

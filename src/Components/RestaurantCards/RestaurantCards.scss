@@ -93,10 +93,18 @@
       }
 
       .dropdown-item {
-        // position: absolute;
+        a {
+          color: v.$dark;
+          font-style: italic;
+          letter-spacing: 1px;
+        }
       }
-    }
 
+    }
+    
+    .yelp {
+      min-width: 20em;
+    }
 
     .dropdown-item {
       padding: 2%;
@@ -130,6 +138,7 @@
       background-color: v.$dark;
       border-radius: 0.2em;
       min-width: 100%;
+
 
       .yelp-logo-white {
         display: inline;

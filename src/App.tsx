@@ -110,7 +110,7 @@ class App extends React.Component<Props, State> {
         <Header />
         {displayError}
         <Route exact path="/:selectedList" render={({match}) => 
-          { console.log(match)
+          { 
             return (
             <MyLists
             userLists={this.state.userLists}

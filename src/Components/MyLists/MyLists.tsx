@@ -99,7 +99,7 @@ class MyLists extends React.Component<Props, State> {
         <button className='submit' onClick={() => this.getInput()}>Create List</button>
       </div>
 
-    const noListMessage = !this.state.cardsToDisplay.length && <p>You currently have no restaurants saved to this list, please <a href='/'>return home</a> and make some selections.</p>
+    const noListMessage = !this.state.cardsToDisplay.length && <p className='no-restaurants-yet'>You currently have no restaurants saved to this list, please <a href='/'>return home</a> and make some selections.</p>
     return (
       <div className='my-lists-page'>
         <section className='my-lists-title'>

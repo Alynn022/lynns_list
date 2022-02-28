@@ -10,7 +10,7 @@ const Header = () => {
       <section className='logo-container' tabIndex={0} onClick={() => {window.location.href='/'}}>
           <img className='logo hidden-mobile' src={lynnslist_logo} alt="Lynn's List"/> 
           <img className='mobile-logo hidden-desktop' src={lynnslist_logo_mobile} alt="Lynn's List"/> 
-          <h1 className='hidden-mobile hidden-desktop'> Lynn's List</h1>
+          <h1 className='hidden-mobile hidden-desktop'>Lynn's List</h1>
       </section>
       <nav>
         <ul className='menu'>

@@ -1,3 +1,5 @@
+import { createYield } from "typescript"
+
 describe('MyLists component user flows', () => {
   const restaurantData = () => {
     return { 
@@ -54,9 +56,10 @@ describe('MyLists component user flows', () => {
     )
     .visit('http://localhost:3000')
       .get('#my-lists-nav').click()
-      .get('.list-card').should('not.exist')
-    
-    .visit('http://localhost:3000')
+      .get('.list-card').should('not.exist') 
+      .get('.selected-list').should('have.text', 'Your "Gotta Go" List')
+      .get('.no-restaurants-yet').should('have.text', 'You currently have no restaurants saved to this list, please return home and make some selections.')
+      .get('#home-nav-button').click()
       .get('.dropdown-btn').click()
       .get('.dropdown-item').first().click({force: true})
       .get('#my-lists-nav').click()
@@ -65,12 +68,12 @@ describe('MyLists component user flows', () => {
       .get('.thumbnail').should('exist')
       .get('.name').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
-      .get('.phone-number').should('have.text', '(303) 455-3811') 
+      .get('.phone-number').should('have.text', '(303) 455-3811')
+      .get('.phone-link').should('have.attr', 'href', 'tel:(303) 455-3811')  
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
       .get('.more-info').should('exist')
-      
-
-    .visit('http://localhost:3000') //switch to home button??
+      .get('.yelp-link').should('have.attr', 'href', 'https://www.yelp.com/biz/little-man-ice-cream-denver?adjust_creative=E6U6G8Kpna_RIMndHiaPpw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=E6U6G8Kpna_RIMndHiaPpw')
+      .get('#home-nav-button').click()
       .get('.dropdown-btn').click()
       .get('.dropdown-item').first().next().click({force: true})
       .get('#my-lists-nav').click()
@@ -80,10 +83,12 @@ describe('MyLists component user flows', () => {
       .get('.delete-button').should('exist')
       .get('.name').should('have.text', 'Little Man Ice Cream')
       .get('.rating').should('have.text', 'Rating: 4.5')
-      .get('.phone-number').should('have.text', '(303) 455-3811') 
+      .get('.phone-number').should('have.text', '(303) 455-3811')
+      .get('.phone-link').should('have.attr', 'href', 'tel:(303) 455-3811')  
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
       .get('.more-info').should('exist') 
-      // .get('.more-info').should('have.text', 'Tell Me More')
+      .get('.yelp-link').should('have.attr', 'href', 'https://www.yelp.com/biz/little-man-ice-cream-denver?adjust_creative=E6U6G8Kpna_RIMndHiaPpw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=E6U6G8Kpna_RIMndHiaPpw')
+
   })
 
   it('should be able to delete a restaurant from a user\'s lists', () => {
@@ -102,13 +107,22 @@ describe('MyLists component user flows', () => {
         .get('.list-card').should('exist')
         .get('.delete-button').click()
         .get('.list-card').should('not.exist')
-
-      .visit('http://localhost:3000')// make home button
+        .get('#home-nav-button').click()
         .get('.dropdown-btn').click()
         .get('.dropdown-item').first().click({force: true})
         .get('#my-lists-nav').click()
         .get('.list-card').should('exist')
         .get('.delete-button').click()
         .get('.list-card').should('not.exist')
-})
+  })
+
+  it('A user should be able to add their own new list', () => {
+
+    cy.visit('http://localhost:3000')
+      .get('#my-lists-nav').click()
+      .get('.new-list-button').click()
+      .get('.list-input').type('A New List')
+      .get('.submit').click()
+      .get('.list-button').eq(2).should('have.text', 'A New List')
+  })
 })

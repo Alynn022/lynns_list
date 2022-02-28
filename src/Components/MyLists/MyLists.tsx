@@ -103,19 +103,21 @@ class MyLists extends React.Component<Props, State> {
       <div className='my-lists-page'>
       <section className='list-menu-container'>
         <section className='my-lists-button-container'>
-          <p className='instructions'>
-            Select a list to view.
-          </p>
           <article className='list-buttons-container'>
+            <p className='instructions'>
+              Select a list to view.
+            </p>
             { this.getListButtons() }
           </article>
-        <button className='new-list-button' onClick={() => this.showNewListInput()}>
+        <article className='new-list-container'>
+          <button className='new-list-button' onClick={() => this.showNewListInput()}>
           <div className='plus'>
             <p>+</p>
           </div>
           <p className='new-list-text'>Add New List</p>
-        </button>
+          </button>
          { inputField }
+         </article>
         </section>
       </section>
       <section className='my-lists-container'>

@@ -9,14 +9,11 @@
   padding: 5%;
   display: grid;
   grid-template-columns: 25% 45% 30%;
+  background-color: v.$medium;
 
-  &:hover {
-    background-color: v.$medium;
-
-    h2, p, a {
-      color: v.$offWhite;
-    };
-  }
+  h2, p, a {
+    color: v.$offWhite;
+  };
 
   .thumbnail {
     width: 100%;
@@ -112,7 +109,7 @@
         letter-spacing: 1px;
         background-color: v.$lightHover;
         color: v.$offBlack;
-        transform: scale(1.08);
+        // transform: scale(1.08);
 
         .yelp-logo-white {
           display: none;

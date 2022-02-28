@@ -83,7 +83,7 @@
         letter-spacing: 1px;
         background-color: v.$lightHover;
         color: v.$offBlack;
-        transform: scale(1.08);
+        // transform: scale(1.08);
       }
     }
   }
@@ -138,7 +138,7 @@
 
     &:hover {
       cursor: pointer;
-      transform: scale(1.05);
+      // transform: scale(1.05);
       
       .plus {
         background-color: v.$darkHover;

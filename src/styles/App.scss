@@ -17,6 +17,7 @@ p {
   font-family: v.$bodyFont;
   font-size: 1.5em;
   padding: 0.5em 0;
+  font-family: v.$headerFont;
 }
 
 .white-text { 
@@ -32,7 +33,7 @@ p {
 }
 
 button {
-  font-family: v.$linkFont;
+  font-family: v.$bodyFont;
 }
 
 // these are here for router styling

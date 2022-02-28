@@ -2,7 +2,6 @@ import * as React from 'react';
 import './RestaurantCards.scss';
 import yelp_icon_white from './yelp_icon_white.png';
 import yelp_icon_black from './yelp_icon_black.png';
-import Dropdown from '../Dropdown/AddToList';
 import { UserLists } from '../../types';
 // import AddToList from '../AddToListButton'
 // import StarRatings from '../StarRatings/StarRatings';
@@ -29,7 +28,7 @@ class HomeCard extends React.Component<Props, State> {
     dropdownOpen: false
   }
 
-  componentDidUpdate = () => {
+  componentDidMount = () => {
     window.addEventListener('scroll', this.closeDropdown);
   }
 
@@ -58,7 +57,7 @@ class HomeCard extends React.Component<Props, State> {
     const keys = Object.keys(this.props.userLists)
     return keys.map((key, index) => {
       return(
-        <a className='dropdown-item' key={index} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}</a>
+        <a className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}</a>
       )
     })
   }

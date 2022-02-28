@@ -94,28 +94,31 @@ class MyLists extends React.Component<Props, State> {
 
   render() {
     const inputField = this.state.input &&
-      <div>
+      <div className='input-container'>
         <input className='list-input'  maxLength={25} type='text' placeholder='max characters 25' value={this.state.value} onChange={event => this.handleChange(event)}></input>
         <button onClick={() => this.getInput()}>Create List</button>
       </div>
 
     return (
       <div className='my-lists-page'>
+        <h2 className='selected-list'>{this.state.selectedList}</h2>
       <section className='list-menu-container'>
         <section className='my-lists-button-container'>
-          <p className='instructions'>
-            Select a list to view.
-          </p>
           <article className='list-buttons-container'>
+            <p className='instructions'>
+              Select a list to view.
+            </p>
             { this.getListButtons() }
           </article>
-        <button className='new-list-button' onClick={() => this.showNewListInput()}>
+        <article className='new-list-container'>
+          <button className='new-list-button' id='newList' onClick={() => this.showNewListInput()}>
           <div className='plus'>
             <p>+</p>
           </div>
           <p className='new-list-text'>Add New List</p>
-        </button>
+          </button>
          { inputField }
+         </article>
         </section>
       </section>
       <section className='my-lists-container'>

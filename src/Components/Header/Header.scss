@@ -3,25 +3,33 @@
 
 header {
   @include m.flexbox(row, nowrap, normal, space-between, center);
-  background-color: v.$medium;
-  padding: 2%;
-  // position: fixed;
-  // top: 0;
-  // width: calc(100% - 60px);
-  // width: 100%;
+  background-color: v.$mediumHover;
   
-  h1 {
-    font-size: 4em;
-    padding: 2%;
-    color: v.$offWhite;
-    
-    &:hover {
-      cursor: pointer;
+  
+  .logo-container {
+    flex: 3;
+    display: flex;
+    align-items: center;
+
+    .logo {
+      width: 40%;
+      margin: 1%;
     }
-  }
-  
-  .logo {
-    flex: 3
+
+    .mobile-logo {
+      width: 20%;
+      margin: 1%;
+    }
+    
+    h1 {
+      font-size: 4em;
+      padding: 2%;
+      color: v.$offWhite;
+      
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
   
   nav {
@@ -74,8 +82,6 @@ header {
   }
 
   header {
-    h1 {
-      font-size: 2em;
-    }
+    height: 5em;
   }
 }

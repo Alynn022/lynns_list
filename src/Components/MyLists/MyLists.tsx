@@ -101,6 +101,7 @@ class MyLists extends React.Component<Props, State> {
 
     return (
       <div className='my-lists-page'>
+        <h2 className='selected-list'>{this.state.selectedList}</h2>
       <section className='list-menu-container'>
         <section className='my-lists-button-container'>
           <article className='list-buttons-container'>

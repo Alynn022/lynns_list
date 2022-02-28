@@ -4,6 +4,11 @@
 .my-lists-page {
   min-height: 100vh;
 
+  .selected-list {
+    margin: 2% 5%;
+    font-size: 2em;
+  }
+
   .list-menu-container {
     // @include m.flexbox(column, wrap, center, center, center);
     width: 100%;

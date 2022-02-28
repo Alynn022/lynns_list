@@ -86,7 +86,7 @@ class MyLists extends React.Component<Props, State> {
     return keys.map(key => {
       return (
         <Link key={key} to={`/${key}`}>
-          <button onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
+          <button className='list-button' onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
         </Link>
       )
     });
@@ -106,18 +106,16 @@ class MyLists extends React.Component<Props, State> {
           <p className='instructions'>
             Select a list to view.
           </p>
-          <article className='buttons'>
+          <article className='list-buttons-container'>
             { this.getListButtons() }
-            {/* <Link to='lovedIt' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('lovedIt')}>Loved It</button></Link>
-            <Link to='gottaGo' className='btn-link'><button className='list-nav-btn' onClick={() => this.updateList('gottaGo')}>Gotta Go</button></Link> */}
           </article>
         <button className='new-list-button' onClick={() => this.showNewListInput()}>
           <div className='plus'>
             <p>+</p>
           </div>
-          <div className='new-list-text'>Add New List</div>
+          <p className='new-list-text'>Add New List</p>
         </button>
-         {inputField}
+         { inputField }
         </section>
       </section>
       <section className='my-lists-container'>

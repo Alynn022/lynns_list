@@ -18,7 +18,6 @@
 
 
   .list-menu-container {
-    // @include m.flexbox(column, wrap, center, center, center);
     width: 100%;
     margin-bottom:auto; 
     position: fixed;
@@ -57,9 +56,6 @@
     }
 
   .my-lists-button-container {
-    // display: flex;
-    // flex-direction: column;
-    // align-items: center;
     display: grid;
     grid-template-columns: 60% 40%;
     width:100%;
@@ -67,9 +63,6 @@
     box-shadow: 0px -2px 4px 1px v.$dark;
 
     .list-buttons-container {
-      // display: flex;
-      // flex-direction: row;
-      // justify-content: space-around;
       text-align: center;
       min-width: 20%;
       max-width: 80%;
@@ -99,7 +92,6 @@
         letter-spacing: 1px;
         background-color: v.$lightHover;
         color: v.$offBlack;
-        // transform: scale(1.08);
       }
     }
   }
@@ -124,17 +116,13 @@
   }
 
   .new-list-container {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    @include m.flexbox(column, nowrap, normal, center, normal);
   }
 
   .new-list-button {
+    @include m.flexbox(row, nowrap, normal, center, center);
     background-color: transparent;
     border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin: 1em;
     
     .plus {
@@ -175,8 +163,7 @@
   }
 
   .input-container {
-    display: flex;
-    justify-content: center;
+    @include m.flexbox(row, nowrap, normal, center, normal);
     margin-bottom: 5%;
 
     input {
@@ -206,8 +193,7 @@
 
   .my-lists-page {
     .my-lists-button-container {
-      display: flex;
-      flex-direction: column;
+      @include m.flexbox(column, nowrap, normal, normal, normal);
       
       .list-buttons-container {
         max-width: 100%;

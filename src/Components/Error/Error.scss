@@ -1,8 +1,8 @@
+@use '../../styles/variables' as v;
+@use '../../styles/mixins' as m;
+
 .error-container{
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  @include m.flexbox(column, nowrap, normal, center, center);
   background-color: white;
   height:100vh;
 }

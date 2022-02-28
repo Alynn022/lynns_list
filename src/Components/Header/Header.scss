@@ -8,8 +8,7 @@ header {
   
   .logo-container {
     flex: 3;
-    display: flex;
-    align-items: center;
+    @include m.flexbox(row, nowrap, normal, normal, center);
 
     .logo {
       width: 40%;
@@ -61,7 +60,6 @@ header {
     font-size: 1.5em;
   }
   
-  // below is for NavLink hover
   .selected {
     border-bottom: 4px solid v.$dark;
     padding-bottom: 20%;

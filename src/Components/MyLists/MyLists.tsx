@@ -77,7 +77,7 @@ class MyLists extends React.Component<Props, State> {
     this.setState({value: '', input: false})
   }
 
-  handleChange = (event: any) => {
+  handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     this.setState({ value: event.target.value });
   }
 

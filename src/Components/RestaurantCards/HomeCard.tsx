@@ -26,7 +26,7 @@ class HomeCard extends React.Component<Props, State> {
     dropdownOpen: false
   }
 
-  componentDidUpdate = () => {
+  componentDidMount = () => {
     window.addEventListener('scroll', this.closeDropdown);
   }
 

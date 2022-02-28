@@ -69,16 +69,14 @@
     max-width: 20em;
 
     .dropdown {
-      // width: 20em;
 
       .dropdown-btn {
-        // width: 20em; 
         .fa {
           color: v.$offWhite;
           margin: 0 5%;
 
           &:after {
-            transform: rotate(180deg)
+            transform: rotate(180deg);
           }
         }
       }
@@ -89,7 +87,7 @@
         overflow-y: hidden;
         overflow-x: hidden;
         position: absolute;
-        width: 20em;
+        max-width: 20em;
       }
 
       .dropdown-item {
@@ -100,10 +98,6 @@
         }
       }
 
-    }
-    
-    .yelp {
-      // min-width: 20em;
     }
 
     .dropdown-item {
@@ -152,7 +146,7 @@
         letter-spacing: 1px;
         background-color: v.$lightHover;
         color: v.$offBlack;
-        // transform: scale(1.08);
+
         .fa {
           color: v.$offBlack;
         }
@@ -178,14 +172,21 @@
 
 //desktop requirements
 @media screen and (min-width: 40em) {
-
+  .dropdown {
+    .dropdown-content {
+      min-width: 19.5em;
+      
+      .dropdown-item {
+        width: 95%;
+      }
+    }
+  }
 }
 
 //tablet requirements
 @media screen and (max-width: 73em) {
   .home-card, .list-card {
-    // @include m.flexbox(column, nowrap, normal, normal, normal);
-    
+   
     .thumbnail {
       width: 100%;
       align-self: center;
@@ -228,8 +229,16 @@
         }
       }
 
-      .dropdown-item {
-        font-size: 1.2em;
+      .dropdown {
+        .dropdown-content {
+          min-width: 10.5em;
+          max-width: 14em;
+          
+          .dropdown-item {
+            width: 95%;
+            font-size: 1.2em;
+          }
+        }
       }
     }
   }
@@ -275,8 +284,16 @@
         margin-top: 5%;
       }
 
-      .dropdown-item {
-        font-size: 1.2em;
+      .dropdown {
+        .dropdown-content {
+          min-width: 17em;
+          max-width: 19.75em;
+          
+          .dropdown-item {
+            width: 95%;
+            font-size: 1.2em;
+          }
+        }
       }
     }
   }

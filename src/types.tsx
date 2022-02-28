@@ -8,7 +8,7 @@ interface Coordinates {
   longitude: number
 }
 
-export interface Location {
+interface Location {
   address1: string,
   address2: string,
   address3: string,
@@ -19,7 +19,7 @@ export interface Location {
   display_address: string[]
 }
 
-export interface Restaurant {
+interface RawRestaurant {
   id: string,
   alias: string,
   name: string,
@@ -38,13 +38,33 @@ export interface Restaurant {
   distance: number
 }
 
-export interface State {
-  restaurants: Restaurant[];
-  userLists: UserLists;
-  error: string;
+interface Center {
+  longitude: number;
+  latitude: number;
 }
 
-export interface IndividualList {
+interface Region {
+  center: Center;
+}
+
+export interface apiData {
+  businesses: RawRestaurant[];
+  region: Region;
+  total: number
+}
+
+export interface Restaurant {
+  id: string,
+  name: string,
+  image_url: string,
+  url: string,
+  rating: number,
+  location: Location,
+  display_phone: string
+}
+
+
+interface IndividualList {
   displayName: string;
   restaurants: Restaurant[];
 }
@@ -52,5 +72,3 @@ export interface IndividualList {
 export interface UserLists {
   [key: string]: IndividualList;
 }
-
-

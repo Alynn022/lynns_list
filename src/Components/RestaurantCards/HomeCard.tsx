@@ -79,6 +79,7 @@ class HomeCard extends React.Component<Props, State> {
           </p>
           <div className='address-container' tabIndex={0}>
             {this.displayAddress(this.props.location)}
+            {/* {this.props.location} */}
           </div>
         </article>
         <article className='card-buttons'>

@@ -41,14 +41,18 @@ class HomeCard extends React.Component<Props, State> {
     }))
   }
 
+  handleClick = (key: string) => {
+    this.props.addToList(key, this.props.id);
+    this.displayDropdown();
+  }
+
   populateDropdown = () => {
-    const listItems = Object.keys(this.props.userLists)
-    return listItems.map((item, index) => {
+    const keys = Object.keys(this.props.userLists)
+    return keys.map((key, index) => {
       return(
-        <a key={index}>{item}</a>
+        <a key={index} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}</a>
       )
     })
-    
   }
 
   render() {

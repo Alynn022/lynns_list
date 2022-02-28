@@ -22,7 +22,14 @@ class App extends React.Component<Props, State> {
  state: State = {
    restaurants: [],
    userLists: {
-     'My Favorites': []
+     'gottago': {
+       displayName: 'Gotta Go',
+       restaurants: []
+      },
+      'lovedit': {
+        displayName: 'Loved It',
+        restaurants: []
+      }
    },
    error: ''
   }
@@ -43,22 +50,27 @@ class App extends React.Component<Props, State> {
 
   addToList = (listName: string, id: string): void => {
     const newRestaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
-    if (newRestaurant && !this.state.userLists[listName].includes(newRestaurant)) {
-    this.setState({
-      userLists: {
-        ...this.state.userLists,
-        [listName]: [...this.state.userLists[listName], newRestaurant]
-      }
-    });
-  } 
+    if (newRestaurant && !this.state.userLists[listName].restaurants.includes(newRestaurant)) {
+      this.setState({
+        userLists: {
+          ...this.state.userLists,
+          [listName]: {
+            ...this.state.userLists[listName],
+              restaurants: [...this.state.userLists[listName].restaurants, newRestaurant]}
+        }
+      });
+    } 
   }
 
   removeFromList = (listName: string, id: string): void => {
-    const updatedList = this.state.userLists[listName].filter(restaurant => restaurant.id !== id);
+    const updatedList = this.state.userLists[listName].restaurants.filter(restaurant => restaurant.id !== id);
     this.setState({
       userLists: {
         ...this.state.userLists,
-        [listName]: updatedList
+        [listName]: {
+          ...this.state.userLists[listName],
+          restaurants: updatedList
+        }   
       }
     })
   }
@@ -68,18 +80,24 @@ class App extends React.Component<Props, State> {
   }
 
   createNewList = (newListName: string): void => {
-    const lists = Object.keys(this.state.userLists)
+    const key = newListName.replace(' ', '').toLowerCase();
+    const currentKeys = Object.keys(this.state.userLists)
     let checkList = false 
-    lists.forEach(list => {
+    
+    currentKeys.forEach(list => {
       if (list === newListName) {
         checkList = true 
       }
     })
+    
     if (!checkList) {
       this.setState ({ 
         userLists: {
           ...this.state.userLists,
-          [newListName]: []
+          [key]: {
+            displayName: newListName,
+            restaurants: []
+          }
         }
       })
     }

@@ -44,8 +44,13 @@ export interface State {
   error: string;
 }
 
+export interface IndividualList {
+  displayName: string;
+  restaurants: Restaurant[];
+}
+
 export interface UserLists {
-  [key: string]: Restaurant[]
+  [key: string]: IndividualList;
 }
 
 

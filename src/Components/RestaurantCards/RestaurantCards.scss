@@ -64,8 +64,24 @@
   .card-buttons {
     @include m.flexbox(column, nowrap, normal, flex-start, normal);
 
-    .gotta-go, 
-    .loved-it, 
+    .dropdown-content {
+      @include m.flexbox(column, nowrap, center, center, center);
+    }
+
+    .dropdown-item {
+      padding: 2%;
+      background-color: v.$light;
+      color: v.$dark;
+      width: 90%;
+      border: 1px solid v.$medium;
+
+      &:hover {
+        cursor: pointer;
+        background-color: v.$lightHover;
+      }
+    }
+
+    .dropdown-btn,
     .more-info,
     .delete-button {
       border: none;

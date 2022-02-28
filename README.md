@@ -6,6 +6,7 @@
 - [Screentshots](#screenshots)
 - [Joint-Learning-Goal](#joint-learning-goal)
 - [Individual-Reflection](#individual-reflection)
+- [Future-Enhancements](#future-enhancements)
 - [Links](#links)
 - [Contributors](#contributors)
 - [Technologies](#technologies)
@@ -15,6 +16,7 @@ This is a group project incorporating a new stretch tech, TypeScript. Lynn's Lis
 
 ## Deployed site
 
+https://lynns-list.herokuapp.com/
 
 ## Screenshots 
 
@@ -62,6 +64,11 @@ Jani - Incorporating TypeScript into React. Understanding how to refactor class 
 
 Lynn - My learning goals was to do more cypress testing using intercepts and stubbing static data. I also wanted to be more familiar with class and functional components in TypeScript, and with this project, was able to understand when it was better when use one over the other. 
 
+## Future Enhancements
+- Add more cities for users to search through
+- Add filters for users to sort through types of restaurants 
+- Add a search bar for users to search by name. 
+
 ## Links 
 Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/module-3/stretch.html)
 
@@ -77,7 +84,7 @@ Checkout the Turing spec sheet [here](https://frontend.turing.edu/projects/modul
 ## Technologies 
 
 - TypeScript 
-- JavaScript 
+- React 
 - React Router
 - Sass
 - Fetch API 

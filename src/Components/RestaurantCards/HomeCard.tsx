@@ -58,7 +58,7 @@ class HomeCard extends React.Component<Props, State> {
     const keys = Object.keys(this.props.userLists)
     return keys.map((key, index) => {
       return(
-        <a className='dropdown-item' key={index} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}</a>
+        <a className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}</a>
       )
     })
   }
@@ -84,28 +84,20 @@ class HomeCard extends React.Component<Props, State> {
           </div>
         </article>
         <article className='card-buttons'>
-          
-          {/* <Dropdown /> */}
-          {/* <div className="dropdown"> */}
-          <button
-            className="dropdown-btn"
-            onClick={ () => this.displayDropdown() }
-          >Add to List</button>
-            { dropDownList }
-          {/* </div> */}
-
-          {/* <button aria-label='click here to add to Gotta Go List' className='gotta-go' id={this.props.id} onClick={(event) => 
-            this.props.addToList('gottaGo', this.props.id)}>Gotta Go!
+          <div className="dropdown">
+          <button className="dropdown-btn" onClick={ () => this.displayDropdown() }> Add to List
           </button>
-          <button aria-label='click here to add to Loved It List' className='loved-it' id={this.props.id} onClick={(event) => 
-            this.props.addToList('lovedIt', this.props.id)}>Loved It!
-          </button> */}
-          <a href={this.props.url} target='_blank' tabIndex={-1}>
-            <button className='more-info'>View On Yelp
-              <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>
-              <img src={yelp_icon_black} alt='visit yelp page' className='yelp-logo-black'/>
-            </button>
-          </a>
+            { dropDownList }
+          </div>
+
+          <div className='yelp'>
+            <a href={this.props.url} target='_blank' tabIndex={-1}>
+              <button className='more-info'>View On Yelp
+                <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>
+                <img src={yelp_icon_black} alt='visit yelp page' className='yelp-logo-black'/>
+              </button>
+            </a>
+          </div>
         </article>
       </section>
     )

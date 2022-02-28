@@ -57,7 +57,8 @@ describe('MyLists component user flows', () => {
       .get('.list-card').should('not.exist')
     
     .visit('http://localhost:3000')
-      .get('.gotta-go').click()
+      .get('.dropdown-btn').click()
+      .get('[data-cy=gottago]').click()
       .get('#my-lists-nav').click()
       .get('.list-card').should('exist')
       .get('.delete-button').should('exist')
@@ -70,9 +71,10 @@ describe('MyLists component user flows', () => {
       // .get('.more-info').should('have.text', 'Tell Me More')
 
     .visit('http://localhost:3000')
-      .get('.loved-it').click()
+      .get('.dropdown-btn').click()
+      .get('.dropdown-item').first().next().click()
       .get('#my-lists-nav').click()
-      .get('.list-dropdown').select('lovedIt')
+      .get('.list-button').first().next().click()
       .get('.list-card').should('exist')
       .get('.thumbnail').should('exist')
       .get('.delete-button').should('exist')

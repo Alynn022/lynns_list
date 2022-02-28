@@ -11,6 +11,7 @@ footer {
     display: flex;
     line-height: 1.5em;
     font-size: 0.9em;
+    margin: 2%;
     
     .project-description {
       flex: 2;
@@ -29,13 +30,15 @@ footer {
     }
     
     h4 {
-      font-size: 1.5em;
+      font-size: 1.8em;
       font-family: v.$headerFont;
       color: v.$offWhite;
+      padding-bottom: 0.5em;
     }
 
     p {
       color: v.$offWhite;
+      font-size: 1.8em;
       line-height: 1.5em;
     }
     
@@ -53,6 +56,7 @@ footer {
       text-decoration: none;
       padding: 0 1%;
       color: v.$offWhite;
+      font-size: 1.5em;
     
       &:hover {
         text-decoration: underline;

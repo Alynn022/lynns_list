@@ -1,14 +1,19 @@
 @use '../../styles/_variables' as v;
 @use '../../styles/_mixins' as m;
 
+.home-cards {
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+
 .home-card, .list-card {
   border: 1px solid v.$medium;
   box-shadow: 1px 1px 4px 1px v.$dark;
   border-radius: 0.5em;
-  margin: 5%;
-  padding: 5%;
+  margin: 2% 15%;
+  padding: 2% 5%;
   display: grid;
-  grid-template-columns: 25% 45% 30%;
+  grid-template-columns: 20% 50% 30%;
   background-color: v.$medium;
 
   h2, p, a {
@@ -16,8 +21,9 @@
   };
 
   .thumbnail {
-    width: 100%;
+    width: 80%;
     border-radius: 0.5em;
+    justify-self: center;
   }
 
   
@@ -165,7 +171,22 @@
 
     .card-buttons {
       margin: 0 10%;
+      
+      .dropdown-btn,
+      .more-info,
+      .delete-button {
+        font-size: 1.2em;
+      }
+
+      .more-info {
+        margin-top: 5%;
+      }
+
+      .dropdown-item {
+        font-size: 1.2em;
+      }
     }
+
   }
 }
 

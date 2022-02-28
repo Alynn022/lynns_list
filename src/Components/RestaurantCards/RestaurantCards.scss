@@ -181,6 +181,60 @@
 
 }
 
+//tablet requirements
+@media screen and (max-width: 73em) {
+  .home-card, .list-card {
+    // @include m.flexbox(column, nowrap, normal, normal, normal);
+    
+    .thumbnail {
+      width: 100%;
+      align-self: center;
+    }
+    
+    .restaurant-info {
+      margin: 10%;
+
+      h2 {
+        font-size: 1.5em;
+      }
+
+      p {
+        font-size: 1.2em;
+      }
+    
+      .yelp-logo {
+        width: 30%;
+      }
+    }
+
+    .card-buttons {
+      margin: 10% 0;
+      
+      .dropdown-btn,
+      .more-info,
+      .delete-button {
+        font-size: 1.2em;
+      }
+
+      .more-info {
+        margin-top: 5%;
+
+        .yelp-logo-white {
+          width: 10%;
+        }
+
+        .yelp-logo-black {
+          width: 10%;
+        }
+      }
+
+      .dropdown-item {
+        font-size: 1.2em;
+      }
+    }
+  }
+}
+
 //mobile requirements
 @media screen and (max-width: 40em) {
   .home-card, .list-card {
@@ -225,7 +279,6 @@
         font-size: 1.2em;
       }
     }
-
   }
 }
 

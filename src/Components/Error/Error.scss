@@ -5,4 +5,15 @@
   @include m.flexbox(column, nowrap, normal, center, center);
   background-color: white;
   height: 100vh;
+
+  .nav-back-home-error {
+    font-size: 2em;
+    padding: 1%;
+    font-family: v.$headerFont;
+
+    &:hover {
+      color: v.$medium;
+      transform: scale(1.05)
+    }
+  }
 }

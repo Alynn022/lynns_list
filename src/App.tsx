@@ -118,7 +118,7 @@ class App extends React.Component<Props, State> {
           );
         } else {
           return (
-            <Error error={'Sorry! Looks like that page does not exist'} />
+            <Error error={'Sorry! Looks like that page does not exist.'} />
           );
         }
       }}

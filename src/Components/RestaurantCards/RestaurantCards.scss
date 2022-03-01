@@ -87,6 +87,7 @@
         overflow-x: hidden;
         position: absolute;
         max-width: 20em;
+        min-width: 18.75em;
       }
 
       .dropdown-item {
@@ -228,7 +229,7 @@
 
       .dropdown {
         .dropdown-content {
-          min-width: 10.5em;
+          min-width: 10.75em;
           max-width: 14em;
           
           .dropdown-item {
@@ -283,7 +284,7 @@
 
       .dropdown {
         .dropdown-content {
-          min-width: 17em;
+          min-width: 13.75em;
           max-width: 19.75em;
           
           .dropdown-item {

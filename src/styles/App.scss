@@ -1,3 +1,4 @@
+@use './reset.scss';
 @use './variables' as v;
 @use './_mixins' as m;
 
@@ -35,7 +36,7 @@ button {
   font-family: v.$bodyFont;
 }
 
-// these are here for router styling
+// router styling
 a {
   font-weight: bold;
 }

@@ -1,14 +1,12 @@
 import * as React from 'react';
 import './styles/App.scss';
 import Header from './Components/Header/Header';
-import MobileFooter from './Components/Footer/MobileFooter';
-import DesktopFooter from './Components/Footer/DesktopFooter';
 import Home from './Components/Home/Home';
 import MyLists from './Components/MyLists/MyLists';
+import Error  from './Components/Error/Error';
 import { getAllRestaurants } from './apiCalls';
 import { Restaurant, UserLists } from './types';
 import { Route } from 'react-router-dom';
-import Error  from './Components/Error/Error'
 
 interface State {
   restaurants: Restaurant[];
@@ -36,27 +34,25 @@ class App extends React.Component<Props, State> {
 
   componentDidMount = () => {
     getAllRestaurants()
-    .then(data => {
-      this.setState({ restaurants: data})
-    })
-    .catch(error => {
-      console.log(error)
-      this.handleError(error)})
+    .then(data => this.setState({ restaurants: data}))
+    .catch(error => this.handleError(error))
   }
 
   handleError = (err: string) => {
-    this.setState({error: err})
+    this.setState({error: err});
   }
 
   addToList = (listName: string, id: string): void => {
     const newRestaurant = this.state.restaurants.find(restaurant => restaurant.id === id);
+    
     if (newRestaurant && !this.state.userLists[listName].restaurants.includes(newRestaurant)) {
       this.setState({
         userLists: {
           ...this.state.userLists,
           [listName]: {
             ...this.state.userLists[listName],
-              restaurants: [...this.state.userLists[listName].restaurants, newRestaurant]}
+            restaurants: [...this.state.userLists[listName].restaurants, newRestaurant]
+          }
         }
       });
     } 
@@ -72,11 +68,13 @@ class App extends React.Component<Props, State> {
           restaurants: updatedList
         }   
       }
-    })
+    });
   }
 
   addRestaurants = (data: Restaurant[]): void => {
-    this.setState(prevState => ({ restaurants: prevState.restaurants.concat(data) }))
+    this.setState(prevState => ({
+      restaurants: prevState.restaurants.concat(data)
+    }));
   }
 
   createNewList = (newListName: string): void => {
@@ -88,7 +86,7 @@ class App extends React.Component<Props, State> {
       if (list === newListName) {
         checkList = true 
       }
-    })
+    });
     
     if (!checkList) {
       this.setState ({ 
@@ -99,27 +97,38 @@ class App extends React.Component<Props, State> {
             restaurants: []
           }
         }
-      })
+      });
     }
   }
   
   render() {
-    const displayError = (this.state.error && <Error error={this.state.error}/>)
+    const displayError = this.state.error && <Error error={this.state.error}/>
+
+    const myListsRoute = <Route
+      exact path="/:selectedList"
+      render={({ match }) => {
+        if (Object.keys(this.state.userLists).includes(match.params.selectedList)) {
+          return (
+            <MyLists
+              userLists={this.state.userLists}
+              removeFromList={this.removeFromList}
+              selectedList={match.params.selectedList}
+              createNewList={this.createNewList}
+            />
+          );
+        } else {
+          return (
+            <Error error={'Sorry! Looks like that page does not exist'} />
+          );
+        }
+      }}
+    /> 
+    
     return (
       <div className="App">
         <Header />
-        {displayError}
-        <Route exact path="/:selectedList" render={({match}) => { 
-            return (
-              <MyLists
-                userLists={this.state.userLists}
-                removeFromList={this.removeFromList}
-                selectedList={match.params.selectedList}
-                createNewList={this.createNewList}
-              />
-            )}
-          } 
-        /> 
+        { displayError }
+        { myListsRoute }
         <Route exact path="/" render={() => 
           <Home
             restaurants={this.state.restaurants}
@@ -127,11 +136,9 @@ class App extends React.Component<Props, State> {
             addRestaurants={this.addRestaurants}
             handleError ={this.handleError}
             userLists={this.state.userLists}
-          />
-          }
+            error={this.state.error}
+          />}
         />
-        {/* <MobileFooter /> */}
-        {/* <DesktopFooter /> */}
       </div>
     );
   }

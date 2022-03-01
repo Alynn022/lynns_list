@@ -1,4 +1,4 @@
-import { Restaurant, apiData } from './types';
+import { apiData } from './types';
 
 const cleanData = (data: apiData) => {
   return data.businesses.map(business => {
@@ -11,7 +11,7 @@ const cleanData = (data: apiData) => {
       location: business.location,
       display_phone: business.display_phone
     }
-  })
+  });
 }
 
 export default cleanData;

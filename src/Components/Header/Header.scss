@@ -5,7 +5,6 @@ header {
   @include m.flexbox(row, nowrap, normal, space-between, center);
   background-color: v.$mediumHover;
   
-  
   .logo-container {
     flex: 3;
     @include m.flexbox(row, nowrap, normal, normal, center);

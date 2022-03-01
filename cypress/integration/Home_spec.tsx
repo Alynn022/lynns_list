@@ -21,18 +21,11 @@ describe('Home Page user flows', () => {
   });
 
   it('A user should be able to load more restaurants', () => {
-    cy.intercept('GET', 'https://fe-cors-proxy.herokuapp.com',
-      {
-        ok: true, 
-        statusCode: 200, 
-        body: restaurantData() 
-      }
-    )
+    cy.intercept('GET', 'https://fe-cors-proxy.herokuapp.com', { fixture: 'sampleRestaurant.json' })
     .visit('http://localhost:3000')
       .get('.home-card').should('exist')
       .get('.load-more').click()
       .get('.home-card').should('have.length', 2)
-      
   });
 });
 

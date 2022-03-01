@@ -33,17 +33,17 @@ class HomeCard extends React.Component<Props, State> {
   displayAddress = (address: string[]) => {
     return address.map((element, index) => 
       <p key={index} className='address'>{element}</p>
-    )
+    );
   }
 
   displayDropdown = () => {
     this.setState(prevState => ({ 
       dropdownOpen: !prevState.dropdownOpen
-    }))
+    }));
   }
 
   closeDropdown = () => {
-    this.setState({ dropdownOpen: false })
+    this.setState({ dropdownOpen: false });
   }
 
   handleClick = (key: string) => {
@@ -52,13 +52,13 @@ class HomeCard extends React.Component<Props, State> {
   }
 
   populateDropdown = () => {
-    const keys = Object.keys(this.props.userLists)
+    const keys = Object.keys(this.props.userLists);
     return keys.map((key, index) => {
       return (
         <li className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} tabIndex={0} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}
         </li>
-      )
-    })
+      );
+    });
   }
 
   render() {
@@ -72,7 +72,7 @@ class HomeCard extends React.Component<Props, State> {
       <section className='home-card'>
         <img className='thumbnail' src={this.props.image} alt={`Photo of ${this.props.name}`} tabIndex={0}/>
         <article className='restaurant-info'>
-        <h2 className='name' tabIndex={0}>{this.props.name}</h2>
+          <h2 className='name' tabIndex={0}>{this.props.name}</h2>
           <p className='rating' tabIndex={0}>Rating: {this.props.rating}</p>
           <p className='phone-number'>
             <a href={`tel:${this.props.phone}`} className='phone-link' aria-label='phone number'>{this.props.phone}</a>
@@ -85,9 +85,9 @@ class HomeCard extends React.Component<Props, State> {
         <article className='card-buttons'>
           <div className="dropdown">
             <button className="dropdown-btn" tabIndex={0} onClick={ () => this.displayDropdown() }> Add to List
-            <i className="fa fa-chevron-down fa-flip-horizontal"></i>
+              <i className="fa fa-chevron-down fa-flip-horizontal"></i>
             </button>
-              { dropDownList }
+            { dropDownList }
           </div>
           <div className='yelp'>
             <a className='yelp-link' href={this.props.url} target='_blank' tabIndex={-1}>
@@ -99,7 +99,7 @@ class HomeCard extends React.Component<Props, State> {
           </div>
         </article>
       </section>
-    )
+    );
   }
 }
 

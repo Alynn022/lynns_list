@@ -1,5 +1,3 @@
-import { createYield } from "typescript"
-
 describe('MyLists component user flows', () => {
 
   it('A user should be able to add a restaurant to either "Wanna try?" or "Loved It"', () => {
@@ -38,8 +36,7 @@ describe('MyLists component user flows', () => {
       .get('.address').should('have.text', '2620 16th StDenver, CO 80211')
       .get('.more-info').should('exist') 
       .get('.yelp-link').should('have.attr', 'href', 'https://www.yelp.com/biz/little-man-ice-cream-denver?adjust_creative=E6U6G8Kpna_RIMndHiaPpw&utm_campaign=yelp_api_v3&utm_medium=api_v3_business_search&utm_source=E6U6G8Kpna_RIMndHiaPpw')
-
-  })
+  });
 
   it('should be able to delete a restaurant from a user\'s lists', () => {
     cy.intercept('GET', 'https://fe-cors-proxy.herokuapp.com', { fixture: 'sampleRestaurant.json' })
@@ -58,7 +55,7 @@ describe('MyLists component user flows', () => {
         .get('.list-card').should('exist')
         .get('.delete-button').click()
         .get('.list-card').should('not.exist')
-  })
+  });
 
   it('A user should be able to add their own new list', () => {
     cy.visit('http://localhost:3000')
@@ -67,5 +64,5 @@ describe('MyLists component user flows', () => {
       .get('.list-input').type('A New List')
       .get('.submit').click()
       .get('.list-button').eq(2).should('have.text', 'A New List')
-  })
-})
+  });
+});

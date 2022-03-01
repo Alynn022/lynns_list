@@ -7,6 +7,7 @@
 - [Joint Learning Goal](#joint-learning-goal)
 - [Individual Reflections](#individual-reflection)
 - [Future Enhancements](#future-enhancements)
+- [Install & Setup](#install-and-setup)
 - [Project Spec & Rubric](#project-spec-and-rubric)
 - [Contributors](#contributors)
 - [Technologies](#technologies)
@@ -70,7 +71,7 @@ Lynn - My learning goals were to do more cypress testing using intercepts and st
 - Add a search bar for users to search by name.
 - Allow users to remove or edit a list name.
 
-## Install & Setup
+## Install and Setup
   1. Clone this repo `git clone git@github.com:Alynn022/lynns_list.git`
   2. Install the necessary package dependencies `npm install`
   3. Run the command `npm start`

@@ -104,42 +104,32 @@ class App extends React.Component<Props, State> {
   render() {
     const displayError = this.state.error && <Error error={this.state.error}/>
 
-    // const myListsRoute = <Route
-    //   exact path="/:selectedList"
-    //   render={({ match }) => {
-    //     if (Object.keys(this.state.userLists).includes(match.params.selectedList)) {
-    //       return (
-    //         <MyLists
-    //           userLists={this.state.userLists}
-    //           removeFromList={this.removeFromList}
-    //           selectedList={match.params.selectedList}
-    //           createNewList={this.createNewList}
-    //         />
-    //       )
-    //     }
-    //     // )} else {
-    //     //   this.handleError('Sorry, we cant find that page')
-    //     // }
-    //     }
-    //   }
-    // /> 
+    const myListsRoute = <Route
+      exact path="/:selectedList"
+      render={({ match }) => {
+        if (Object.keys(this.state.userLists).includes(match.params.selectedList)) {
+          return (
+            <MyLists
+              userLists={this.state.userLists}
+              removeFromList={this.removeFromList}
+              selectedList={match.params.selectedList}
+              createNewList={this.createNewList}
+            />
+          );
+        } else {
+          return (
+            <Error error={'Sorry! Looks like that page does not exist'} />
+          );
+        }
+      }}
+    /> 
     
     return (
       <div className="App">
         <Header />
-        {/* {displayError} */}
+        { displayError }
         <Switch>
-          <Route exact path="/:selectedList" render={({match}) => {
-              return (
-                <MyLists
-                  userLists={this.state.userLists}
-                  removeFromList={this.removeFromList}
-                  selectedList={match.params.selectedList}
-                  createNewList={this.createNewList}
-                />
-              )}
-            } 
-          /> 
+          { myListsRoute }
           <Route exact path="/" render={() => 
             <Home
               restaurants={this.state.restaurants}
@@ -150,7 +140,6 @@ class App extends React.Component<Props, State> {
               error={this.state.error}
             />}
           />
-          <Route render={() => <Error error={this.state.error} />} />
         </Switch>
       </div>
     );

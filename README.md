@@ -57,7 +57,7 @@ Application has a 100% Lighthouse Accessibility Score.
 Our learning goal was to build this application using a new technology that none of us had previous experience with. We chose TypeScript.
 
 ## Individual Reflection 
-Ali - My learning goals were to continue gaining experience with React and dynamically rendering based on user input.
+Ali - My goals were to learn how to work with a strongly typed language, continue gaining experience with React functional and class components, and to make our app dynamic based on user input. 
 
 Daniel - My primary learning goal over the course of this project was to gain an understanding of strongly typed languages via Typescript. I also wanted to continue transferring the staples I learned in VanillaJS to React.
 

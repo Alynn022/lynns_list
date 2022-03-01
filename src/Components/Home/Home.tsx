@@ -9,10 +9,11 @@ import './Home.scss';
 
 interface Props {
   restaurants: Restaurant[];
-  addToList: ((listName: string, id: string) => void)
-  addRestaurants: (data: Restaurant[]) => void
-  handleError: (error: string) => void
+  addToList: (listName: string, id: string) => void;
+  addRestaurants: (data: Restaurant[]) => void;
+  handleError: (error: string) => void;
   userLists: UserLists;
+  error: string;
 }
 
 interface State {
@@ -31,7 +32,7 @@ class Home extends React.Component<Props, State> {
   }
 
   loadMoreResults = () => {
-    this.setState(prevState => ({offset: prevState.offset + 50}), this.updateRestaurants)
+    this.setState(prevState => ({offset: prevState.offset + 50}), this.updateRestaurants);
   }
 
   render() {
@@ -49,19 +50,22 @@ class Home extends React.Component<Props, State> {
           url={restaurant.url}
           userLists={this.props.userLists}
         />
-      )
-    })
+      );
+    });
+
+    const loadMoreButton = !this.props.error && 
+      <article className='bottom-button'>
+        <a className='load-more' tabIndex={0} onClick={() => this.loadMoreResults()}>Load More...</a>
+      </article>
 
     return (
       <section className='home-page'>
-        {restaurantCards}
-      <article className='bottom-button'>
-        <a className='load-more'  tabIndex={0} onClick={() => this.loadMoreResults()}>Load More...</a>
-      </article>
+        { restaurantCards }
+        { loadMoreButton }
         <MobileFooter />
         <DesktopFooter />
       </section>
-    )
+    );
   }
 }
 

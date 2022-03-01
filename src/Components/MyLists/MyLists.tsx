@@ -1,7 +1,7 @@
 import * as React from 'react';
 import './MyLists.scss';
-import { UserLists } from '../../types';
 import ListCard from '../RestaurantCards/ListCard';
+import { UserLists } from '../../types';
 import { Link } from 'react-router-dom';
 
 interface Props {
@@ -51,13 +51,13 @@ class MyLists extends React.Component<Props, State> {
           url={restaurant.url}
           selectedList={this.state.selectedList}
         />
-      )
-    })
-    this.setState({ cardsToDisplay: cards })
+      );
+    });
+    this.setState({ cardsToDisplay: cards });
   }
 
   updateList = (listName: string) => {
-    this.setState({ selectedList: listName }, this.createCardsToDisplay)
+    this.setState({ selectedList: listName }, this.createCardsToDisplay);
   }
 
   showNewListInput = (): void => {
@@ -68,13 +68,13 @@ class MyLists extends React.Component<Props, State> {
 
   getInput = (): void => {
     if (this.state.value) {
-      this.props.createNewList(this.state.value)
-      this.clearInput()
+      this.props.createNewList(this.state.value);
+      this.clearInput();
     }
   }
 
   clearInput = (): void => {
-    this.setState({value: '', input: false})
+    this.setState({value: '', input: false});
   }
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -88,7 +88,7 @@ class MyLists extends React.Component<Props, State> {
         <Link key={key} to={`/${key}`} tabIndex={-1}>
           <button className='list-button' id={`${key}-list-button`} tabIndex={0} onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
         </Link>
-      )
+      );
     });
   }
 
@@ -100,40 +100,41 @@ class MyLists extends React.Component<Props, State> {
       </div>
 
     const noListMessage = !this.state.cardsToDisplay.length && <p className='no-restaurants-yet'>You currently have no restaurants saved to this list, please <a href='/'>return home</a> and make some selections.</p>
+    
     return (
       <div className='my-lists-page'>
         <section className='my-lists-title'>
           <h2 className='selected-list' tabIndex={0}>Your "{this.props.userLists[this.state.selectedList].displayName}" List</h2>
           { noListMessage }
         </section>
-      <section className='list-menu-container'>
-        <section className='my-lists-button-container'>
-          <article className='list-buttons-container'>
-            <p className='instructions'>
-              Select a list to view.
-            </p>
-            <div className='scroll-wrap'>
-              { this.getListButtons() }
-            </div>
+        <section className='list-menu-container'>
+          <section className='my-lists-button-container'>
+            <article className='list-buttons-container'>
+              <p className='instructions'>
+                Select a list to view.
+              </p>
+              <div className='scroll-wrap'>
+                { this.getListButtons() }
+              </div>
+            </article>
+            <article className='new-list-container'>
+              <button className='new-list-button' id='newList' onClick={() => this.showNewListInput()}>
+                <div className='plus'>
+                  <p>+</p>
+                </div>
+                <p className='new-list-text'>Add New List</p>
+              </button>
+              { inputField }
           </article>
-        <article className='new-list-container'>
-          <button className='new-list-button' id='newList' onClick={() => this.showNewListInput()}>
-          <div className='plus'>
-            <p>+</p>
-          </div>
-          <p className='new-list-text'>Add New List</p>
-          </button>
-         { inputField }
-         </article>
+          </section>
         </section>
-      </section>
-      <section className='my-lists-container'>
-        <section className='list-view'>
-          { this.state.cardsToDisplay }
+        <section className='my-lists-container'>
+          <section className='list-view'>
+            { this.state.cardsToDisplay }
+          </section>
         </section>
-      </section>
-    </div>
-    )
+      </div>
+    );
   }
 }
 

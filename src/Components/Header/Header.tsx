@@ -1,10 +1,10 @@
 import * as React from 'react';
-import './Header.scss'
+import './Header.scss';
 import lynnslist_logo from './lynnslist_logo.png';
 import lynnslist_logo_mobile from './lynnslist_logo_mobile.png';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
-const Header = () => {
+const Header: React.FC = () => {
   return (
     <header>
       <section className='logo-container' tabIndex={0} onClick={() => {window.location.href='/'}}>
@@ -23,7 +23,7 @@ const Header = () => {
         </ul>
       </nav>
     </header>
-  )
+  );
 }
 
 export default Header;

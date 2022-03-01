@@ -4,5 +4,5 @@
 .error-container{
   @include m.flexbox(column, nowrap, normal, center, center);
   background-color: white;
-  height:100vh;
+  height: 100vh;
 }

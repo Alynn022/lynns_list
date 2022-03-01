@@ -1,9 +1,9 @@
-import React from 'react';
-import './DesktopFooter.scss'
+import * as React from 'react';
+import './DesktopFooter.scss';
 import react_logo from './react_logo.png';
 import turing_logo from './turing_logo.png';
 
-const DesktopFooter = () => {
+const DesktopFooter: React.FC = () => {
   return (
     <footer>
       <div className='footer-content hidden-mobile'>
@@ -41,7 +41,7 @@ const DesktopFooter = () => {
         <p>© Lynn's List | Dining, Drinks, and Desserts</p>
       </div>
     </footer>
-  )
+  );
 }
 
 export default DesktopFooter;

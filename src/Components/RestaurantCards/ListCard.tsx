@@ -1,7 +1,6 @@
 import '../RestaurantCards/RestaurantCards.scss';
 import yelp_icon_white from './yelp_icon_white.png';
 import yelp_icon_black from './yelp_icon_black.png';
-import { UserLists } from '../../types';
 
 interface Props {
   removeFromList: (listName: string, id: string) => void;
@@ -19,7 +18,7 @@ interface Props {
 const displayAddress = (address: string[]) => {
   return address.map((element, index) => 
     <p key={index} className='address'>{element}</p>
-  )
+  );
 }
 
 const ListCard: React.FC<Props> = (props: Props) => {
@@ -47,8 +46,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
         </a>
       </article>
     </section>
-  )
+  );
 }
-
 
 export default ListCard;

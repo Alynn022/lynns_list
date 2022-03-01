@@ -50,7 +50,7 @@ interface Region {
 export interface apiData {
   businesses: RawRestaurant[];
   region: Region;
-  total: number
+  total: number;
 }
 
 export interface Restaurant {

@@ -6,7 +6,7 @@ import MyLists from './Components/MyLists/MyLists';
 import Error  from './Components/Error/Error';
 import { getAllRestaurants } from './apiCalls';
 import { Restaurant, UserLists } from './types';
-import { Route } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
 interface State {
   restaurants: Restaurant[];
@@ -103,31 +103,55 @@ class App extends React.Component<Props, State> {
   
   render() {
     const displayError = this.state.error && <Error error={this.state.error}/>
+
+    // const myListsRoute = <Route
+    //   exact path="/:selectedList"
+    //   render={({ match }) => {
+    //     if (Object.keys(this.state.userLists).includes(match.params.selectedList)) {
+    //       return (
+    //         <MyLists
+    //           userLists={this.state.userLists}
+    //           removeFromList={this.removeFromList}
+    //           selectedList={match.params.selectedList}
+    //           createNewList={this.createNewList}
+    //         />
+    //       )
+    //     }
+    //     // )} else {
+    //     //   this.handleError('Sorry, we cant find that page')
+    //     // }
+    //     }
+    //   }
+    // /> 
     
     return (
       <div className="App">
         <Header />
-        {displayError}
-        <Route exact path="/:selectedList" render={({match}) => { 
-          return (
-            <MyLists
+        {/* {displayError} */}
+        <Switch>
+          <Route exact path="/:selectedList" render={({match}) => {
+              return (
+                <MyLists
+                  userLists={this.state.userLists}
+                  removeFromList={this.removeFromList}
+                  selectedList={match.params.selectedList}
+                  createNewList={this.createNewList}
+                />
+              )}
+            } 
+          /> 
+          <Route exact path="/" render={() => 
+            <Home
+              restaurants={this.state.restaurants}
+              addToList={this.addToList}
+              addRestaurants={this.addRestaurants}
+              handleError ={this.handleError}
               userLists={this.state.userLists}
-              removeFromList={this.removeFromList}
-              selectedList={match.params.selectedList}
-              createNewList={this.createNewList}
-            />
-          )}} 
-        /> 
-        <Route exact path="/" render={() => 
-          <Home
-            restaurants={this.state.restaurants}
-            addToList={this.addToList}
-            addRestaurants={this.addRestaurants}
-            handleError ={this.handleError}
-            userLists={this.state.userLists}
-            error={this.state.error}
-          />}
-        />
+              error={this.state.error}
+            />}
+          />
+          <Route render={() => <Error error={this.state.error} />} />
+        </Switch>
       </div>
     );
   }

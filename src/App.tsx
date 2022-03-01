@@ -6,7 +6,7 @@ import MyLists from './Components/MyLists/MyLists';
 import Error  from './Components/Error/Error';
 import { getAllRestaurants } from './apiCalls';
 import { Restaurant, UserLists } from './types';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 interface State {
   restaurants: Restaurant[];
@@ -128,19 +128,17 @@ class App extends React.Component<Props, State> {
       <div className="App">
         <Header />
         { displayError }
-        <Switch>
-          { myListsRoute }
-          <Route exact path="/" render={() => 
-            <Home
-              restaurants={this.state.restaurants}
-              addToList={this.addToList}
-              addRestaurants={this.addRestaurants}
-              handleError ={this.handleError}
-              userLists={this.state.userLists}
-              error={this.state.error}
-            />}
-          />
-        </Switch>
+        { myListsRoute }
+        <Route exact path="/" render={() => 
+          <Home
+            restaurants={this.state.restaurants}
+            addToList={this.addToList}
+            addRestaurants={this.addRestaurants}
+            handleError ={this.handleError}
+            userLists={this.state.userLists}
+            error={this.state.error}
+          />}
+        />
       </div>
     );
   }

@@ -28,7 +28,10 @@ class Home extends React.Component<Props, State> {
   updateRestaurants = () => {
     getAllRestaurants(this.state.offset)
       .then(data => this.props.addRestaurants(data))
-      .catch(error => this.props.handleError(error))
+      .catch(error => {
+        console.log(error);
+        this.props.handleError(error.message)
+      })
   }
 
   loadMoreResults = () => {
@@ -54,7 +57,10 @@ class Home extends React.Component<Props, State> {
     });
 
     const loadMoreButton = !this.props.error && 
-      <button className='load-more' onClick={() => this.loadMoreResults()}>
+      <button
+        className='load-more'
+        onClick={() => this.loadMoreResults()}
+      >
         Load More
       </button>
 

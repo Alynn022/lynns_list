@@ -73,7 +73,7 @@ Lynn - My learning goals were to do more cypress testing using intercepts and st
 - Integrate a map so that user's can view a restaurants location on the home page 
 
 ## Install and Setup
-  1. Clone this repo `git clone git@github.com:Alynn022/lynns_list.git`
+  1. Clone this repo `git clone git@github.com:aliroemhildt/lynns_list.git`
   2. Install the necessary package dependencies `npm install`
   3. Run the command `npm start`
   4. Start the server at `http://localhost:3000/`

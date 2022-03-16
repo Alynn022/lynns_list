@@ -6,13 +6,13 @@ const url = `https://api.yelp.com/v3/businesses/search?location=Denver&categorie
 
 const checkForError = (response: Response) => {
   if (response.status === 404) {
-    throw (`${response.status} Error. Sorry, the page you're looking for doesn't exist.`)
+    throw new Error (`${response.status} Error. Sorry, the page you're looking for doesn't exist.`)
   } else if ((!response.ok && response.status >= 400) && response.status < 500) {
-    throw (`${response.status} Error. Sorry, the page you're looking for doesn't exist.`)
+    throw new Error (`${response.status} Error. Sorry, the page you're looking for doesn't exist.`)
   } else if (!response.ok && response.status >= 500) {
-    throw (`${response.status} Error. Something went wrong. Please try again!`)
+    throw new Error (`${response.status} Error. Something went wrong. Please try again!`)
   } else if (!response.ok){
-    throw (`${response.status} Error. Something went wrong! We're not sure either, sorry!!`)
+    throw new Error (`${response.status} Error. Something went wrong! We're not sure either, sorry!!`)
   } else {
     return response.json()
   }

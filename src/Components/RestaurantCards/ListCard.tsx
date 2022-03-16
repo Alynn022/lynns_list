@@ -24,7 +24,7 @@ const displayAddress = (address: string[]) => {
 const ListCard: React.FC<Props> = (props: Props) => {
   return (
     <section className='list-card'>
-      <img className='thumbnail' src={props.image} alt={`Photo of ${props.name} Image`} tabIndex={0}/>
+      <img className='thumbnail' src={props.image} alt={`${props.name}`} tabIndex={0}/>
       <article className='restaurant-info'>
         <h2 className='name' tabIndex={0}>{props.name}</h2>
         <p className='rating' tabIndex={0}>Rating: {props.rating}</p>

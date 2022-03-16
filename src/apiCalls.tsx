@@ -1,6 +1,6 @@
 import cleanData from './utilities';
 
-const apiKey = 'AH6TkVNX-YvTWJNUDUWrGhPCWRjzowhc6chQ6pvs4uhx251m3PAI0UoMZT5jRW1IyQFG0DifaEmk6F3Iz64u4myxtcZRuGThLO9OHp_zAGCp7yGsEorWWz3lhLIOYnYx';
+const apiKey = 'Ad0_XGC0yivo6Othpb0K30Z_KvuGmbz8B1ZNnqP5C0lQSP8SwrVXCSaLLxNwVCWe9DyUojQ6a42vz1KdOmMshvFgTzc-t1uO2XDl1c8_i-bn53L3zRZfXEaI1CIUYnYx';
 
 const url = `https://api.yelp.com/v3/businesses/search?location=Denver&categories=food&limit=50`;
 

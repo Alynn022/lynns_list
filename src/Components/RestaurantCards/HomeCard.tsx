@@ -70,7 +70,7 @@ class HomeCard extends React.Component<Props, State> {
 
     return (
       <section className='home-card'>
-        <img className='thumbnail' src={this.props.image} alt={`Photo of ${this.props.name}`} tabIndex={0}/>
+        <img className='thumbnail' src={this.props.image} alt={`${this.props.name}`} tabIndex={0}/>
         <article className='restaurant-info'>
           <h2 className='name' tabIndex={0}>{this.props.name}</h2>
           <p className='rating' tabIndex={0}>Rating: {this.props.rating}</p>
@@ -90,10 +90,10 @@ class HomeCard extends React.Component<Props, State> {
             { dropDownList }
           </div>
           <div className='yelp'>
-            <a className='yelp-link' href={this.props.url} target='_blank' tabIndex={-1}>
+            <a className='yelp-link' href={this.props.url} target='_blank' tabIndex={-1} rel='noreferrer'>
               <button className='more-info'>View On Yelp
-                <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>
-                <img src={yelp_icon_black} alt='visit yelp page' className='yelp-logo-black'/>
+                <img src={yelp_icon_white} alt='yelp icon' className='yelp-logo-white'/>
+                <img src={yelp_icon_black} alt='yelp icon' className='yelp-logo-black'/>
               </button>
             </a>
           </div>

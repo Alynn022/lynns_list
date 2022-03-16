@@ -5,28 +5,24 @@
   text-align: center;
   margin: 5% 0 10% 0;
   height: 100vh;
-
-  .bottom-button {
-    padding: 2% 0 10% 0;
     
-    .load-more {
-      border: none;
-      padding: 1% 10%;
-      margin: 10%;
-      font-weight: 600;
-      font-size: 1.5em;
-      font-family: v.$headerFont;
-      color: v.$offBlack;
-      cursor: pointer;
-      transition: all .2s ease-in-out;
-      background-color: v.$grayHover;
-      border-radius: 0.2em;
-      
-      &:hover {
-        letter-spacing: 1px;
-        text-transform: underline;
-        background-color: v.$gray;
-      }
+  .load-more {
+    border: none;
+    margin: 10%;
+    width: 6em;
+    font-weight: 600;
+    font-size: 1.5em;
+    font-family: v.$headerFont;
+    color: v.$offBlack;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+    background-color: v.$grayHover;
+    border-radius: 0.2em;
+    
+    &:hover {
+      letter-spacing: 1px;
+      text-transform: underline;
+      background-color: v.$gray;
     }
   }
 }

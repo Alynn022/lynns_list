@@ -35,7 +35,10 @@ class App extends React.Component<Props, State> {
   componentDidMount = () => {
     getAllRestaurants()
     .then(data => this.setState({ restaurants: data}))
-    .catch(error => this.handleError(error))
+    .catch(error => {
+      console.log(error);
+      this.handleError(error.message);
+    })
   }
 
   handleError = (err: string) => {

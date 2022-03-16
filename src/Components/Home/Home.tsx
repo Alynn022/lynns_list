@@ -54,9 +54,9 @@ class Home extends React.Component<Props, State> {
     });
 
     const loadMoreButton = !this.props.error && 
-      <article className='bottom-button'>
-        <a className='load-more' tabIndex={0} onClick={() => this.loadMoreResults()}>Load More...</a>
-      </article>
+      <button className='load-more' onClick={() => this.loadMoreResults()}>
+        Load More
+      </button>
 
     return (
       <section className='home-page'>

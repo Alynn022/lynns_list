@@ -90,7 +90,7 @@ class HomeCard extends React.Component<Props, State> {
             { dropDownList }
           </div>
           <div className='yelp'>
-            <a className='yelp-link' href={this.props.url} target='_blank' tabIndex={-1}>
+            <a className='yelp-link' href={this.props.url} target='_blank' tabIndex={-1} rel='noreferrer'>
               <button className='more-info'>View On Yelp
                 <img src={yelp_icon_white} alt='yelp icon' className='yelp-logo-white'/>
                 <img src={yelp_icon_black} alt='yelp icon' className='yelp-logo-black'/>

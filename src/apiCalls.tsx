@@ -21,7 +21,7 @@ const checkForError = (response: Response) => {
 const getAllRestaurants = (offset: number = 0) => {
   return fetch('https://fe-cors-proxy.herokuapp.com', {
     headers: {
-    "Target-URL": `${url}` + `&offset=${offset}`,
+    "Target-URL": `${url}&offset=${offset}`,
     "Authorization": `Bearer ${apiKey}`
     }
   })

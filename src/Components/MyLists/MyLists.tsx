@@ -74,7 +74,7 @@ class MyLists extends React.Component<Props, State> {
   }
 
   clearInput = (): void => {
-    this.setState({value: '', input: false});
+    this.setState({ value: '', input: false });
   }
 
   handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -85,8 +85,19 @@ class MyLists extends React.Component<Props, State> {
     const keys = Object.keys(this.props.userLists);
     return keys.map(key => {
       return (
-        <Link key={key} to={`/${key}`} tabIndex={-1}>
-          <button className='list-button' id={`${key}-list-button`} tabIndex={0} onClick={() => this.updateList(key)}>{this.props.userLists[key].displayName}</button>
+        <Link
+          key={key}
+          to={`/${key}`}
+          tabIndex={-1}
+        >
+          <button
+            className='list-button'
+            id={`${key}-list-button`}
+            tabIndex={0}
+            onClick={() => this.updateList(key)}
+          >
+            { this.props.userLists[key].displayName }
+          </button>
         </Link>
       );
     });
@@ -95,16 +106,33 @@ class MyLists extends React.Component<Props, State> {
   render() {
     const inputField = this.state.input &&
       <div className='input-container'>
-        <input className='list-input'  maxLength={25} type='text' placeholder='max characters 25' value={this.state.value} onChange={event => this.handleChange(event)}></input>
-        <button className='submit' onClick={() => this.getInput()}>Create List</button>
+        <input
+          className='list-input'
+          maxLength={25}
+          type='text'
+          placeholder='max characters 25'
+          value={this.state.value}
+          onChange={event => this.handleChange(event)}
+        />
+        <button
+          className='submit'
+          onClick={() => this.getInput()}
+        >
+          Create List
+        </button>
       </div>
 
-    const noListMessage = !this.state.cardsToDisplay.length && <p className='no-restaurants-yet'>You currently have no restaurants saved to this list, please <a href='/'>return home</a> and make some selections.</p>
+    const noListMessage = !this.state.cardsToDisplay.length &&
+      <p className='no-restaurants-yet'>
+        You currently have no restaurants saved to this list, please <a href='/'>return home</a> and make some selections.
+      </p>
     
     return (
       <div className='my-lists-page'>
         <section className='my-lists-title'>
-          <h2 className='selected-list' tabIndex={0}>Your "{this.props.userLists[this.state.selectedList].displayName}" List</h2>
+          <h2 className='selected-list' tabIndex={0}>
+            Your "{this.props.userLists[this.state.selectedList].displayName}" List
+          </h2>
           { noListMessage }
         </section>
         <section className='list-menu-container'>
@@ -118,7 +146,11 @@ class MyLists extends React.Component<Props, State> {
               </div>
             </article>
             <article className='new-list-container'>
-              <button className='new-list-button' id='newList' onClick={() => this.showNewListInput()}>
+              <button
+                className='new-list-button'
+                id='newList'
+                onClick={() => this.showNewListInput()}
+              >
                 <div className='plus'>
                   <p>+</p>
                 </div>

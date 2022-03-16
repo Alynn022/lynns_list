@@ -19,7 +19,7 @@ const DesktopFooter: React.FC = () => {
           <h3 tabIndex={0}>Follow Us</h3>
           <section className='repo'>
               <h4 tabIndex={0}>Project Repo</h4>
-              <a href='https://github.com/Alynn022/lynns_list' target='_blank' rel='noreferrer'>github.com/Alynn022/lynns_list</a>
+            <a href='https://github.com/aliroemhildt/lynns_list' target='_blank' rel='noreferrer'>github.com/Alynn022/lynns_list</a>
           </section>
           <section className='github'>
               <h4 tabIndex={0}>GitHub Profiles</h4>

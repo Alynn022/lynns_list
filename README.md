@@ -66,10 +66,11 @@ Jani - My learning goals included incorporating TypeScript into React, understan
 Lynn - My learning goals were to do more cypress testing using intercepts and stubbing static data. I also wanted to be more familiar with class and functional components in TypeScript, and with this project, to understand when it was better to use one over the other. 
 
 ## Future Enhancements
-- Add more cities for users to view restaurants for.
-- Add filters for users to sort through types of restaurants.
-- Add a search bar for users to search by name.
-- Allow users to remove or edit a list name.
+- Allow user to select from multiple cities, or configure app to detect a user's location 
+- Add filters for users to sort through types of restaurants on the home page
+- Add a search bar for users to search for restaurants by name
+- Allow users to remove or edit a list name
+- Integrate a map so that user's can view a restaurants location on the home page 
 
 ## Install and Setup
   1. Clone this repo `git clone git@github.com:Alynn022/lynns_list.git`

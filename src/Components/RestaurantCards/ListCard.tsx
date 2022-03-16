@@ -38,7 +38,7 @@ const ListCard: React.FC<Props> = (props: Props) => {
       <article className='card-buttons'>
         <button className='delete-button' id={props.id} onClick={() => props.removeFromList(props.selectedList, props.id)}>Remove From List
         </button>
-        <a className='yelp-link' href={props.url} target='_blank' tabIndex={-1}>
+        <a className='yelp-link' href={props.url} target='_blank' tabIndex={-1} rel='noreferror'>
           <button className='more-info'>View On Yelp
             <img src={yelp_icon_white} alt='visit yelp page' className='yelp-logo-white'/>
             <img src={yelp_icon_black} alt='visit yelp page' className='yelp-logo-black'/>

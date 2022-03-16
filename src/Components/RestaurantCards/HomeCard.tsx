@@ -59,7 +59,15 @@ class HomeCard extends React.Component<Props, State> {
     const keys = Object.keys(this.props.userLists);
     return keys.map((key, index) => {
       return (
-        <li className='dropdown-item' key={index} id={`${key}-id`} data-cy={key} tabIndex={0} onClick={() => this.handleClick(key)}>{this.props.userLists[key].displayName}
+        <li
+          className='dropdown-item'
+          key={index}
+          id={`${key}-id`}
+          data-cy={key}
+          tabIndex={0}
+          onClick={() => this.handleClick(key)}
+        >
+          { this.props.userLists[key].displayName }
         </li>
       );
     });
@@ -68,13 +76,20 @@ class HomeCard extends React.Component<Props, State> {
   render() {
     const dropDownList = this.state.dropdownOpen &&
       <ul id="myDropdown" className="dropdown-content">
-        {this.populateDropdown()}
-        <li className='dropdown-item'><a href='/gottago/#newList'>Create A New List</a></li>
+        { this.populateDropdown() }
+        <li className='dropdown-item'>
+          <a href='/gottago/#newList'>Create A New List</a>
+        </li>
       </ul>
 
     return (
       <section className='home-card'>
-        <img className='thumbnail' src={this.props.image} alt={`${this.props.name}`} tabIndex={0}/>
+        <img
+          className='thumbnail'
+          src={this.props.image}
+          alt={`${this.props.name}`}
+          tabIndex={0}
+        />
         <article className='restaurant-info'>
           <h2 className='name' tabIndex={0}>{this.props.name}</h2>
           <p className='rating' tabIndex={0}>Rating: {this.props.rating}</p>
@@ -83,21 +98,40 @@ class HomeCard extends React.Component<Props, State> {
           </p>
           <div className='address-container' tabIndex={0}>
             {this.displayAddress(this.props.location)}
-            {/* {this.props.location} */}
           </div>
         </article>
         <article className='card-buttons'>
           <div className="dropdown">
-            <button className="dropdown-btn" tabIndex={0} onClick={ () => this.displayDropdown() }> Add to List
+            <button
+              className="dropdown-btn"
+              tabIndex={0}
+              onClick={() => this.displayDropdown()}
+            > 
+              Add to List
               <i className="fa fa-chevron-down fa-flip-horizontal"></i>
             </button>
             { dropDownList }
           </div>
           <div className='yelp'>
-            <a className='yelp-link' href={this.props.url} target='_blank' tabIndex={-1} rel='noreferrer'>
-              <button className='more-info'>View On Yelp
-                <img src={yelp_icon_white} alt='yelp icon' className='yelp-logo-white'/>
-                <img src={yelp_icon_black} alt='yelp icon' className='yelp-logo-black'/>
+            <a
+              className='yelp-link'
+              href={this.props.url}
+              target='_blank'
+              tabIndex={-1}
+              rel='noreferrer'
+            >
+              <button className='more-info'>
+                View On Yelp
+                <img
+                  src={yelp_icon_white}
+                  alt='yelp icon'
+                  className='yelp-logo-white'
+                />
+                <img
+                  src={yelp_icon_black}
+                  alt='yelp icon'
+                  className='yelp-logo-black'
+                />
               </button>
             </a>
           </div>

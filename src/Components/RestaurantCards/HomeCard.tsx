@@ -30,6 +30,10 @@ class HomeCard extends React.Component<Props, State> {
     window.addEventListener('scroll', this.closeDropdown);
   }
 
+  componentWillUnmount = () => {
+    window.removeEventListener('scroll', this.closeDropdown);
+  }
+
   displayAddress = (address: string[]) => {
     return address.map((element, index) => 
       <p key={index} className='address'>{element}</p>
